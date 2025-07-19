@@ -2,9 +2,11 @@
 
 ## 🔐 Module 2: User & Role Management (Complete)
 
-This module defines how users are onboarded, assigned roles, managed across branches, and secured with advanced access controls and workflows.
+This module defines how users are created, invited, assigned roles, managed across garages and branches, and how security, permissions, and governance are enforced.
 
 ---
+
+## 🧱 Batch 1: Core Roles, Structure, and Onboarding
 
 ### ✅ Role Strategy
 
@@ -59,6 +61,8 @@ This module defines how users are onboarded, assigned roles, managed across bran
 
 ---
 
+## 🔁 Batch 2: Promotions, Expiry, Impersonation, Profile Control, MFA
+
 ### ✅ Role Transfer & Promotion
 
 - Garage Admins can promote users (e.g., Assistant → Technician)
@@ -72,21 +76,18 @@ This module defines how users are onboarded, assigned roles, managed across bran
 
 - Optional `access_end_date` per user
 - Controlled by Garage Admin (enabled/disabled per role or globally)
-- System sends expiration warnings before deactivation
+- System sends notifications before expiration
 - After expiration: user is auto-deactivated but kept in history
 
 ---
 
 ### ✅ User Impersonation
 
-- Impersonation supported with full security controls
-- Enabled/disabled per garage by Garage Admin
-- Who can impersonate:
-  - ✅ SaaS Admins (all garages)
-  - ✅ Garage Admins (own users only)
-  - ❌ No impersonating Primary Owners or SaaS Admins
-- Clear visual indicators during impersonation
-- All actions logged (who, when, what)
+- SaaS Admins can impersonate any user (except Primary Owner)
+- Garage Admins can impersonate users from their garage
+- Configurable per garage
+- Clear banner + full action logs
+- Cannot impersonate SaaS Admins or Owners
 
 ---
 
@@ -103,30 +104,136 @@ This module defines how users are onboarded, assigned roles, managed across bran
 | Password                 | ✅ User           |
 | Role & Branch            | 🔒 Admin Only     |
 
-- Changes are audit-logged
-- Sensitive uploads (e.g., ID) are secured and restricted
-
 ---
 
 ### ✅ Multi-Factor Authentication (MFA)
 
 - Supported: SMS OTP and TOTP apps (e.g., Google Authenticator)
 - Enabled per **garage** and per **role** by Garage Admin
-- Users prompted to set up MFA at next login when enabled
-- MFA enforced on:
+- MFA required for:
   - Login
-  - Sensitive actions (e.g., role change)
-  - Impersonation start
-- Optional backup codes
-- Setup and access attempts are fully logged
+  - Impersonation
+  - Critical actions
+- MFA logs include: setup status, attempts, device
 
 ---
 
-### 🧠 Future-Ready Features (Planned)
+## 🛡️ Batch 3: Permissions, Activity Logs, Session Control, SaaS Directory
 
-- Multi-role support per user per branch
-- Cross-garage freelancer support
-- Custom role/permission builder
-- Branch-specific deactivation (vs. full deactivation)
-- Reactivation workflows
-- Global MFA policy per SaaS subscription plan
+### ✅ Permission Matrix
+
+- Permissions are hardcoded per role
+- Garage Admins **can view** permissions but **cannot edit**
+- Roles mapped to CRUD actions per module (e.g., Invoices, Technicians)
+- Future upgrade: override per SaaS Plan or tenant
+
+---
+
+### ✅ User Activity Logs
+
+- All major user actions are logged
+- Examples: login, role change, invoice created, job closed
+- Viewable by:
+  - ✅ Garage Admins (own staff)
+  - ✅ SaaS Admins (all users)
+- Filterable and exportable (optional)
+
+---
+
+### ✅ Session Control
+
+- Configurable per garage or per role
+- Settings include:
+  - Session timeout (e.g., 15–60 minutes)
+  - Max concurrent sessions
+  - Simultaneous login blocking
+- Admin can force logout of users
+- All sessions are tracked
+
+---
+
+### ✅ Global User Directory (SaaS Admins)
+
+- View users across all garages
+- Filter by name, garage, role, status
+- SaaS Admin can:
+  - Impersonate
+  - Deactivate
+  - View full history
+- Cannot impersonate or deactivate other SaaS Admins
+
+---
+
+## 🧩 Batch 4: Governance, Notifications, Exports, Feature Flags
+
+### ✅ User-Linked Notifications
+
+- Admin-configured, not user-configurable
+- Supported Channels:
+  - In-App 🔔
+  - Email 📧
+  - Push (optional future)
+  - SMS (optional future)
+- Sample Events:
+  - Job assigned/reassigned
+  - Role or branch updated
+  - Access expiring
+  - MFA status changed
+
+---
+
+### ✅ Export Permissions
+
+- Export allowed for predefined roles only
+- No justification or audit trail required
+- Exportable data:
+  - Job cards
+  - Invoices
+  - Customer list
+  - Technician logs
+
+---
+
+### ✅ Feature Flags
+
+- Controlled per:
+  - SaaS Plan (Free, Pro, Enterprise)
+  - Garage (manual override)
+- Garage Admin can view but not edit
+- Examples:
+  - Training Tracker
+  - Garage Collaboration
+  - Export Module
+  - Reports
+  - Insurance Add-on
+
+---
+
+### ✅ Admin Alerts
+
+- Alert Types:
+  - Failed logins
+  - MFA changes
+  - Impersonation started
+  - Job or invoice deletions
+- Delivery:
+  - In-App 🔔
+  - Email 📧
+- Configurable per Garage Admin
+
+---
+
+### ✅ User Access & Session Report
+
+- Tracks:
+  - Login/logout time
+  - Device/browser/IP
+  - Session duration
+  - Impersonation vs. normal login
+- Available to:
+  - ✅ Garage Admins (own users)
+  - ✅ SaaS Admins (all users)
+- Includes mobile app logins
+- Exportable (CSV)
+- Optional: Inactive user report
+
