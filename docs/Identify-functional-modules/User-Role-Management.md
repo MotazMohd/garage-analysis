@@ -80,3 +80,70 @@ This module manages how users are created, invited, onboarded, assigned to roles
 - Branch-specific deactivation (planned)
 - Freelancer technician mode (planned)
 - Role customization (planned)
+
+## 
+
+
+###  Advanced Access & Security
+
+---
+
+### ✅ Role Transfer & Promotion
+
+- Garage Admins can promote users (e.g., Assistant → Technician, Technician → Leader)
+- Role transfer can include branch reassignment
+- Role history is logged for audits
+- Promotion is manual; future: auto-suggestions from training tracker
+
+---
+
+### ✅ Account Expiry & Auto-Deactivation
+
+- `access_end_date` is an optional field per user
+- Feature can be enabled/disabled per garage by the Garage Admin
+- System sends notifications before expiration (e.g., 7 days prior)
+- After expiration: account is auto-deactivated but retained for history
+
+---
+
+### ✅ User Impersonation
+
+- SaaS Admins can impersonate any user (except Primary Owner)
+- Garage Admins can impersonate users from their garage
+- Feature is configurable: Garage Admin can enable/disable it
+- Impersonation sessions:
+  - Show a clear banner (“You are impersonating X”)
+  - Are logged with time and action tracking
+- Cannot impersonate SaaS Admin or Primary Owner
+
+---
+
+### ✅ Profile Edit Permissions
+
+| Field                    | Editable By       |
+|--------------------------|-------------------|
+| Full Name                | 🔒 Admin Only     |
+| Phone & Email            | ✅ User           |
+| Profile Photo            | ✅ User           |
+| Digital Signature        | ✅ User           |
+| National ID / Gov ID     | 🔒 Admin Only     |
+| Emergency Contact        | ✅ User (optional)|
+| Password                 | ✅ User           |
+| Role & Branch            | 🔒 Admin Only     |
+
+- All changes are audit-logged
+- File uploads (e.g., ID) are secured and access-controlled
+
+---
+
+### ✅ Multi-Factor Authentication (MFA)
+
+- Supported: SMS OTP and TOTP (e.g., Google Authenticator)
+- Enabled/disabled per **garage** and **role** by Garage Admin
+- Required setup on next login when turned on
+- MFA used for:
+  - Login
+  - Sensitive actions (e.g., promotions)
+  - Starting impersonation
+- Optionally supports backup codes
+- MFA logs: setup status, attempts, failures
