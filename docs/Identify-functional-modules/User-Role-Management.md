@@ -1,120 +1,92 @@
 # Step 2: Identify Core Functional Modules
 
-## 🔐 Module 2: User & Role Management
+## 🔐 Module 2: User & Role Management (Complete)
 
-This module manages how users are created, invited, onboarded, assigned to roles and branches, and how they interact with the system.
+This module defines how users are onboarded, assigned roles, managed across branches, and secured with advanced access controls and workflows.
 
 ---
 
 ### ✅ Role Strategy
 
-- Fixed list of predefined roles (future custom roles possible)
+- Use a fixed set of predefined roles (custom roles in future)
 - Each user can have **only one role per branch**
-- One user can belong to **multiple branches**, but only **one role per branch**
-- Primary Owner role is protected and persistent
+- One user can be assigned to **multiple branches**
+- Primary Owner role is protected and non-removable
 
-#### Predefined Roles (Sample)
+#### Predefined Roles
 
-| Role                 | Scope        | Description |
-|----------------------|--------------|-------------|
-| Primary Owner        | Garage-wide  | Full control |
-| Garage Admin         | Garage-wide  | Manage everything except owner-level changes |
-| Branch Manager       | Branch-only  | Schedule, staff, inventory |
-| Receptionist         | Branch-only  | Customer bookings, check-ins |
-| Technician Leader    | Branch-only  | Assign jobs to technicians |
-| Technician           | Branch-only  | Handle assigned tasks |
-| Assistant Technician | Branch-only  | Perform task steps, log progress |
-| Purchaser            | Branch-only  | Place and manage orders |
-| Invoice Manager      | Branch-only  | Billing and receipts |
-| Auditor (Read-Only)  | Garage/Branch| No editing rights, full visibility |
-
----
-
-### ✅ User Role & Deactivation Rules
-
-- Users are removed entirely if detached from their last branch
-- Account is deactivated (no login)
-- All historical actions are preserved
-- Future: soft-removal or multi-branch access possible
+| Role                 | Scope        |
+|----------------------|--------------|
+| Primary Owner        | Garage-wide  |
+| Garage Admin         | Garage-wide  |
+| Branch Manager       | Branch-only  |
+| Receptionist         | Branch-only  |
+| Technician Leader    | Branch-only  |
+| Technician           | Branch-only  |
+| Assistant Technician | Branch-only  |
+| Purchaser            | Branch-only  |
+| Invoice Manager      | Branch-only  |
+| Auditor (Read-Only)  | Garage/Branch|
 
 ---
 
-### ✅ Onboarding Methods
+### ✅ User Lifecycle & Deactivation
 
-| Method           | Description |
-|------------------|-------------|
-| Admin Invitation | Email/SMS invite with role & branch assignment |
-| Self-Registration | Users can sign up, admin approves and assigns them |
-
-- Role-based restrictions on self-registration (e.g., only technicians allowed)
-- Admin approval workflow for self-registered users
+- When removed from last branch, user is deactivated
+- Deactivated users cannot log in
+- Historical actions remain (e.g., job logs)
+- Reactivation and branch-level deactivation are planned for future
 
 ---
 
 ### ✅ Garage Association
 
-- One user = One garage only
-- Email/phone must be unique per garage
-- Future: support cross-garage users (e.g., freelancers)
+- Each user belongs to **one garage only**
+- No cross-garage access (future: freelancer support)
+- Unique phone/email per garage
 
 ---
 
-### ✅ User Profile Fields
+### ✅ Onboarding Methods
 
-| Field / Asset            | Staff (Required?) | Customer (Required?) |
-|--------------------------|------------------|----------------------|
-| Profile Photo            | ✅ Yes           | ❌ Optional          |
-| Digital Signature        | ✅ Yes           | ❌ Optional          |
-| Government/ID Upload     | ✅ (per role)    | ❌ Optional          |
-| Phone & Email            | ✅ Yes           | ✅ Yes               |
-| Emergency Contact        | ❌ Optional      | ❌ Optional          |
+| Method              | Description |
+|---------------------|-------------|
+| Admin Invitation    | Email/SMS invite with predefined role and branch |
+| Self-Registration   | Public sign-up → Admin review → Role assignment |
 
-- Signature captured via touchscreen canvas
-- Uploaded files secured and access-controlled
-
----
-
-### 🧠 Future-Ready Notes
-
-- Multi-role support per user (not enabled yet)
-- Branch-specific deactivation (planned)
-- Freelancer technician mode (planned)
-- Role customization (planned)
-
-## 
-
-
-###  Advanced Access & Security
+- Role-based filtering supported (e.g., only technicians may self-register)
+- Admin must approve all self-registered users
 
 ---
 
 ### ✅ Role Transfer & Promotion
 
-- Garage Admins can promote users (e.g., Assistant → Technician, Technician → Leader)
-- Role transfer can include branch reassignment
-- Role history is logged for audits
-- Promotion is manual; future: auto-suggestions from training tracker
+- Garage Admins can promote users (e.g., Assistant → Technician)
+- New role may require branch change
+- Action is logged in role history for traceability
+- Future: Auto-suggestion based on technician training tracker
 
 ---
 
 ### ✅ Account Expiry & Auto-Deactivation
 
-- `access_end_date` is an optional field per user
-- Feature can be enabled/disabled per garage by the Garage Admin
-- System sends notifications before expiration (e.g., 7 days prior)
-- After expiration: account is auto-deactivated but retained for history
+- Optional `access_end_date` per user
+- Controlled by Garage Admin (enabled/disabled per role or globally)
+- System sends expiration warnings before deactivation
+- After expiration: user is auto-deactivated but kept in history
 
 ---
 
 ### ✅ User Impersonation
 
-- SaaS Admins can impersonate any user (except Primary Owner)
-- Garage Admins can impersonate users from their garage
-- Feature is configurable: Garage Admin can enable/disable it
-- Impersonation sessions:
-  - Show a clear banner (“You are impersonating X”)
-  - Are logged with time and action tracking
-- Cannot impersonate SaaS Admin or Primary Owner
+- Impersonation supported with full security controls
+- Enabled/disabled per garage by Garage Admin
+- Who can impersonate:
+  - ✅ SaaS Admins (all garages)
+  - ✅ Garage Admins (own users only)
+  - ❌ No impersonating Primary Owners or SaaS Admins
+- Clear visual indicators during impersonation
+- All actions logged (who, when, what)
 
 ---
 
@@ -131,19 +103,30 @@ This module manages how users are created, invited, onboarded, assigned to roles
 | Password                 | ✅ User           |
 | Role & Branch            | 🔒 Admin Only     |
 
-- All changes are audit-logged
-- File uploads (e.g., ID) are secured and access-controlled
+- Changes are audit-logged
+- Sensitive uploads (e.g., ID) are secured and restricted
 
 ---
 
 ### ✅ Multi-Factor Authentication (MFA)
 
-- Supported: SMS OTP and TOTP (e.g., Google Authenticator)
-- Enabled/disabled per **garage** and **role** by Garage Admin
-- Required setup on next login when turned on
-- MFA used for:
+- Supported: SMS OTP and TOTP apps (e.g., Google Authenticator)
+- Enabled per **garage** and per **role** by Garage Admin
+- Users prompted to set up MFA at next login when enabled
+- MFA enforced on:
   - Login
-  - Sensitive actions (e.g., promotions)
-  - Starting impersonation
-- Optionally supports backup codes
-- MFA logs: setup status, attempts, failures
+  - Sensitive actions (e.g., role change)
+  - Impersonation start
+- Optional backup codes
+- Setup and access attempts are fully logged
+
+---
+
+### 🧠 Future-Ready Features (Planned)
+
+- Multi-role support per user per branch
+- Cross-garage freelancer support
+- Custom role/permission builder
+- Branch-specific deactivation (vs. full deactivation)
+- Reactivation workflows
+- Global MFA policy per SaaS subscription plan
