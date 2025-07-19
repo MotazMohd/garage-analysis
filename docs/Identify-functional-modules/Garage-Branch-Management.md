@@ -21,6 +21,10 @@ This module handles the creation, configuration, and access control for garages 
 | Email                  | ❌ Optional | Defaults from user if not provided                               |
 | Garage Description     | ❌ Optional | Visible in booking/customer portal                               |
 | Garage Type            | ❌ Optional | e.g., Independent, Franchise, Chain Head                         |
+| Google Maps Pin        | ❌ Optional | For mobile maps & customer search                                |
+| Garage Tags/Categories | ❌ Optional | e.g., Bodywork, Electrical, Tuning, Quick Service                |
+| Document Uploads       | ❌ Optional | Trade license, permits, insurance                                |
+| Service Radius (KM)    | ❌ Optional | For towing, pickup, roadside support                             |
 
 ---
 
@@ -29,11 +33,13 @@ This module handles the creation, configuration, and access control for garages 
 - New garages are created with status `Pending`
 - SaaS Admin must approve before activation
 - Admin may:
-  - Review license
+  - Review license and documents
   - Review location and contact
   - Review services
   - Accept or reject with a reason
-- Audit logs and notifications are maintained
+- Garage can have statuses: `Pending`, `Active`, `Suspended`, `Archived`
+- Suspension and Archiving managed by SaaS Admin
+- Audit trail stored for all actions
 
 ---
 
@@ -54,11 +60,14 @@ This module handles the creation, configuration, and access control for garages 
 | Field                       | Inherited from Garage | Editable Per Branch |
 |----------------------------|------------------------|----------------------|
 | Location (Address, City)   | ❌ No                  | ✅ Yes               |
+| Google Maps Pin            | ❌ No                  | ✅ Yes               |
 | Working Hours              | ✅ Yes                 | ✅ Yes               |
 | Service Types              | ✅ Yes                 | ✅ Yes               |
 | Contact Info               | ✅ Yes                 | ✅ Yes               |
 | Logo & Branding            | ✅ Yes                 | ✅ Optional override |
 | Branch Description         | ❌ N/A                 | ✅ Yes               |
+| Service Radius (KM)        | ✅ Yes                 | ✅ Yes               |
+| Document Uploads           | ❌ Optional            | ✅ Optional override |
 
 ---
 
@@ -70,7 +79,7 @@ This module handles the creation, configuration, and access control for garages 
   - Users can be shared across multiple branches
 - Each user account stores:
   - `primaryBranchId`
-  - `allowedBranchIds[]` (optional)
+  - `allowedBranchIds[]` (if cross-branch enabled)
 
 ---
 
@@ -90,4 +99,17 @@ This module handles the creation, configuration, and access control for garages 
 
 ---
 
-✅ This completes the configuration and design for the **Garage & Branch Management module**.
+### 📝 Change Log / Audit History
+
+- Every major update is audit-logged:
+  - Working hours, service types, branch creation
+  - Ownership transfer or status changes
+  - Document uploads or removals
+- Viewable by:
+  - SaaS Admin
+  - Primary Owner
+  - Auditors (read-only role)
+
+---
+
+✅ This completes the extended and finalized configuration for the **Garage & Branch Management module**.
