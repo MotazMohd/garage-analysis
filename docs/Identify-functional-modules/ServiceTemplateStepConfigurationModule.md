@@ -42,6 +42,7 @@ To define reusable service templates that consist of customizable step templates
 | Field                | Type          | Description                            |
 | -------------------- | ------------- | -------------------------------------- |
 | Id                   | uuid          | Unique identifier                      |
+| ServiceTemplateId    | uuid          | Reference to parent template           |
 | StepName             | string        | Name of the step                       |
 | Description          | text          | Optional description                   |
 | OrderIndex           | int?          | Step order within service              |
@@ -109,11 +110,27 @@ No comments are required at this stage.
 
 ---
 
+## Spare Part Reference (Integrated with Service Template)
+
+### PartRef Fields
+
+* `PartId` (uuid)
+* `QuantityRequired`
+* `TrackingMode`: `None`, `Batch`, or `Serial`
+* `IsOptional`: boolean
+* `AllowSharedStock`: boolean (garage can opt to use external stock)
+* `UnitConversion`: { PurchaseUnit, SellUnit, ConversionRate }
+* `TaxPurchase` / `TaxSell`: optional percentages
+
+Stock and sharing logic is managed centrally in the inventory module but integrated here for default configuration.
+
+---
+
 ## Key Features
 
 * 🔁 Reusable service templates for job automation
 * 🔧 Skill-based step requirements for technician routing
-* 🛠️ Default parts and tools linking
+* 🛠️ Default parts and tools linking with batch/serial/unit conversion
 * 🧠 Rich documentation (media, instructions)
 * ⚙️ Configurable by garage (if allowed)
 * ✅ Validation & control logic for each step
@@ -204,13 +221,6 @@ Table StepAuditLogs {
 ```
 
 
-
-
-
-
-
-
-
 Here's the code to visualize the relationship between ServiceTemplate, Garage, and JobCard — showing how services are defined, customized, and used in jobs:
 
 classDiagram
@@ -255,9 +265,6 @@ classDiagram
     GarageServiceTemplate --> JobCard : used for
 
 
-
-
-
 ---
 
 ## To Be Added Later
@@ -265,3 +272,5 @@ classDiagram
 * Template versioning (with backward compatibility)
 * Draft vs Published lifecycle
 * Marketplace for sharing public templates
+* Multi-language translation keys for all templates and steps
+* SaaS-side template library export/import
