@@ -10,6 +10,7 @@ classDiagram
         +datetime CreatedAt
         +datetime? AccessEndDate
         +Guid GarageId
+        +enum UserType
     }
 
     class Role {
@@ -31,7 +32,6 @@ classDiagram
     User --> UserRoleBranch : assigned
     Role --> UserRoleBranch : mapped
 
-
     class Garage {
         +Guid Id
         +string Name
@@ -44,7 +44,6 @@ classDiagram
     }
 
     Garage <|-- User : belongs to
-
 
     class Branch {
         +Guid Id
@@ -69,8 +68,6 @@ classDiagram
 
     User --> SessionLog : has sessions
 
-
-
     class ActivityLog {
         +Guid Id
         +Guid UserId
@@ -82,7 +79,6 @@ classDiagram
 
     User --> ActivityLog : has logs
 
-
     class MFAStatus {
         +Guid UserId
         +enum Method
@@ -92,7 +88,6 @@ classDiagram
 
     User --> MFAStatus : has MFA
 
-
     class NotificationPreference {
         +Guid UserId
         +string[] Channel
@@ -101,8 +96,6 @@ classDiagram
     }
 
     User --> NotificationPreference : has preferences
-
-
 
     class FeatureFlag {
         +Guid Id
@@ -114,7 +107,6 @@ classDiagram
 
     Garage --> FeatureFlag : has flags
 
-
     class SaasPlan {
         +Guid Id
         +string Name
@@ -125,3 +117,26 @@ classDiagram
 
     SaasPlan --> Garage : linked to
 
+    class TechnicianProfile {
+        +Guid UserId
+        +string[] Skills
+        +bool IsLead
+        +string Certifications
+    }
+
+    class CustomerProfile {
+        +Guid UserId
+        +string Address
+        +string Nationality
+        +string PreferredLanguage
+    }
+
+    class AssistantProfile {
+        +Guid UserId
+        +string[] AssignedTasks
+        +string TrainingLevel
+    }
+
+    User --> TechnicianProfile : has tech profile
+    User --> CustomerProfile : has customer profile
+    User --> AssistantProfile : has assistant profile

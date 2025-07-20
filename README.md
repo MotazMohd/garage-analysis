@@ -17,3 +17,11 @@
 # Subscription & SaaS Billing
 
 Mobile App APIs / Interfaces
+
+
+
+## for diagram and chart display use these 
+
+https://mermaid.live/ => use case diagram
+
+https://dbdiagram.io/d => ERD Diagram
