@@ -1,0 +1,180 @@
+Sprint 1: Core Refactor + Cleanup — Appointments Module
+🎯 Sprint Goal
+
+Unify appointment booking and scheduling into a robust module that supports service selection, garage choice, slot availability, booking confirmation, draft saves, and rescheduling — while laying the groundwork for reminders, notifications, and accessibility.
+
+✅ Tasks Breakdown (Data Model • Endpoints • FE • Mobile • Why)
+1) Core Entities & Lookups
+
+Data Model
+
+Appointment(Id, UserId, ServiceId, GarageId, TechnicianId, StartTime, EndTime, Status, Notes, Attachments, IsDraft)
+
+Slot(Id, GarageId, TechnicianId, StartTime, EndTime, Status)
+
+AppointmentStatus: Draft, Confirmed, Rescheduled, Canceled
+
+Endpoints
+
+GET /appointments (list, filter by garage, technician, status)
+
+POST /appointments (create/draft)
+
+PATCH /appointments/{id} (update/reschedule)
+
+DELETE /appointments/{id} (cancel)
+
+GET /slots (availability by garage/technician/service)
+
+Frontend (Admin & Client)
+
+Multi-step form with service, garage, slot, confirm
+
+Save as draft
+
+Status badges (Confirmed, Draft, Canceled)
+
+Mobile
+
+Appointment list (list view, filter by status)
+
+Booking flow (service → garage → slot → confirm)
+
+Drafts saved locally if offline
+
+Why
+Gives a reliable base for appointment lifecycle with consistent states across platforms.
+
+2) Calendar & Availability View
+
+Data Model
+
+Extend Slot with IsLocked, IsOverbooked, IsWalkIn
+
+Endpoints
+
+GET /calendar?garageId&techId&date
+
+Frontend
+
+Add calendar toggle (list vs calendar view)
+
+Color-coded slots (available, walk-in, booked, overbooked)
+
+Mobile
+
+Compact calendar with vertical scroll slots
+
+Why
+Critical for visualizing garage & technician load; reduces scheduling errors.
+
+3) Reminders & Notifications (basic hooks)
+
+Data Model
+
+Notification(Id, AppointmentId, Channel(SMS/Email), Template, ScheduledTime)
+
+Endpoints
+
+POST /appointments/{id}/notify
+
+Hook on confirm/cancel → enqueue notification
+
+Frontend
+
+Config: reminder interval (1 day/1h before)
+
+Email/SMS toggle
+
+Mobile
+
+Push notification placeholder (future)
+
+Why
+Improves show-up rates and client experience.
+
+4) Validation & Edge Case Handling
+
+Rules
+
+Prevent overlapping appointments by garage/technician.
+
+Past date/time → block with error.
+
+VIN format validation (if car info included).
+
+Drafts must be retrievable and editable.
+
+Frontend
+
+Inline validation (date, VIN, attachments).
+
+Empty/Loading/Error states for each screen.
+
+Why
+Ensures data integrity and prevents double-booking.
+
+5) Accessibility & UI Polish
+
+Frontend/Mobile
+
+ARIA for stepper, calendar, and slot buttons.
+
+High-contrast CTAs (WCAG AA+).
+
+Keyboard/tab focus flow.
+
+Why
+Increases inclusivity and meets accessibility standards.
+
+6) Migration & Seed Data
+
+Tasks
+
+Backfill existing draft/confirmed appointments.
+
+Seed slots for garages with sample availability.
+
+Why
+Ensures smooth transition and working demo post-deployment.
+
+📌 Acceptance Criteria
+
+Appointment CRUD available via API + UI.
+
+Draft save + retrieval working.
+
+Calendar view with slots integrated.
+
+Inline validation + error/loading/empty states visible.
+
+Notifications sent on confirm/cancel.
+
+Accessibility baseline: ARIA + contrast fixes.
+
+Migration completes with safe defaults.
+
+⏱️ Estimated Time — Totals (3h/day)
+Role	Hours	Dev-days @3h/day
+Backend	48h	16d
+Frontend	30h	10d
+Mobile	24h	8d
+UI/UX	12h	4d
+QA	21h	7d
+Total	135h	45d
+
+Can trim scope (defer notifications + drafts) if Sprint 1 must fit 2 calendar weeks.
+
+✅ Sprint Outcome
+
+Full CRUD appointment lifecycle.
+
+Drafts + rescheduling support.
+
+Calendar visualization.
+
+Notifications hooked.
+
+Accessibility baseline.
+
+Ready for Sprint 2 (smart slot allocation, real-time locks, group bookings).
