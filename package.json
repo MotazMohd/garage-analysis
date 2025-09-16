@@ -1,0 +1,12 @@
+{
+  "name": "garage-analysis",
+  "version": "1.0.0",
+  "description": "Analysis repository for garage modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/placeholder.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
