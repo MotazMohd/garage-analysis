@@ -17,10 +17,11 @@ Equip garages with a centralized tool registry, availability tracking, maintenan
 - Integrate tool availability checks into service scheduling flows.
 - Outcome: Tool readiness is enforced operationally with alerts and dashboards.
 
-## 📈 Future Sprint (Preview)
-- Integrate with inventory/spare parts to suggest tools alongside services.
-- Add technician mobile app interfaces for checkout/check-in scanning.
-- Enable IoT/telemetry hooks for tool usage monitoring and automated maintenance tickets.
+## 🚀 Sprint 3: Intelligent Tool Operations
+- Recommend tools alongside service templates and historical usage.
+- Provide technician mobile scanning workflows tied to reservations and availability.
+- Ingest telemetry data to trigger maintenance and deliver advanced analytics insights.
+- Outcome: Data-driven automation keeps tools ready, visible, and optimized across the network.
 
 ---
 
@@ -40,6 +41,6 @@ Equip garages with a centralized tool registry, availability tracking, maintenan
 |--------|----------|
 | Sprint 1 | ~6 dev days |
 | Sprint 2 | ~6.5 dev days |
-| Future Sprint | ~5 dev days (tentative) |
+| Sprint 3 | ~7 dev days |
 
-**Overall:** ~17.5 dev days for the first two sprints plus an optional future sprint.
+**Overall:** ~19.5 dev days across the first three sprints.
