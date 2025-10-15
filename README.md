@@ -25,8 +25,9 @@
 ## 🔜 Next Modules in Order
 
 ### 🔹 7. Tool Management
-- Shared and per-garage tools  
+- Shared and per-garage tools
 - Tool linking to service steps
+- 📄 See `Tasks/ToolManagementModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 8. Job Cards & Task Assignment
 - Job creation from services  
