@@ -41,8 +41,9 @@
 - 📄 See `Tasks/AppointmentsSchedulingModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 10. Customer Management
-- Profiles, history, preferences  
+- Profiles, history, preferences
 - Vehicles, invoices, communication
+- 📄 See `Tasks/CustomerManagementModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 11. Purchase Orders & Supplier Integration
 - Restocking spare parts/tools  
