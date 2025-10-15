@@ -107,3 +107,49 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - **Communication stack:** Dedicated Slack/Teams channels for each squad, one #daily-standup summary channel, and an executive readout channel for twice-weekly updates.
 - **Observability dashboards:** Pre-built Grafana/Kibana views pinned for deployment health, service latencies, and error budgets; alerts routed through PagerDuty with escalation policies defined during the kickoff.
 - **Quality automation:** CI jobs configured to run static analysis, unit/integration suites, and security scans with gating rules agreed in the engineering enablement checklist.
+
+## Day 0 Runbook Timeline
+- **T-48 hours:** Circulate pre-read packet (schedule, risk radar, team roster) and confirm attendance for kickoff; ensure all tooling accounts are provisioned.
+- **T-24 hours:** Hold dependency alignment sync between squad leads to validate API contracts and data schema readiness; document open issues with owners and due dates.
+- **T-12 hours:** Platform team completes final environment smoke tests; Quality team verifies CI pipelines execute baseline checks without regressions.
+- **T-3 hours:** Share kickoff agenda reminder, distribute dial-in details, and confirm note taker plus action-item tracker ownership.
+- **Kickoff (T0):** Execute agenda outlined above, capture decisions, and update shared workspace in real time.
+- **T+2 hours:** Publish kickoff summary, distribute action items, and update scorecards with Day 1 targets.
+- **T+6 hours:** Squad leads confirm Day 1 sprint boards are groomed and blockers resolved; Program manager reviews risk register for any escalations.
+- **T+12 hours:** Send final “all systems go” status to stakeholders, highlighting any constraints being monitored during Day 1 start.
+
+## Squad Readiness Checklists
+- **Platform & Infrastructure:**
+  - Infrastructure-as-code repositories reviewed and passing lint/security scans.
+  - Secrets rotation schedule defined; break-glass procedure rehearsed.
+  - Monitoring probes configured for core environments and queued services.
+- **Core Services:**
+  - API contracts documented with versioning strategy and mocking assets available.
+  - Service templates include observability hooks (metrics, traces) and security middleware by default.
+  - Backlog contains integration test scenarios mapped to cross-service interactions.
+- **Experience & Enablement:**
+  - Design system updated with localization tokens and RTL/LTR toggles.
+  - Accessibility checklist integrated into Definition of Done for UI stories.
+  - Content team prepped with translation glossary and review workflows.
+- **Data & Intelligence:**
+  - Data quality rules and acceptance thresholds established for each ETL pipeline.
+  - Feature store conventions agreed (naming, versioning, retention) and documented.
+  - Model monitoring instrumentation outlined (drift metrics, alert thresholds).
+- **Quality & Compliance:**
+  - Test environments mapped to deployment stages with data refresh cadence defined.
+  - Security scanning tools configured with alert routing to responsible engineers.
+  - Compliance evidence templates stored in documentation hub for easy updates.
+
+## Integration Rehearsal Plan
+1. **Service contract dry-run:** Within 48 hours of Day 1, run mock API calls between core services using contract tests to validate request/response fidelity.
+2. **Deployment drill:** Execute a non-production blue-green cutover rehearsal to verify pipeline steps, rollback strategy, and observability signals.
+3. **Notification workflow simulation:** Trigger end-to-end messaging flows (SMS/email) across staging systems to validate localization and template fallbacks.
+4. **Data pipeline validation:** Process synthetic data through ETL pipelines and confirm arrival in the warehouse, downstream model training, and dashboard ingestion.
+5. **Access review:** Confirm RBAC assignments across tooling (Jira, repos, CI/CD, cloud) match least-privilege expectations prior to Day 1.
+
+## Contingency Playbooks
+- **Infrastructure blocker:** Activate backup environment plan using pre-provisioned IaC templates; escalate to cloud vendor support with critical SLA.
+- **Third-party outage (payments, notifications):** Switch to pre-approved fallback provider or enable manual operations procedure, logging all transactions for later reconciliation.
+- **Regression suite failure:** Invoke war-room within one hour, triage to responsible squad, and enforce fix-forward or rollback decision within the same business day.
+- **Data quality breach:** Pause downstream model training and analytics consumption, trigger data governance response plan, and communicate timeline for remediation.
+- **Localization defects discovered late:** Enable feature flag to limit exposure to impacted locale while remediation stories are expedited.
