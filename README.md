@@ -36,8 +36,9 @@
 - 📄 See `Tasks/JobCardsModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 9. Appointments & Scheduling
-- Customer booking interface  
+- Customer booking interface
 - Slot availability, technician load
+- 📄 See `Tasks/AppointmentsSchedulingModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 10. Customer Management
 - Profiles, history, preferences  
