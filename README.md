@@ -46,8 +46,9 @@
 - 📄 See `Tasks/CustomerManagementModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 11. Purchase Orders & Supplier Integration
-- Restocking spare parts/tools  
+- Restocking spare parts/tools
 - Multi-vendor, approval flow
+- 📄 See `Tasks/PurchaseOrdersModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 12. Invoice & Billing
 - Invoice generation from jobs  
