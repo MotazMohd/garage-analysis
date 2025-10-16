@@ -63,7 +63,8 @@
 - 📄 See `Tasks/ReportsDashboardsModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 14. Mobile Apps Integration
-- Technician app  
-- Customer app  
-- Push notifications  
+- Technician app
+- Customer app
+- Push notifications
 - Job flow
+- 📄 See `Tasks/MobileAppsIntegrationModulePlan/` for three-sprint roadmap and deliverables
