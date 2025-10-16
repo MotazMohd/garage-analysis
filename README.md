@@ -76,3 +76,9 @@
 - Evidence capture & intake documents
 - Upsell prompts and approvals
 - 📄 See `Tasks/AppointmentCheckInModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 16. Technician Training & Certification
+- Track technician skills, contributions, and coaching notes
+- Automate certification journeys and staffing hooks
+- Layer predictive insights, integrations, and governance
+- 📄 See `Tasks/TechnicianTrainingModulePlan/` for three-sprint roadmap and deliverables
