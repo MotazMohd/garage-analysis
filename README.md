@@ -57,9 +57,10 @@
 
 ### 🔹 13. Reports & Dashboards
 - Revenue
-- Usage  
-- Technician performance  
+- Usage
+- Technician performance
 - Stock turnover
+- 📄 See `Tasks/ReportsDashboardsModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 14. Mobile Apps Integration
 - Technician app  
