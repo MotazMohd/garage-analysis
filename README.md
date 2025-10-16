@@ -82,3 +82,8 @@
 - Automate certification journeys and staffing hooks
 - Layer predictive insights, integrations, and governance
 - 📄 See `Tasks/TechnicianTrainingModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 17. Insurance & Claims Collaboration
+- Claim intake linked to job cards, policies, and insurer partners
+- Automated approvals, communications, and financial recovery tracking
+- 📄 See `Tasks/InsuranceClaimsModulePlan/` for three-sprint roadmap and deliverables
