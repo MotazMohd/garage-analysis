@@ -18,7 +18,9 @@
 - Already completed
 
 ### 🔹 6. Spare Parts & Inventory
-- In progress (currently active)
+- Catalog governance, compatibility, and stock tracking
+- Purchase, pricing, and allocation controls
+- 📄 See `Tasks/SparePartsInventoryModulePlan/` for three-sprint roadmap and deliverables
 
 ---
 
