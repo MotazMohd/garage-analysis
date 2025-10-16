@@ -51,11 +51,12 @@
 - 📄 See `Tasks/PurchaseOrdersModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 12. Invoice & Billing
-- Invoice generation from jobs  
+- Invoice generation from jobs
 - Integration with tax, parts, labor
+- 📄 See `Tasks/InvoiceBillingModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 13. Reports & Dashboards
-- Revenue  
+- Revenue
 - Usage  
 - Technician performance  
 - Stock turnover
