@@ -68,3 +68,9 @@
 - Push notifications
 - Job flow
 - 📄 See `Tasks/MobileAppsIntegrationModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 15. Appointment Check-in
+- Arrival-to-intake workflow
+- Evidence capture & intake documents
+- Upsell prompts and approvals
+- 📄 See `Tasks/AppointmentCheckInModulePlan/` for three-sprint roadmap and deliverables
