@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, resilience, field execution, sustainability oversight, and treasury coordination so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, and customer engagement intersect with day-to-day garage and branch operations.
+The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, and AI governance so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations.
 
 **Key actors captured in the diagram**
 
@@ -32,6 +32,13 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Facilities Maintenance Platform`: supplies scheduled work orders and inspection notes so operational teams can coordinate on-site remediation.
 - `Customer Communications Hub`: provides campaign calendars, messaging updates, and preference changes that influence targeted outreach.
 - `Bank Settlement Feed`: mirrors funding confirmations and rejection notices that reconcile downstream treasury settlements.
+- `Enterprise Resource Planning System`: surfaces booked revenue, cost centers, and ledger postings that reconcile against garage and branch activation outcomes.
+- `Insurance Carrier Portal`: transmits policy changes, coverage limits, and claim updates relevant to garage operations.
+- `Social Listening Platform`: collects sentiment shifts and trending feedback from external channels to guide proactive support.
+- `Field Inspection Reports`: capture on-site audits, safety findings, and remediation notes submitted by inspectors.
+- `Regulator Collaboration Portal`: publishes formal guidance, inquiry requests, and certification updates from regulators.
+- `Data Science Workbench`: shares model experiments, data quality findings, and operational ML needs discovered by analysts.
+- `Procurement Management Suite`: broadcasts sourcing events, contract updates, and purchase requisitions tied to branch supply.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -68,6 +75,15 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Privacy & Consent Service`: enforces opt-in policies, stores consent receipts, and gates messaging against preference changes.
 - `Engagement Orchestration Hub`: sequences targeted communications while coordinating with experience, compliance, and consent services.
 - `Treasury Settlement Service`: validates cleared invoices, triggers payouts, and logs settlement confirmations for finance partners.
+- `Regulatory Reporting Gateway`: aggregates attestations, obligations, and filings before distributing them to the proper authorities and stakeholders.
+- `Insurance Claims Orchestrator`: coordinates claim intake, adjuster communication, and settlement routing for covered events.
+- `Revenue Insights Engine`: blends billing, payout, and revenue performance data to guide profitability decisions.
+- `Procurement Coordination Hub`: manages sourcing workflows, fulfillment signals, and finance/operations synchronization.
+- `AI & ML Operations Service`: governs the lifecycle of predictive models, coordinates retraining, and enforces deployment policies.
+- `Data Anonymization Service`: produces privacy-preserving datasets to support analytics without exposing sensitive information.
+- `Accessibility Compliance Service`: reviews digital assets and engagement flows to enforce accessibility standards.
+- `Customer Success Desk`: tracks health indicators, remediation plans, and churn-risk escalations for garages and partners.
+- `Business Continuity Planner`: curates continuity playbooks, aligns with disaster recovery teams, and verifies readiness signals.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -108,6 +124,15 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Engagement Campaign Archive`: stores targeted outreach history along with effectiveness analytics.
 - `Payment Gateway`: executes treasury-initiated payouts and refunds tied to billing and settlement workflows.
 - `Treasury Settlement Vault`: long-term ledger of payouts, funding attempts, and reconciliation evidence used by finance teams.
+- `Regulatory Filing Portal`: destination for submitted attestations, evidence packages, and status confirmations provided to regulators.
+- `Insurance Claims Repository`: central record of claim decisions, documentation, and insurer correspondence.
+- `Revenue Analytics Mart`: curated store for revenue, payout, and performance metrics sourced from finance tooling.
+- `Procurement Ledger`: reconciles purchase orders, invoices, and fulfillment confirmations for supply operations.
+- `Model Registry`: catalog of approved predictive models, metadata, and deployment history.
+- `Synthetic Data Vault`: storage for anonymized datasets and training corpora generated by the data anonymization service.
+- `Accessibility Reporting Archive`: preserves accessibility audit evidence, remediation outcomes, and certification history.
+- `Customer Success Workspace`: shared hub for success managers to track plans, escalations, and follow-through items.
+- `Business Continuity Vault`: retains signed continuity plans, readiness attestations, and drill evidence.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -131,6 +156,14 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Facilities Operations`: manages maintenance command queues, ensures repairs land on schedule, and confirms asset lifecycle updates.
 - `Treasury & Payments`: reviews settlement vault entries, validates payout readiness, and coordinates exceptions across billing and banking feeds.
 - `Customer Engagement`: tunes campaign sequencing, monitors consent adherence, and aligns outreach outcomes with enablement initiatives.
+- `Regulatory Affairs`: oversees submission schedules, regulator feedback, and proof-of-compliance archives.
+- `Insurance & Risk Financing`: reviews claim repositories, tracks outstanding coverage issues, and coordinates with treasury and facilities on recovery.
+- `Revenue Strategy`: monitors revenue analytics marts and treasury signals to adjust pricing and incentive models.
+- `Procurement Office`: supervises procurement ledgers, fulfillment health, and supplier escalations.
+- `AI Governance Council`: evaluates model registry updates, synthetic data usage, and policy adherence from AIMLOps.
+- `Accessibility Program`: validates remediation progress, accessibility archives, and experience updates.
+- `Customer Success Leadership`: tracks success workspace updates and coordinates cross-functional remediation plans.
+- `Business Continuity & Resilience`: validates readiness attestations, continuity vault updates, and disaster recovery alignments.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -149,6 +182,7 @@ The latest revision folds in support, security, resilience, field execution, sus
 | Resilience, Security & Support Coordination | Threat intel, incident command, and recovery drills protect uptime while enforcing refreshed policies. | Threat Intelligence Feed → Security Operations Center → SIEM / Key Vault; Support Ticketing System → Incident Response Orchestrator → Support Ticket Queue / Runbook Repository; Garage & Branch Services → Disaster Recovery Coordinator → Disaster Recovery Site |
 | Field Execution, Vendors & Change Enablement | Vendor onboarding, mobile tasking, and training compliance stay synchronized with policy, fraud, and supply chain guardrails. | Vendor Portal → Vendor Management Service → Workflow Orchestration Hub / Vendor Settlement Ledger; Garage Mobile App ↔ Mobile Sync Service ↔ Garage Management Service; Training Platform → Training Compliance Service → Compliance Reporter / Training Records Archive; Parts Supply Coordinator → Monitoring / Parts Inventory System; Fraud Detection Service → Monitoring / Fraud Case Queue |
 | Sustainability, Maintenance & Treasury Assurance | ESG metrics, facility upkeep, and payout orchestration reinforce compliance, safety, and fiscal integrity. | Sustainability Feed → Environmental Compliance Service → Compliance / ESG Workspace / Data Governance; Facilities Maintenance Platform → Facilities Maintenance Coordinator → Supply Chain / Maintenance Command Center / Asset Lifecycle Manager → Asset Registry / Retention; Billing Reconciliation → Treasury Settlement Service → Payment Gateway / Treasury Settlement Vault / Monitoring; Customer Communications Hub → Engagement Orchestration Hub ↔ Privacy & Consent Service → Notify / Consent & Preference Vault / Engagement Campaign Archive |
+| Regulatory, Insurance & Intelligence Governance | Filings, claims, revenue analytics, procurement, and model oversight keep regulators, insurers, finance, and AI programs aligned. | Treasury Settlement Service → Regulatory Reporting Gateway → Regulator Collaboration Portal / Continuity Vault / Policy Automation Engine; Insurance Carrier Portal → Insurance Claims Orchestrator → Insurance Claims Repository / Facilities Maintenance Coordinator / Treasury Settlement Service / Customer Success Desk; Billing Reconciliation → Revenue Insights Engine → Monitoring / Revenue Analytics Mart / Analytics & ML Hub; Procurement Management Suite → Procurement Coordination Hub → Procurement Ledger / Supply Chain / Vendor Management Service; AI & ML Operations → Model Registry / Data Anonymization Service → Synthetic Data Vault / Privacy & Consent Service / Analytics & ML Hub |
 
 ---
 

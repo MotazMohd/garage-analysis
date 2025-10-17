@@ -24,6 +24,13 @@ flowchart LR
         FacilitiesPlatform[Facilities Maintenance Platform]
         CustomerComms[Customer Communications Hub]
         BankFeed[Bank Settlement Feed]
+        ERP[Enterprise Resource Planning System]
+        InsurancePortal[Insurance Carrier Portal]
+        SocialListening[Social Listening Platform]
+        FieldInspectors[Field Inspection Reports]
+        RegPortal[Regulator Collaboration Portal]
+        DSWorkbench[Data Science Workbench]
+        ProcurementSuite[Procurement Management Suite]
     end
 
     subgraph CoreServices[Core Processes]
@@ -61,6 +68,15 @@ flowchart LR
         PrivacyService[Privacy & Consent Service]
         EngagementHub[Engagement Orchestration Hub]
         TreasuryOps[Treasury Settlement Service]
+        RegReporting[Regulatory Reporting Gateway]
+        InsuranceClaims[Insurance Claims Orchestrator]
+        RevenueInsights[Revenue Insights Engine]
+        ProcurementHub[Procurement Coordination Hub]
+        AIMLOps[AI & ML Operations Service]
+        DataMasking[Data Anonymization Service]
+        AccessibilitySvc[Accessibility Compliance Service]
+        CustomerSuccess[Customer Success Desk]
+        BusinessContinuity[Business Continuity Planner]
     end
 
     subgraph Destinations[Data Destinations]
@@ -103,6 +119,15 @@ flowchart LR
         EngagementArchive[(Engagement Campaign Archive)]
         PaymentGateway[(Payment Gateway)]
         TreasuryVault[(Treasury Settlement Vault)]
+        RegulatorPortal[(Regulatory Filing Portal)]
+        InsuranceRepository[(Insurance Claims Repository)]
+        RevenueWarehouse[(Revenue Analytics Mart)]
+        ProcurementLedger[(Procurement Ledger)]
+        ModelRegistry[(Model Registry)]
+        SyntheticVault[(Synthetic Data Vault)]
+        AccessibilityArchive[(Accessibility Reporting Archive)]
+        SuccessWorkspace[(Customer Success Workspace)]
+        ContinuityVault[(Business Continuity Vault)]
     end
 
     GA -->|Authenticate| IdP
@@ -129,6 +154,13 @@ flowchart LR
     CustomerComms -->|Provide messaging calendar| EngagementHub
     CustomerComms -->|Transmit consent updates| PrivacyService
     BankFeed -->|Send settlement results| TreasuryOps
+    ERP -->|Share financial actuals| RevenueInsights
+    InsurancePortal -->|Submit coverage updates| InsuranceClaims
+    SocialListening -->|Surface sentiment signals| CustomerSuccess
+    FieldInspectors -->|Upload inspection findings| FacilitiesCoord
+    RegPortal -->|Publish regulatory guidance| RegReporting
+    DSWorkbench -->|Share model experiment metadata| AIMLOps
+    ProcurementSuite -->|Send sourcing events| ProcurementHub
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -164,6 +196,7 @@ flowchart LR
     Lifecycle -->|Schedule periodic reviews| GMS
     Lifecycle -->|Trigger dormant cleanup| Retention
     EnvCompliance -->|Register ESG policies| DataGov
+    RegReporting -->|Sync updated obligations| DataGov
 
     GMS -->|Status changes, ownership transfer, document updates| AuditBus
     AuditBus -->|Write append-only log| AL
@@ -177,6 +210,7 @@ flowchart LR
 
     Notify -->|Broadcast approvals & reminders| Monitoring
     Warehouse -->|Drive compliance dashboards| Monitoring
+    RevenueInsights -->|Publish revenue dashboards| Monitoring
     Retention -->|Archive inactive records| Archive
     Retention -->|Confirm retention disposition| AuditBus
     Monitoring -->|Surface anomalies| QAEngine
@@ -189,6 +223,13 @@ flowchart LR
     BillingRecon -->|Settle partner fees| BillingLedger
     BillingRecon -->|Flag discrepancies| Compliance
     BillingRecon -->|Forward cleared invoices| TreasuryOps
+    BillingRecon -->|Reconcile procurement accruals| ProcurementHub
+    ProcurementHub -->|Match purchase orders| ProcurementLedger
+    ProcurementHub -->|Notify sourcing variances| SupplyChain
+    ProcurementHub -->|Raise escalations| Compliance
+    ProcurementHub -->|Coordinate fulfillment| VendorMgmt
+    ProcurementHub -->|Sync financial impacts| ERP
+    RevenueInsights -->|Blend payout & revenue data| RevenueWarehouse
     DataGov -->|Register lineage & ownership| DataCatalog
     DataGov -->|Publish access policies| AccessCtrl
     IncidentResponse -->|Create remediation tickets| TicketQueue
@@ -228,12 +269,14 @@ flowchart LR
     SupplyChain -->|Sync vendor updates| VendorMgmt
     FraudDetect -->|Score anomalous activity| Monitoring
     FraudDetect -->|Open fraud cases| FraudCaseQueue
+    FraudDetect -->|Share fraud patterns| AIMLOps
     FacilitiesCoord -->|Coordinate repairs| SupplyChain
     FacilitiesCoord -->|Dispatch maintenance tasks| MaintenanceBoard
     FacilitiesCoord -->|Sync facility lifecycle| AssetManager
     AssetManager -->|Update asset registry| AssetRegistry
     AssetManager -->|Notify retirements| Retention
     AssetManager -->|Publish asset posture| Monitoring
+    FacilitiesCoord -->|Dispatch inspection follow-ups| FieldInspectors
     EnvCompliance -->|Publish ESG dashboards| ESGWorkspace
     EnvCompliance -->|Enforce sustainability policies| PolicyEngine
     CoachingEngine -->|Assign coaching plans| CoachingLog
@@ -247,8 +290,30 @@ flowchart LR
     TreasuryOps -->|Initiate payouts| PaymentGateway
     TreasuryOps -->|Persist treasury ledger| TreasuryVault
     TreasuryOps -->|Emit settlement telemetry| Monitoring
+    TreasuryOps -->|Share regulator-ready summaries| RegReporting
+    RegReporting -->|Submit filings| RegulatorPortal
+    RegReporting -->|Track regulatory feedback| Compliance
+    RegReporting -->|Distribute obligations| Compliance
+    RegReporting -->|Archive submissions| ContinuityVault
+    RegReporting -->|Broadcast updates| Notify
+    RegReporting -->|Coordinate attestations| AuditBus
+    RegReporting -->|Publish policy proof| PolicyEngine
+    InsuranceClaims -->|Record claim status| InsuranceRepository
+    InsuranceClaims -->|Coordinate loss adjusters| FacilitiesCoord
+    InsuranceClaims -->|Share claim visibility| TreasuryOps
+    InsuranceClaims -->|Inform coverage reviews| Compliance
+    InsuranceClaims -->|Sync policy usage| AuditBus
+    InsuranceClaims -->|Trigger payouts| PaymentGateway
+    InsuranceClaims -->|Alert customer success| CustomerSuccess
+    InsuranceClaims -->|Log claim summaries| RevenueInsights
+    CustomerSuccess -->|Update case health| SuccessWorkspace
+    CustomerSuccess -->|Share remediation plans| QAEngine
+    CustomerSuccess -->|Escalate churn risks| ExperienceOrch
+    CustomerSuccess -->|Feed qualitative insights| FeedbackDB
     EnvCompliance -->|Share sustainability signals| AnalyticsHub
     CoachingEngine -->|Provide enablement outcomes| AnalyticsHub
+    RevenueInsights -->|Provide revenue projections| AnalyticsHub
+    AIMLOps -->|Govern model lifecycle| AnalyticsHub
     PolicyEngine -->|Place records on hold| LegalHold
     Compliance -->|Escalate legal hold requests| LegalHold
     Lifecycle -->|Publish longitudinal dataset| DataLake
@@ -259,12 +324,26 @@ flowchart LR
     Monitoring -->|Provide telemetry snapshots| ExperienceOrch
     IncidentResponse -->|Update procedural knowledge| KnowledgeBase
     QAEngine -->|Surface best practices| KnowledgeBase
+    AIMLOps -->|Register approved models| ModelRegistry
+    AIMLOps -->|Request synthetic datasets| DataMasking
+    DataMasking -->|Generate anonymized samples| SyntheticVault
+    DataMasking -->|Share safe datasets| AnalyticsHub
+    DataMasking -->|Publish privacy attestations| PrivacyService
+    AIMLOps -->|Coordinate retraining| QAEngine
+    AIMLOps -->|Alert governance| DataGov
+    AccessibilitySvc -->|Review digital assets| ExperienceOrch
+    AccessibilitySvc -->|Log compliance reports| AccessibilityArchive
+    AccessibilitySvc -->|Flag remediation tasks| ChangeMgmt
+    BusinessContinuity -->|Curate continuity playbooks| ContinuityVault
+    BusinessContinuity -->|Coordinate with DR plans| DRCoordinator
+    BusinessContinuity -->|Share readiness status| Monitoring
+    BusinessContinuity -->|Distribute updates| Notify
 
     classDef source fill:#eff6ff,stroke:#1d4ed8,stroke-width:1px,color:#1f2937;
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault destination;
 ```
