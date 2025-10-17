@@ -67,6 +67,14 @@ flowchart LR
         EVChargingNetwork[EV Charging Network]
         CyberSecurityLab[Cyber Security Lab]
         EmployeeFeedback[Employee Feedback Platform]
+        EdgeGateway[Edge Compute Gateway]
+        MetaverseSimulator[Immersive Training Simulator]
+        ClimateConsortium[Climate Risk Consortium]
+        SupplyFinancePlatform[Supply Chain Finance Platform]
+        InnovationSandbox[Partner Innovation Sandbox]
+        QuantumLab[Quantum Research Lab]
+        OpenDataExchange[Open Data Exchange]
+        CommunityScienceHub[Community Science Hub]
     end
 
     subgraph CoreServices[Core Processes]
@@ -155,6 +163,14 @@ flowchart LR
         CircularEconomyPlanner[Circular Economy Planner]
         KnowledgeOps[Knowledge Operations Desk]
         ExperienceLabOrchestrator[Experience Lab Orchestrator]
+        EdgeOrchestrator[Edge Orchestration Service]
+        ImmersiveTrainingStudio[Immersive Training Studio]
+        ClimateRiskAnalyzer[Climate Risk Analyzer]
+        SupplyFinanceCoordinator[Supply Finance Coordinator]
+        InnovationSandboxManager[Innovation Sandbox Manager]
+        QuantumSecurityService[Quantum Security Service]
+        OpenDataSteward[Open Data Steward]
+        CommunityScienceCoordinator[Community Science Coordinator]
     end
 
     subgraph Destinations[Data Destinations]
@@ -247,6 +263,14 @@ flowchart LR
         CircularityRegistry[(Circularity Registry)]
         SecurityResearchArchive[(Security Research Archive)]
         ExperienceLabWorkspace[(Experience Lab Workspace)]
+        EdgeOpsConsole[(Edge Operations Console)]
+        ImmersiveTrainingArchive[(Immersive Training Archive)]
+        ClimateRiskDashboard[(Climate Risk Dashboard)]
+        SupplyFinanceLedger[(Supply Finance Ledger)]
+        InnovationSandboxArchive[(Innovation Sandbox Archive)]
+        QuantumSecurityVault[(Quantum Security Vault)]
+        OpenDataPortal[(Open Data Portal)]
+        CommunityImpactHub[(Community Impact Hub)]
     end
 
     GA -->|Authenticate| IdP
@@ -309,6 +333,14 @@ flowchart LR
     CyberSecurityLab -->|Share research findings| SecurityResearchOps
     CyberSecurityLab -->|Report emerging threats| SecurityOps
     EmployeeFeedback -->|Submit wellbeing insights| EmployeeWellnessDesk
+    EdgeGateway -->|Stream edge telemetry| EdgeOrchestrator
+    MetaverseSimulator -->|Deliver immersive scenarios| ImmersiveTrainingStudio
+    ClimateConsortium -->|Send climate risk updates| ClimateRiskAnalyzer
+    SupplyFinancePlatform -->|Share financing terms| SupplyFinanceCoordinator
+    InnovationSandbox -->|Publish experiment feedback| InnovationSandboxManager
+    QuantumLab -->|Provide quantum threat intel| QuantumSecurityService
+    OpenDataExchange -->|Share open datasets| OpenDataSteward
+    CommunityScienceHub -->|Submit community findings| CommunityScienceCoordinator
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -638,6 +670,32 @@ flowchart LR
     CircularEconomyPlanner -->|Coordinate ESG attestations| EnvCompliance
     CircularEconomyPlanner -->|Surface reuse insights| AnalyticsHub
     KnowledgeOps -->|Curate knowledge assets| KnowledgeBase
+    EdgeOrchestrator -->|Coordinate edge workloads| EdgeOpsConsole
+    EdgeOrchestrator -->|Feed operational telemetry| Monitoring
+    EdgeOrchestrator -->|Sync edge twins| DigitalTwinService
+    ImmersiveTrainingStudio -->|Publish immersive curricula| ImmersiveTrainingArchive
+    ImmersiveTrainingStudio -->|Refresh enablement journeys| EnablementLibrary
+    ImmersiveTrainingStudio -->|Prototype experiences| ExperienceLabWorkspace
+    ClimateRiskAnalyzer -->|Model climate exposure| ClimateRiskDashboard
+    ClimateRiskAnalyzer -->|Alert sustainability stewards| EnvCompliance
+    ClimateRiskAnalyzer -->|Enrich risk posture| RiskEngine
+    ClimateRiskAnalyzer -->|Guide treasury hedging| TreasuryOps
+    SupplyFinanceCoordinator -->|Coordinate supply financing| SupplyFinanceLedger
+    SupplyFinanceCoordinator -->|Align procurement funding| ProcurementHub
+    SupplyFinanceCoordinator -->|Inform treasury liquidity| TreasuryOps
+    InnovationSandboxManager -->|Archive sandbox insights| InnovationSandboxArchive
+    InnovationSandboxManager -->|Fuel innovation backlog| InnovationBacklog
+    InnovationSandboxManager -->|Hand off pilots| ExperienceLabOrchestrator
+    QuantumSecurityService -->|Harden crypto posture| SecurityOps
+    QuantumSecurityService -->|Store post-quantum keys| QuantumSecurityVault
+    QuantumSecurityService -->|Update privileged access| KeyVault
+    OpenDataSteward -->|Publish curated datasets| OpenDataPortal
+    OpenDataSteward -->|Register assets| DataCatalog
+    OpenDataSteward -->|Engage communities| CommunityHub
+    CommunityScienceCoordinator -->|Amplify community science| CommunityImpactHub
+    CommunityScienceCoordinator -->|Inform ESG planning| EnvCompliance
+    CommunityScienceCoordinator -->|Share grassroots insights| JourneyStudio
+    CommunityScienceCoordinator -->|Coordinate with open data| OpenDataSteward
     KnowledgeOps -->|Publish enablement briefs| EnablementLibrary
     KnowledgeOps -->|Share insights with experience lab| ExperienceLabWorkspace
     ExperienceLabOrchestrator -->|Prototype new journeys| ExperienceOrch
