@@ -99,3 +99,8 @@
 - Multi-channel delivery across email, SMS, push, and in-app alerts
 - Preference-aware workflows, fallbacks, and analytics for messaging
 - 📄 See `Tasks/NotificationCommunicationModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 20. Super Admin & Tenant Governance
+- Tenant onboarding, verification, and plan activation tooling for SaaS operators
+- Marketplace packaging, entitlements, and compliance automation across tenants
+- 📄 See `Tasks/SuperAdminGovernanceModulePlan/` for three-sprint roadmap and deliverables
