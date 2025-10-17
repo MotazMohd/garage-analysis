@@ -109,6 +109,7 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 - [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/AppointmentCheckIn-Level4.md) — highlights arrival capture, booking lookups, identity verification, condition documentation, intake form generation, upsell recommendation, job card creation, and notification queuing across the supporting stores.
 - [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/AppointmentCheckIn-Level5.md) — illustrates ingress gateways, appointment lookup, identity verification, intake, evidence capture, upsell, job card creation, notification services, and monitoring telemetry protecting the check-in lifecycle.
 - [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/AppointmentCheckIn-Level6.md) — describes geo-distributed arrival capture, booking lookup, identity verification, evidence storage, upsell engines, job card bridging, and notification dispatching with mirrored ledgers and failover automation.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/AppointmentCheckIn-Level7.md) — details intake governance policies, evidence retention rules, privacy controls, classification pipelines, anomaly detection, and incident desks securing the arrival workflow.
 
 #### Data Flow Highlights
 - **Intake capture:** Reception staff confirm booking details, log vehicle conditions, and upload mandatory photos that persist in dedicated stores.

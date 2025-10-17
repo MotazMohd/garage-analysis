@@ -93,6 +93,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level6/AppointmentCheckIn-Level6.md`](Level6/AppointmentCheckIn-Level6.md) | Intake resilience | Illustrates arrival capture, evidence logging, upsell logic, job card bridging, and notifications mirrored across intake regions. |
 | [`Level6/JobCardExecution-Level6.md`](Level6/JobCardExecution-Level6.md) | Workshop resilience | Demonstrates assignment, telemetry, resource usage, exceptions, QA, customer updates, and billing bridging with regional failover paths. |
 
+### Level 7 Security, Compliance & Assurance Views
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level7/SystemOverview-Level7.md`](Level7/SystemOverview-Level7.md) | Governance & assurance | Outlines policy engines, security operations, assurance pipelines, and trust communications spanning every module. |
+| [`Level7/GarageBranchManagement-Level7.md`](Level7/GarageBranchManagement-Level7.md) | Garage governance assurance | Shows policy catalogues, onboarding monitoring, document scanning, risk scoring, and compliance case management protecting tenant data. |
+| [`Level7/UserRoleManagement-Level7.md`](Level7/UserRoleManagement-Level7.md) | Identity assurance | Details access policy governance, identity analytics, privilege scanning, MFA health, and incident response loops. |
+| [`Level7/ServiceTemplateConfiguration-Level7.md`](Level7/ServiceTemplateConfiguration-Level7.md) | Template assurance | Captures governance policies, safety checklists, scanners, hazard analysis, localisation reviews, and advisory boards preserving template quality. |
+| [`Level7/SparePartsManagement-Level7.md`](Level7/SparePartsManagement-Level7.md) | Inventory assurance | Highlights supplier scanning, quality monitoring, anomaly detection, fraud analytics, and incident desks safeguarding parts integrity. |
+| [`Level7/ToolsManagement-Level7.md`](Level7/ToolsManagement-Level7.md) | Tool assurance | Covers calibration standards, telemetry analysis, safety inspections, supplier audits, and alert desks protecting tool readiness. |
+| [`Level7/AppointmentCheckIn-Level7.md`](Level7/AppointmentCheckIn-Level7.md) | Intake assurance | Explains intake governance, evidence retention, privacy controls, classification pipelines, and incident desks securing arrival workflows. |
+| [`Level7/JobCardExecution-Level7.md`](Level7/JobCardExecution-Level7.md) | Workshop assurance | Presents governance policies, telemetry monitoring, exception analysis, quality auditing, and escalation handling across execution. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.

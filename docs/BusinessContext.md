@@ -20,6 +20,7 @@ Includes role-based access, training tracking, and inter-garage collaboration. S
 - [Level 4 integration workflow](../Diagrams/DataFlow/Level4/SystemOverview-Level4.md) — exposes the service mesh, data plane, event streaming, and notification layers underpinning each stage of the platform journey.
 - [Level 5 infrastructure & observability view](../Diagrams/DataFlow/Level5/SystemOverview-Level5.md) — details ingress security, service mesh governance, domain microservices, shared data stores, monitoring stacks, and external platforms keeping the journey resilient.
 - [Level 6 resilience & disaster recovery view](../Diagrams/DataFlow/Level6/SystemOverview-Level6.md) — highlights geo-redundant ingress, mirrored workloads, replicated stores, and failover automation protecting each business goal.
+- [Level 7 security, compliance & assurance view](../Diagrams/DataFlow/Level7/SystemOverview-Level7.md) — maps the governance controls, security operations centre, data assurance pipelines, and trust communications safeguarding the platform outcomes.
 
 ---
 

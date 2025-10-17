@@ -31,6 +31,7 @@
 - [Level 4 integration workflow](Diagrams/DataFlow/Level4/SystemOverview-Level4.md) — exposes the underlying service mesh, data plane, and streaming analytics that coordinate authentication, operations, and lifecycle automation.
 - [Level 5 infrastructure & observability view](Diagrams/DataFlow/Level5/SystemOverview-Level5.md) — maps ingress protection, service mesh control, domain microservices, shared ledgers, monitoring stacks, and external integrations that sustain the platform.
 - [Level 6 resilience & disaster recovery view](Diagrams/DataFlow/Level6/SystemOverview-Level6.md) — highlights geo-distributed edge controls, regional workloads, mirrored data planes, and automation that orchestrates failover across the SaaS journey.
+- [Level 7 security, compliance & assurance view](Diagrams/DataFlow/Level7/SystemOverview-Level7.md) — outlines governance controls, security operations, assurance pipelines, and trust communications coordinating across every module.
 - [Data flow diagram index](Diagrams/DataFlow/README.md) — catalogues every module-level diagram and provides editing guidelines to keep the visuals consistent.
 
 ---

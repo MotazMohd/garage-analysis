@@ -30,3 +30,4 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - Use the [Level 4 integration workflow](../Diagrams/DataFlow/Level4/SystemOverview-Level4.md) when planning infrastructure or release steps that depend on authentication, data planes, and event streaming.
 - Consult the [Level 5 infrastructure & observability view](../Diagrams/DataFlow/Level5/SystemOverview-Level5.md) when coordinating ingress security, service mesh governance, monitoring, and third-party integrations during rollout.
 - Review the [Level 6 resilience & disaster recovery view](../Diagrams/DataFlow/Level6/SystemOverview-Level6.md) to plan geo-redundant deployments, failover drills, and cross-region data replication alongside schedule milestones.
+- Align with the [Level 7 security, compliance & assurance view](../Diagrams/DataFlow/Level7/SystemOverview-Level7.md) to map security operations, assurance workflows, and trust communications into the deployment cadence.

@@ -79,6 +79,7 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 - [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/ToolsManagement-Level4.md) — covers tool registry updates, calibration scheduling, availability planning, checkout/return flows, preventive maintenance, external integrations, and notification dispatching over the tool stores.
 - [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/ToolsManagement-Level5.md) — illustrates tool catalog, calibration, availability planning, checkout, maintenance logging, telemetry ingestion, notification hubs, partner integrations, and monitoring pipelines safeguarding tool readiness.
 - [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/ToolsManagement-Level6.md) — depicts geo-redundant tool cataloguing, imports, availability planning, checkout, maintenance, telemetry, compliance monitoring, and audit streaming with mirrored stores and queues.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/ToolsManagement-Level7.md) — covers governance policies, calibration standards, telemetry analysis, safety inspections, supplier audits, and alert desks safeguarding tool usage.
 
 #### Data Flow Highlights
 - **Catalogue creation:** SaaS or garage admins register tools in the shared catalogue and optionally import them into local inventories.
