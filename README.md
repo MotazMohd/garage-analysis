@@ -88,3 +88,8 @@
 - Claim intake linked to job cards, policies, and insurer partners
 - Automated approvals, communications, and financial recovery tracking
 - 📄 See `Tasks/InsuranceClaimsModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 18. Inter-Garage Collaboration
+- Trusted partner network for sharing parts, tools, and specialty services
+- Governed request, logistics, and settlement workflows across garages
+- 📄 See `Tasks/InterGarageCollaborationModulePlan/` for three-sprint roadmap and deliverables
