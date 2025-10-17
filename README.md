@@ -94,3 +94,8 @@
 - Trusted partner network for sharing parts, tools, and specialty services
 - Governed request, logistics, and settlement workflows across garages
 - 📄 See `Tasks/InterGarageCollaborationModulePlan/` for three-sprint roadmap and deliverables
+
+### 🔹 19. Notification & Communication Platform
+- Multi-channel delivery across email, SMS, push, and in-app alerts
+- Preference-aware workflows, fallbacks, and analytics for messaging
+- 📄 See `Tasks/NotificationCommunicationModulePlan/` for three-sprint roadmap and deliverables
