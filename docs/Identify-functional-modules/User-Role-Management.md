@@ -242,6 +242,7 @@ This module defines how users are created, invited, assigned roles, managed acro
 - [User & Role Management data flow](../../Diagrams/DataFlow/UserRoleManagement.md) — shows invitation, approval, MFA, and session governance across the identity services.
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/UserRoleManagement-Level1.md) — breaks down invitations, registration validation, credential provisioning, MFA, role governance, impersonation, and alerting into discrete processes.
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/UserRoleManagement-Level2.md) — traces invitation completion, MFA enrolment, role assignment, session issuance, and impersonation auditing across supporting services.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/UserRoleManagement-Level3.md) — highlights the invitation console, identity APIs, role policy engine, session manager, and impersonation service coordinating through the directory, caches, and security telemetry bus.
 
 #### Data Flow Highlights
 - **Onboarding sources:** Admin invitations and self-registration requests converge on the identity directory, which orchestrates outbound email/SMS and persists pending user context.

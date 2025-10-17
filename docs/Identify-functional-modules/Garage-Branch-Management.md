@@ -117,6 +117,7 @@ This module handles the creation, configuration, and access control for garages 
 - [Garage & Branch Management data flow](../../Diagrams/DataFlow/GarageBranchManagement.md) — visualizes onboarding, approval, branch inheritance, and audit logging across the service.
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/GarageBranchManagement-Level1.md) — expands the lifecycle into numbered processes for intake, decisioning, branch configuration, access control, and ongoing governance.
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/GarageBranchManagement-Level2.md) — drills into onboarding, compliance review, branch setup, and staff visibility actions writing to the shared stores and audit ledger.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/GarageBranchManagement-Level3.md) — shows the intake portals, compliance desks, lifecycle controllers, and provisioning services interacting with applications, branches, staff directories, and audit stores.
 
 #### Data Flow Highlights
 - **Registration intake:** Garage admins submit onboarding data and document uploads through the portal, which the service stages in the garages store and mirrors to the audit log for traceability.

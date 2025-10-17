@@ -27,6 +27,7 @@
 - [Overall SaaS module data flow](Diagrams/DataFlow/SystemOverview.md) — summarizes how garage onboarding, user governance, templates, inventory, appointments, and job execution exchange data across the platform.
 - [Level 1 system decomposition](Diagrams/DataFlow/Level1/SystemOverview-Level1.md) — clusters customer journeys, operational services, and shared data stores to surface state transitions end-to-end.
 - [Level 2 customer journey decomposition](Diagrams/DataFlow/Level2/SystemOverview-Level2.md) — follows the booking-to-billing lifecycle and shows how operational services and shared stores collaborate for a single customer.
+- [Level 3 orchestration services view](Diagrams/DataFlow/Level3/SystemOverview-Level3.md) — breaks the platform into onboarding, identity, scheduling, job orchestration, inventory, and billing services interacting through shared stores and notification queues.
 - [Data flow diagram index](Diagrams/DataFlow/README.md) — catalogues every module-level diagram and provides editing guidelines to keep the visuals consistent.
 
 ---

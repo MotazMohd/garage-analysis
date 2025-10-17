@@ -41,6 +41,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level2/AppointmentCheckIn-Level2.md`](Level2/AppointmentCheckIn-Level2.md) | Intake & handover | Captures appointment lookup, digital intake, evidence storage, job card creation, and notification updates. |
 | [`Level2/JobCardExecution-Level2.md`](Level2/JobCardExecution-Level2.md) | Workshop progress | Depicts assignment, resource consumption, exception routing, QA approval, and billing hand-off. |
 
+### Level 3 Service Component Views
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level3/SystemOverview-Level3.md`](Level3/SystemOverview-Level3.md) | Platform orchestration services | Breaks the journey into concrete services (onboarding, identity, scheduling, job orchestration, inventory, billing) writing to shared stores and notification channels. |
+| [`Level3/GarageBranchManagement-Level3.md`](Level3/GarageBranchManagement-Level3.md) | Garage governance services | Shows intake portals, compliance desks, lifecycle controllers, branch configurators, and staff provisioning touches across their data stores. |
+| [`Level3/UserRoleManagement-Level3.md`](Level3/UserRoleManagement-Level3.md) | Identity microservices | Details invitation, self-registration, MFA, role policy, impersonation, and security telemetry integrations. |
+| [`Level3/ServiceTemplateConfiguration-Level3.md`](Level3/ServiceTemplateConfiguration-Level3.md) | Template execution pipeline | Maps authoring, version control, validation, resource binding, and job step resolution services. |
+| [`Level3/SparePartsManagement-Level3.md`](Level3/SparePartsManagement-Level3.md) | Inventory command & control | Highlights catalogue curation, supplier feeds, garage localisation, reservations, replenishment, and quality hold workflows. |
+| [`Level3/ToolsManagement-Level3.md`](Level3/ToolsManagement-Level3.md) | Tool availability lifecycle | Visualises curation, import, calibration scheduling, reservations, checkout, maintenance, and availability synchronisation. |
+| [`Level3/AppointmentCheckIn-Level3.md`](Level3/AppointmentCheckIn-Level3.md) | Intake service components | Breaks down reception capture, identity verification, intake forms, upsell logic, and job card handoff. |
+| [`Level3/JobCardExecution-Level3.md`](Level3/JobCardExecution-Level3.md) | Workshop execution services | Details assignment, telemetry, resource consumption, exception routing, QA checks, and customer communication pipelines. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.

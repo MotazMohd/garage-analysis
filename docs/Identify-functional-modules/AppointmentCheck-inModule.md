@@ -105,6 +105,7 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 - [Appointment check-in data flow](../../Diagrams/DataFlow/AppointmentCheckIn.md) — details the intake, media capture, and notification sequence triggered during arrival.
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/AppointmentCheckIn-Level1.md) — expands the arrival journey into booking retrieval, intake capture, service confirmation, job card creation, and scheduling updates.
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/AppointmentCheckIn-Level2.md) — emphasises appointment lookup, digital intake, evidence storage, job card creation, and notification broadcasts with audit logging.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/AppointmentCheckIn-Level3.md) — illustrates the reception tablet, identity verification, intake services, upsell engine, and job card handler coordinating through appointment ledgers, intake records, media vaults, and notification channels.
 
 #### Data Flow Highlights
 - **Intake capture:** Reception staff confirm booking details, log vehicle conditions, and upload mandatory photos that persist in dedicated stores.
