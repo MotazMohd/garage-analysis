@@ -89,9 +89,9 @@ To enable garages and SaaS administrators to manage spare parts inventory, prici
 - [Spare parts management data flow](../../Diagrams/DataFlow/SparePartsManagement.md) — captures authoring, localization, stock adjustments, and alerting.
 
 #### Data Flow Highlights
-- SaaS administrators curate the master catalogue and push updates that downstream garages can selectively import.
-- Garage inventory adjustments—such as receiving, consuming, or transferring stock—synchronize quantities and availability across the service templates that reference the parts.
-- Low-stock thresholds trigger notification workflows and audit entries so replenishment tasks are tracked alongside operational changes.
+- **Catalogue governance:** SaaS administrators manage the master part catalogue and publish updates that garages can selectively import into local inventory.
+- **Inventory synchronisation:** Receiving, consuming, or transferring stock keeps quantities and availability aligned with the service templates referencing those parts.
+- **Replenishment triggers:** Low-stock thresholds emit notifications and audit entries so restocking tasks remain visible to operations teams.
 
 ---
 

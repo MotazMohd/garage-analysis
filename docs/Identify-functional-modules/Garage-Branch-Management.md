@@ -117,9 +117,9 @@ This module handles the creation, configuration, and access control for garages 
 - [Garage & Branch Management data flow](../../Diagrams/DataFlow/GarageBranchManagement.md) — visualizes onboarding, approval, branch inheritance, and audit logging across the service.
 
 #### Data Flow Highlights
-- Garage admins submit registrations and supporting documents through the portal, which land in the Garage Management service before persisting to the garages store.
-- SaaS administrators review pending garages, triggering approval or rejection paths that update the data store and notify stakeholders.
-- Branch creation applies inheritance rules, records overrides, and updates staff access records while every lifecycle change is mirrored in the audit log.
+- **Registration intake:** Garage admins submit onboarding data and document uploads through the portal, which the service stages in the garages store and mirrors to the audit log for traceability.
+- **Approval decisions:** SaaS administrators process pending garages, applying approval or rejection outcomes that update tenant records, notify stakeholders, and append lifecycle entries to the audit trail.
+- **Branch lifecycle:** Branch creation executes inheritance rules, captures overrides, synchronises staff visibility, and records each change for compliance reporting.
 
 ✅ This completes the extended and finalized configuration for the **Garage & Branch Management module**.
 

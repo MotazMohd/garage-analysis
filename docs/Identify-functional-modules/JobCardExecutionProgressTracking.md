@@ -137,9 +137,9 @@ Parallel and sequential steps are both supported.
 - [Job card execution data flow](../../Diagrams/DataFlow/JobCardExecution.md) — maps technician updates, exception handling, and customer notifications throughout the lifecycle.
 
 #### Data Flow Highlights
-- Job card services distribute step assignments to technicians and assistants, who report progress back through the execution API.
-- Exceptions such as blocked steps or parts shortages trigger escalation paths that notify managers and update the audit trail.
-- Completion approvals release customer updates and sync final state to downstream systems such as invoicing or analytics.
+- **Work allocation:** Job card services distribute steps to technicians and assistants, who submit progress updates through the execution API.
+- **Exception handling:** Blocked steps, missing parts, or QA failures raise escalations that notify managers and enrich the audit trail.
+- **Completion signalling:** Approvals release customer notifications and synchronise final job state with downstream systems such as invoicing and analytics.
 
 ---
 

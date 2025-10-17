@@ -75,9 +75,9 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 - [Tools management data flow](../../Diagrams/DataFlow/ToolsManagement.md) — illustrates cataloging, local availability, job usage, and maintenance feedback.
 
 #### Data Flow Highlights
-- SaaS or garage admins register tools and sync metadata to the shared catalogue while optional imports create per-garage inventories.
-- Service template linkages drive reservations that update availability records and flag conflicts when tools are already assigned.
-- Usage and maintenance feedback loops raise alerts and update audit history so calibration and repairs can be scheduled proactively.
+- **Catalogue creation:** SaaS or garage admins register tools in the shared catalogue and optionally import them into local inventories.
+- **Operational allocation:** Service template linkages reserve tools, update availability, and surface conflicts when equipment is double-booked.
+- **Maintenance telemetry:** Usage and condition feedback raise alerts and enrich audit history so calibration and repairs can be scheduled proactively.
 
 ---
 
