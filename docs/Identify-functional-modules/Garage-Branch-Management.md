@@ -13,6 +13,7 @@ This module handles the creation, configuration, and access control for garages 
 - `SaaS Admin`: triggers the approval workflow and lifecycle changes.
 - `Branch Setup Form`: captures per-branch adjustments that piggyback on garage defaults.
 - `Document Uploads Portal`: secures license, insurance, and compliance attachments alongside the garage request.
+- `Identity Provider`: authenticates admins and scopes their permissions before any management action is accepted.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -20,6 +21,8 @@ This module handles the creation, configuration, and access control for garages 
 - `Branch Management Service`: applies inheritance rules, tracks overrides, and persists branch metadata.
 - `Audit Event Bus`: normalizes events from the core services before writing to the append-only audit log.
 - `Document Verification Service`: sanitizes uploads, links them to requests, and flags any compliance anomalies for review.
+- `Access Control Service`: validates scopes from the Identity Provider and enforces role-aware access to garage and branch actions.
+- `Compliance Reporter`: orchestrates follow-up for flagged documents and packages lifecycle signals for downstream reporting.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -27,8 +30,16 @@ This module handles the creation, configuration, and access control for garages 
 - `Notification Service`: relays approval results and rejection reasoning back to garage administrators.
 - `Audit Log Store` + `Audit Viewer`: retain immutable history and expose the full change log to auditors and admins.
 - `Document Vault`: preserves the original, sanitized copies of every supporting artifact for audit retrieval.
+- `Compliance Review Queue`: centralizes anomaly investigations from the compliance reporter for manual analysts.
+- `Monitoring Dashboard`: visualizes real-time approval throughput, alerting on stalled reviews or repeated rejections.
+- `Reporting Warehouse`: captures normalized lifecycle datasets so leadership dashboards reflect accurate garage and branch health.
 
-> 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility.
+**Oversight & Insight Consumers**
+- `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
+- `Operations Monitoring`: subscribes to alerts and dashboards to guarantee SLAs for activation and branch provisioning.
+- `Business Intelligence`: builds aggregated metrics from the reporting warehouse to guide expansion and retention strategies.
+
+> 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
 ### 🔁 Process Highlights
 
@@ -37,7 +48,9 @@ This module handles the creation, configuration, and access control for garages 
 | Intake & Classification | Garage Admin submits structured fields while uploading licenses via the Document Portal. | Portal → Document Verification Service → Garage Management Service & Document Vault |
 | Approval & Decisioning | SaaS Admin reviews consolidated context, including compliance flags, before approving or rejecting. | Approval Console ↔ Garage Management Service ↔ Audit Event Bus |
 | Branch Provisioning | Default branch configuration is cloned and overrides captured via the Branch Setup Form. | Branch Setup Form → Branch Management Service → Branch Directory DB |
+| Access Control & Alerts | Identity Provider and Access Control Service enforce scoped permissions while alerts surface issues. | Identity Provider → Access Control Service → Garage Management Service → Monitoring Dashboard |
 | Notifications & Audit | Decisions are broadcast to admins while every event is normalized and archived. | Garage Management Service / Branch Service → Audit Event Bus → Audit Log Store & Viewer |
+| Insight & Compliance Reporting | Lifecycle events and flagged documents fuel manual review and analytics. | Document Verification → Compliance Reporter → Compliance Review Queue / Reporting Warehouse |
 
 ---
 
