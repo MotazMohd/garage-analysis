@@ -16,6 +16,8 @@ This module handles the creation, configuration, and access control for garages 
 - `Identity Provider`: authenticates admins and scopes their permissions before any management action is accepted.
 - `Partner CRM Integration`: synchronizes franchise metadata (e.g., parent company IDs, billing contacts) that pre-populate garage records before submission.
 - `Regulatory Bulletin Feed`: streams licensing rule updates that are consumed by compliance tooling to flag new documentary requirements.
+- `Customer Feedback Portal`: gathers qualitative and CSAT-style feedback from garage managers and staff once provisioning is complete.
+- `Operational Telemetry Feeds`: capture latency, error rates, and job throughput from the garage and branch services to power proactive monitoring.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -28,6 +30,9 @@ This module handles the creation, configuration, and access control for garages 
 - `Risk Scoring Engine`: pre-scores garage submissions using historical outcomes, manual overrides, and regulatory risk factors so high-risk cases are surfaced early.
 - `Lifecycle Scheduler`: automatically queues periodic reviews for dormant or aging garages and coordinates status confirmations with admins.
 - `Retention Service`: enforces data retention rules by coordinating archival for inactive garages and logging the disposition of associated records.
+- `Quality Assurance Engine`: correlates feedback, telemetry, and audit signals to recommend remediation actions for struggling garages or branches.
+- `Billing Reconciliation Service`: reconciles provisioning data against partner fee schedules so finance teams can clear payouts or escalate disputes.
+- `Data Governance Manager`: registers metadata, ownership, and policy changes whenever audit or lifecycle events modify stored records.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -40,12 +45,18 @@ This module handles the creation, configuration, and access control for garages 
 - `Reporting Warehouse`: captures normalized lifecycle datasets so leadership dashboards reflect accurate garage and branch health.
 - `Risk Score Store`: retains machine-calculated and analyst-adjusted risk assessments that inform escalation policy.
 - `Cold Archive Storage`: houses long-term historical records after retention thresholds are met while maintaining linkage back to the audit trail.
+- `Customer Feedback DB`: stores normalized satisfaction metrics and remediation notes for retrospective analysis.
+- `Billing Ledger`: final destination for reconciled payouts, clawbacks, and dispute adjustments surfaced by finance teams.
+- `Data Catalog & Lineage`: registers canonical schema, access policies, and data ownership for downstream discovery and compliance audits.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
 - `Operations Monitoring`: subscribes to alerts and dashboards to guarantee SLAs for activation and branch provisioning.
 - `Business Intelligence`: builds aggregated metrics from the reporting warehouse to guide expansion and retention strategies.
 - `Risk Operations`: reviews auto-scored submissions, overrides false positives, and coordinates escalations with compliance for regulator outreach.
+- `Customer Experience`: monitors quality scores and remediation outcomes to confirm that branch performance issues are addressed quickly.
+- `Finance Operations`: validates reconciled payouts, confirms dispute resolutions, and feeds variance findings back into partner agreements.
+- `Data Governance`: ensures cataloged lineage, retention attestations, and access policies stay current with every lifecycle event.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -60,6 +71,7 @@ This module handles the creation, configuration, and access control for garages 
 | Risk Scoring & Escalation | Submissions are pre-scored, with high-risk outcomes notifying compliance for deeper review. | Garage Management Service → Risk Scoring Engine → Risk Score Store / Compliance Reporter |
 | Notifications & Audit | Decisions are broadcast to admins while every event is normalized and archived. | Garage Management Service / Branch Service → Audit Event Bus → Audit Log Store & Viewer |
 | Insight, Retention & Compliance Reporting | Lifecycle events and flagged documents fuel manual review, analytics, and archival. | Document Verification → Compliance Reporter & Retention Service → Compliance Queue / Reporting Warehouse / Cold Archive |
+| Experience, Billing & Governance Oversight | Feedback, telemetry, and reconciliation routines drive continuous improvement and policy alignment. | Monitoring / Feedback Portal → Quality Assurance Engine → Compliance Reporter / Customer Feedback DB; Garage & Branch Services → Billing Reconciliation → Billing Ledger; Audit Event Bus → Data Governance Manager → Data Catalog |
 
 ---
 

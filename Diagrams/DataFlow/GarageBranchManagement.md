@@ -10,6 +10,8 @@ flowchart LR
         IdP[Identity Provider]
         CRM[Partner CRM Integration]
         RegFeed[Regulatory Bulletin Feed]
+        Feedback[Customer Feedback Portal]
+        Telemetry[Operational Telemetry Feeds]
     end
 
     subgraph CoreServices[Core Processes]
@@ -23,6 +25,9 @@ flowchart LR
         RiskEngine[Risk Scoring Engine]
         Lifecycle[Lifecycle Scheduler]
         Retention[Retention Service]
+        QAEngine[Quality Assurance Engine]
+        BillingRecon[Billing Reconciliation Service]
+        DataGov[Data Governance Manager]
     end
 
     subgraph Destinations[Data Destinations]
@@ -37,6 +42,9 @@ flowchart LR
         Warehouse[(Reporting Warehouse)]
         RiskStore[(Risk Score Store)]
         Archive[(Cold Archive Storage)]
+        FeedbackDB[(Customer Feedback DB)]
+        BillingLedger[(Billing Ledger)]
+        DataCatalog[(Data Catalog & Lineage)]
     end
 
     GA -->|Authenticate| IdP
@@ -46,6 +54,8 @@ flowchart LR
     AccessCtrl -->|Return role grants| GMS
     CRM -->|Push partner context| GMS
     RegFeed -->|Publish compliance updates| Compliance
+    Feedback -->|Share satisfaction scores & qualitative input| QAEngine
+    Telemetry -->|Stream performance metrics| Monitoring
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -88,17 +98,28 @@ flowchart LR
     AuditBus -->|Trigger operational alerts| Monitoring
     AuditBus -->|Publish lifecycle dataset| Warehouse
     Lifecycle -->|Emit cadence log| AuditBus
+    AuditBus -->|Publish metadata events| DataGov
 
     Notify -->|Broadcast approvals & reminders| Monitoring
     Warehouse -->|Drive compliance dashboards| Monitoring
     Retention -->|Archive inactive records| Archive
     Retention -->|Confirm retention disposition| AuditBus
+    Monitoring -->|Surface anomalies| QAEngine
+    QAEngine -->|Log structured insights| FeedbackDB
+    QAEngine -->|Open remediation tasks| Compliance
+    QAEngine -->|Share service scores| Monitoring
+    GMS -->|Generate invoicing data| BillingRecon
+    BranchSvc -->|Sync branch billing impacts| BillingRecon
+    BillingRecon -->|Settle partner fees| BillingLedger
+    BillingRecon -->|Flag discrepancies| Compliance
+    DataGov -->|Register lineage & ownership| DataCatalog
+    DataGov -->|Publish access policies| AccessCtrl
 
     classDef source fill:#eff6ff,stroke:#1d4ed8,stroke-width:1px,color:#1f2937;
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog destination;
 ```
