@@ -4,6 +4,7 @@
 
 ### 🔹 1. Garage & Branch Management
 - Already completed
+- 📄 See `Tasks/GarageBranchManagementModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 2. User, Role, and Permission Management
 - Already completed
