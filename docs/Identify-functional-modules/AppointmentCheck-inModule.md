@@ -103,6 +103,7 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 ## 📈 Data Flow Diagram
 
 - [Appointment check-in data flow](../../Diagrams/DataFlow/AppointmentCheckIn.md) — details the intake, media capture, and notification sequence triggered during arrival.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/AppointmentCheckIn-Level1.md) — expands the arrival journey into booking retrieval, intake capture, service confirmation, job card creation, and scheduling updates.
 
 #### Data Flow Highlights
 - **Intake capture:** Reception staff confirm booking details, log vehicle conditions, and upload mandatory photos that persist in dedicated stores.

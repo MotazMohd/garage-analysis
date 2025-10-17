@@ -14,6 +14,7 @@ Includes role-based access, training tracking, and inter-garage collaboration. S
 
 ### Visual Overview
 - [System data flow](../Diagrams/DataFlow/SystemOverview.md) — illustrates how the primary modules described in this context share data across the SaaS platform.
+- [Level 1 system decomposition](../Diagrams/DataFlow/Level1/SystemOverview-Level1.md) — highlights the clusters of customer interactions, operational services, and shared stores that sustain the workflows.
 
 ---
 

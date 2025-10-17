@@ -24,3 +24,4 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - Dependencies are met on or before the day a task begins; contingency buffers handled via cross-day overlap.
 - Observability (task 19) and testing (task 16) are iterative, with milestones reflected on the days above.
 - See the [system data flow overview](../Diagrams/DataFlow/SystemOverview.md) for how these workstreams converge into the unified platform architecture.
+- Consult the [Level 1 system decomposition](../Diagrams/DataFlow/Level1/SystemOverview-Level1.md) to understand which data stores and operational services are touched by each milestone.

@@ -30,6 +30,7 @@
 
 ### Visual Reference
 - [Garage & Branch Management data flow](../Diagrams/DataFlow/GarageBranchManagement.md) — end-to-end view of onboarding, approval, branch inheritance, and audit logging.
+- [Level 1 data flow decomposition](../Diagrams/DataFlow/Level1/GarageBranchManagement-Level1.md) — shows the numbered processes for intake, review, branch configuration, staff access, and lifecycle enforcement.
 
 ## Branch Management & Inheritance
 | Field | Inherited from Garage | Editable Per Branch |

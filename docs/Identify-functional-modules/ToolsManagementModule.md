@@ -73,6 +73,7 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 ## 📈 Data Flow Diagram
 
 - [Tools management data flow](../../Diagrams/DataFlow/ToolsManagement.md) — illustrates cataloging, local availability, job usage, and maintenance feedback.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/ToolsManagement-Level1.md) — sequences catalog authoring, garage imports, availability planning, technician checkout, and maintenance cycles.
 
 #### Data Flow Highlights
 - **Catalogue creation:** SaaS or garage admins register tools in the shared catalogue and optionally import them into local inventories.
