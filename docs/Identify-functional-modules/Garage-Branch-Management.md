@@ -14,6 +14,8 @@ This module handles the creation, configuration, and access control for garages 
 - `Branch Setup Form`: captures per-branch adjustments that piggyback on garage defaults.
 - `Document Uploads Portal`: secures license, insurance, and compliance attachments alongside the garage request.
 - `Identity Provider`: authenticates admins and scopes their permissions before any management action is accepted.
+- `Partner CRM Integration`: synchronizes franchise metadata (e.g., parent company IDs, billing contacts) that pre-populate garage records before submission.
+- `Regulatory Bulletin Feed`: streams licensing rule updates that are consumed by compliance tooling to flag new documentary requirements.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -23,6 +25,9 @@ This module handles the creation, configuration, and access control for garages 
 - `Document Verification Service`: sanitizes uploads, links them to requests, and flags any compliance anomalies for review.
 - `Access Control Service`: validates scopes from the Identity Provider and enforces role-aware access to garage and branch actions.
 - `Compliance Reporter`: orchestrates follow-up for flagged documents and packages lifecycle signals for downstream reporting.
+- `Risk Scoring Engine`: pre-scores garage submissions using historical outcomes, manual overrides, and regulatory risk factors so high-risk cases are surfaced early.
+- `Lifecycle Scheduler`: automatically queues periodic reviews for dormant or aging garages and coordinates status confirmations with admins.
+- `Retention Service`: enforces data retention rules by coordinating archival for inactive garages and logging the disposition of associated records.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -33,11 +38,14 @@ This module handles the creation, configuration, and access control for garages 
 - `Compliance Review Queue`: centralizes anomaly investigations from the compliance reporter for manual analysts.
 - `Monitoring Dashboard`: visualizes real-time approval throughput, alerting on stalled reviews or repeated rejections.
 - `Reporting Warehouse`: captures normalized lifecycle datasets so leadership dashboards reflect accurate garage and branch health.
+- `Risk Score Store`: retains machine-calculated and analyst-adjusted risk assessments that inform escalation policy.
+- `Cold Archive Storage`: houses long-term historical records after retention thresholds are met while maintaining linkage back to the audit trail.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
 - `Operations Monitoring`: subscribes to alerts and dashboards to guarantee SLAs for activation and branch provisioning.
 - `Business Intelligence`: builds aggregated metrics from the reporting warehouse to guide expansion and retention strategies.
+- `Risk Operations`: reviews auto-scored submissions, overrides false positives, and coordinates escalations with compliance for regulator outreach.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -49,8 +57,9 @@ This module handles the creation, configuration, and access control for garages 
 | Approval & Decisioning | SaaS Admin reviews consolidated context, including compliance flags, before approving or rejecting. | Approval Console ↔ Garage Management Service ↔ Audit Event Bus |
 | Branch Provisioning | Default branch configuration is cloned and overrides captured via the Branch Setup Form. | Branch Setup Form → Branch Management Service → Branch Directory DB |
 | Access Control & Alerts | Identity Provider and Access Control Service enforce scoped permissions while alerts surface issues. | Identity Provider → Access Control Service → Garage Management Service → Monitoring Dashboard |
+| Risk Scoring & Escalation | Submissions are pre-scored, with high-risk outcomes notifying compliance for deeper review. | Garage Management Service → Risk Scoring Engine → Risk Score Store / Compliance Reporter |
 | Notifications & Audit | Decisions are broadcast to admins while every event is normalized and archived. | Garage Management Service / Branch Service → Audit Event Bus → Audit Log Store & Viewer |
-| Insight & Compliance Reporting | Lifecycle events and flagged documents fuel manual review and analytics. | Document Verification → Compliance Reporter → Compliance Review Queue / Reporting Warehouse |
+| Insight, Retention & Compliance Reporting | Lifecycle events and flagged documents fuel manual review, analytics, and archival. | Document Verification → Compliance Reporter & Retention Service → Compliance Queue / Reporting Warehouse / Cold Archive |
 
 ---
 

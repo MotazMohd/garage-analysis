@@ -8,6 +8,8 @@ flowchart LR
         BranchForm[Branch Setup Form]
         DocsPortal[Document Uploads Portal]
         IdP[Identity Provider]
+        CRM[Partner CRM Integration]
+        RegFeed[Regulatory Bulletin Feed]
     end
 
     subgraph CoreServices[Core Processes]
@@ -18,6 +20,9 @@ flowchart LR
         DocService[Document Verification Service]
         AccessCtrl[Access Control Service]
         Compliance[Compliance Reporter]
+        RiskEngine[Risk Scoring Engine]
+        Lifecycle[Lifecycle Scheduler]
+        Retention[Retention Service]
     end
 
     subgraph Destinations[Data Destinations]
@@ -30,6 +35,8 @@ flowchart LR
         ComplianceQueue[(Compliance Review Queue)]
         Monitoring[(Monitoring Dashboard)]
         Warehouse[(Reporting Warehouse)]
+        RiskStore[(Risk Score Store)]
+        Archive[(Cold Archive Storage)]
     end
 
     GA -->|Authenticate| IdP
@@ -37,12 +44,17 @@ flowchart LR
     IdP -->|Issue scoped tokens| GMS
     GMS -->|Validate permissions| AccessCtrl
     AccessCtrl -->|Return role grants| GMS
+    CRM -->|Push partner context| GMS
+    RegFeed -->|Publish compliance updates| Compliance
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
     GMS -->|Emit submission event| AuditBus
     AuditBus -->|Store request snapshot| AL
     GMS -->|Notify pending review| SA
+    GMS -->|Pre-score risk| RiskEngine
+    RiskEngine -->|Persist assessment| RiskStore
+    RiskEngine -->|Raise high-risk alerts| Compliance
 
     GA -->|Upload licenses & permits| DocsPortal
     DocsPortal -->|Sanitize & classify| DocService
@@ -65,6 +77,8 @@ flowchart LR
     BranchForm -->|Inherit garage defaults| BranchSvc
     BranchSvc -->|Persist branch overrides| BR
     BranchSvc -->|Emit branch change event| AuditBus
+    Lifecycle -->|Schedule periodic reviews| GMS
+    Lifecycle -->|Trigger dormant cleanup| Retention
 
     GMS -->|Status changes, ownership transfer, document updates| AuditBus
     AuditBus -->|Write append-only log| AL
@@ -73,15 +87,18 @@ flowchart LR
     GA -->|Review history| AuditView
     AuditBus -->|Trigger operational alerts| Monitoring
     AuditBus -->|Publish lifecycle dataset| Warehouse
+    Lifecycle -->|Emit cadence log| AuditBus
 
     Notify -->|Broadcast approvals & reminders| Monitoring
     Warehouse -->|Drive compliance dashboards| Monitoring
+    Retention -->|Archive inactive records| Archive
+    Retention -->|Confirm retention disposition| AuditBus
 
     classDef source fill:#eff6ff,stroke:#1d4ed8,stroke-width:1px,color:#1f2937;
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive destination;
 ```
