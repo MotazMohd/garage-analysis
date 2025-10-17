@@ -245,6 +245,7 @@ This module defines how users are created, invited, assigned roles, managed acro
 - [Level 3 service component flow](../../Diagrams/DataFlow/Level3/UserRoleManagement-Level3.md) — highlights the invitation console, identity APIs, role policy engine, session manager, and impersonation service coordinating through the directory, caches, and security telemetry bus.
 - [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/UserRoleManagement-Level4.md) — follows invitation token storage, credential vaulting, MFA secret registration, role policy enforcement, session management, impersonation monitoring, and analytics pipelines across the identity stores and audit ledgers.
 - [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/UserRoleManagement-Level5.md) — outlines ingress gateways, identity services, invitation, registration, credential issuance, MFA, role governance, session control, impersonation guardrails, dedicated security stores, and alerting pipelines tied into SIEM and threat intelligence feeds.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/UserRoleManagement-Level6.md) — presents active-passive identity services, credential vault replication, MFA gateways, session brokers, and audit mirroring that preserve access continuity during regional failover.
 
 #### Data Flow Highlights
 - **Onboarding sources:** Admin invitations and self-registration requests converge on the identity directory, which orchestrates outbound email/SMS and persists pending user context.

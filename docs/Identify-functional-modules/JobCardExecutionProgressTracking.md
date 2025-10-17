@@ -140,6 +140,7 @@ Parallel and sequential steps are both supported.
 - [Level 3 service component flow](../../Diagrams/DataFlow/Level3/JobCardExecution-Level3.md) — details the assignment engine, telemetry collectors, resource reservation services, exception router, QA checklist, and customer update pipeline coordinating through their ledgers and queues.
 - [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/JobCardExecution-Level4.md) — shows task routing, step assignment, telemetry capture, resource consumption, exception desks, QA inspections, customer notifications, billing bridges, and audit services collaborating across execution data stores.
 - [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/JobCardExecution-Level5.md) — details ingress, assignment, step tracking, telemetry collection, exception desks, QA, resource management, customer notifications, billing bridge, and monitoring pipelines coordinating via execution ledgers and observability stacks.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/JobCardExecution-Level6.md) — demonstrates geo-redundant assignment, telemetry ingestion, resource usage, exception routing, QA inspection, customer notification, billing bridging, and audit streaming with replicated stores and failover orchestration.
 
 #### Data Flow Highlights
 - **Work allocation:** Job card services distribute steps to technicians and assistants, who submit progress updates through the execution API.

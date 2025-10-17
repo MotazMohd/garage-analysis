@@ -80,6 +80,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level5/AppointmentCheckIn-Level5.md`](Level5/AppointmentCheckIn-Level5.md) | Check-in infrastructure | Breaks down appointment lookup, identity verification, intake, evidence capture, upsell, job card creation, and notifications across stores and monitoring. |
 | [`Level5/JobCardExecution-Level5.md`](Level5/JobCardExecution-Level5.md) | Execution infrastructure | Illustrates assignment, tracking, telemetry, exception handling, QA, resource management, customer notifications, and billing integration with observability and ledgers. |
 
+### Level 6 Resilience & Disaster Recovery Views
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level6/SystemOverview-Level6.md`](Level6/SystemOverview-Level6.md) | Multi-region platform resilience | Shows edge control, regional workloads, mirrored data planes, and DR automation ensuring continuity across regions. |
+| [`Level6/GarageBranchManagement-Level6.md`](Level6/GarageBranchManagement-Level6.md) | Garage governance resilience | Details multi-region onboarding, compliance, branch configuration, and audit services with replicated stores and failover orchestration. |
+| [`Level6/UserRoleManagement-Level6.md`](Level6/UserRoleManagement-Level6.md) | Identity continuity | Highlights active-passive identity services, credential vault replication, MFA gateways, and security analytics spanning regions. |
+| [`Level6/ServiceTemplateConfiguration-Level6.md`](Level6/ServiceTemplateConfiguration-Level6.md) | Template resilience | Maps authoring, validation, localisation, binding, and publishing services across regions with mirrored repositories and DR runbooks. |
+| [`Level6/SparePartsManagement-Level6.md`](Level6/SparePartsManagement-Level6.md) | Inventory resilience | Shows supplier ingestion, catalogue management, stock adjustments, and replenishment automation with replicated ledgers and queues. |
+| [`Level6/ToolsManagement-Level6.md`](Level6/ToolsManagement-Level6.md) | Tool lifecycle resilience | Depicts tool cataloguing, availability planning, checkout, maintenance, telemetry, and compliance monitoring with regional replicas. |
+| [`Level6/AppointmentCheckIn-Level6.md`](Level6/AppointmentCheckIn-Level6.md) | Intake resilience | Illustrates arrival capture, evidence logging, upsell logic, job card bridging, and notifications mirrored across intake regions. |
+| [`Level6/JobCardExecution-Level6.md`](Level6/JobCardExecution-Level6.md) | Workshop resilience | Demonstrates assignment, telemetry, resource usage, exceptions, QA, customer updates, and billing bridging with regional failover paths. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.
