@@ -159,6 +159,7 @@ Stock and sharing logic is managed centrally in the inventory module but integra
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/ServiceTemplateConfiguration-Level1.md) — details authoring, localization, resource binding, execution orchestration, and exception handling phases.
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/ServiceTemplateConfiguration-Level2.md) — clarifies authoring, versioning, garage-level overrides, resource binding, and publishing into the job engine.
 - [Level 3 service component flow](../../Diagrams/DataFlow/Level3/ServiceTemplateConfiguration-Level3.md) — maps the template studio, version control, publishing APIs, validation engine, resource binding, and job step resolver working together through shared stores and audit logs.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/ServiceTemplateConfiguration-Level4.md) — illustrates authoring APIs, version control, validation engines, localisation overrides, resource binding, publishing gateways, auditing, and notification hubs coordinating with the execution engine.
 
 #### Data Flow Highlights
 - **Template authoring:** SaaS administrators curate the global catalogue, persisting master metadata and default step definitions for downstream tenants.

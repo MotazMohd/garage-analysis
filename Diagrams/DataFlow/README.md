@@ -54,6 +54,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level3/AppointmentCheckIn-Level3.md`](Level3/AppointmentCheckIn-Level3.md) | Intake service components | Breaks down reception capture, identity verification, intake forms, upsell logic, and job card handoff. |
 | [`Level3/JobCardExecution-Level3.md`](Level3/JobCardExecution-Level3.md) | Workshop execution services | Details assignment, telemetry, resource consumption, exception routing, QA checks, and customer communication pipelines. |
 
+### Level 4 Integration Workflows
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level4/SystemOverview-Level4.md`](Level4/SystemOverview-Level4.md) | Platform service mesh | Details channel authentication, operations services, shared data plane, and streaming analytics that orchestrate every lifecycle transition. |
+| [`Level4/GarageBranchManagement-Level4.md`](Level4/GarageBranchManagement-Level4.md) | Garage governance integrations | Shows onboarding intake, document classification, compliance workflow, branch configuration, staff provisioning, and lifecycle enforcement over core stores. |
+| [`Level4/UserRoleManagement-Level4.md`](Level4/UserRoleManagement-Level4.md) | Identity & security controls | Follows invitations, credential issuance, MFA enrolment, role governance, impersonation monitoring, and analytics with their underlying vaults and ledgers. |
+| [`Level4/ServiceTemplateConfiguration-Level4.md`](Level4/ServiceTemplateConfiguration-Level4.md) | Template service mesh | Illustrates authoring, versioning, validation, localisation, resource binding, publishing, and notifications across the template repositories. |
+| [`Level4/SparePartsManagement-Level4.md`](Level4/SparePartsManagement-Level4.md) | Inventory integrations | Maps catalogue authoring, supplier feeds, garage localisation, reservations, stock ledgers, replenishment planning, and quality holds. |
+| [`Level4/ToolsManagement-Level4.md`](Level4/ToolsManagement-Level4.md) | Tool lifecycle orchestration | Captures registry updates, calibration scheduling, availability planning, technician checkout, maintenance workflows, and partner integrations. |
+| [`Level4/AppointmentCheckIn-Level4.md`](Level4/AppointmentCheckIn-Level4.md) | Intake microservices | Breaks down arrival capture, booking lookup, identity verification, evidence logging, upsell recommendations, and job card creation. |
+| [`Level4/JobCardExecution-Level4.md`](Level4/JobCardExecution-Level4.md) | Workshop execution engines | Details task routing, telemetry capture, resource consumption, exception handling, QA inspection, billing bridge, and audit trail services. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.

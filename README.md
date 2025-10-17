@@ -28,6 +28,7 @@
 - [Level 1 system decomposition](Diagrams/DataFlow/Level1/SystemOverview-Level1.md) — clusters customer journeys, operational services, and shared data stores to surface state transitions end-to-end.
 - [Level 2 customer journey decomposition](Diagrams/DataFlow/Level2/SystemOverview-Level2.md) — follows the booking-to-billing lifecycle and shows how operational services and shared stores collaborate for a single customer.
 - [Level 3 orchestration services view](Diagrams/DataFlow/Level3/SystemOverview-Level3.md) — breaks the platform into onboarding, identity, scheduling, job orchestration, inventory, and billing services interacting through shared stores and notification queues.
+- [Level 4 integration workflow](Diagrams/DataFlow/Level4/SystemOverview-Level4.md) — exposes the underlying service mesh, data plane, and streaming analytics that coordinate authentication, operations, and lifecycle automation.
 - [Data flow diagram index](Diagrams/DataFlow/README.md) — catalogues every module-level diagram and provides editing guidelines to keep the visuals consistent.
 
 ---

@@ -76,6 +76,7 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/ToolsManagement-Level1.md) — sequences catalog authoring, garage imports, availability planning, technician checkout, and maintenance cycles.
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/ToolsManagement-Level2.md) — expands tool curation, garage imports, availability planning, technician checkout, and maintenance scheduling with audit logging.
 - [Level 3 service component flow](../../Diagrams/DataFlow/Level3/ToolsManagement-Level3.md) — visualises tool curation, importers, calibration schedulers, reservation services, technician checkout, maintenance logging, and availability sync writing into shared registries and alert queues.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/ToolsManagement-Level4.md) — covers tool registry updates, calibration scheduling, availability planning, checkout/return flows, preventive maintenance, external integrations, and notification dispatching over the tool stores.
 
 #### Data Flow Highlights
 - **Catalogue creation:** SaaS or garage admins register tools in the shared catalogue and optionally import them into local inventories.
