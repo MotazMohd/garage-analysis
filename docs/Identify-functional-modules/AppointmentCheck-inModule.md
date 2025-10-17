@@ -104,4 +104,9 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 
 - [Appointment check-in data flow](../../Diagrams/DataFlow/AppointmentCheckIn.md) — details the intake, media capture, and notification sequence triggered during arrival.
 
+#### Data Flow Highlights
+- Reception staff validate the booking, capture condition notes, and upload mandatory photos that persist to dedicated stores.
+- The check-in service creates intake documents and optionally proposes upsell services before activating or generating a job card.
+- Notifications keep customers informed of check-in status while audit logs record evidence capture and decision points for compliance.
+
 ---

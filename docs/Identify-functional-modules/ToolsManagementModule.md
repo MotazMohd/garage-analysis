@@ -74,6 +74,11 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 
 - [Tools management data flow](../../Diagrams/DataFlow/ToolsManagement.md) — illustrates cataloging, local availability, job usage, and maintenance feedback.
 
+#### Data Flow Highlights
+- SaaS or garage admins register tools and sync metadata to the shared catalogue while optional imports create per-garage inventories.
+- Service template linkages drive reservations that update availability records and flag conflicts when tools are already assigned.
+- Usage and maintenance feedback loops raise alerts and update audit history so calibration and repairs can be scheduled proactively.
+
 ---
 
 ## ERD (Entity Relationship Diagram)

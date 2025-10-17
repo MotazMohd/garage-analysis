@@ -23,3 +23,4 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - Staffing assumes domain-focused squads capable of parallel execution.
 - Dependencies are met on or before the day a task begins; contingency buffers handled via cross-day overlap.
 - Observability (task 19) and testing (task 16) are iterative, with milestones reflected on the days above.
+- See the [system data flow overview](../Diagrams/DataFlow/SystemOverview.md) for how these workstreams converge into the unified platform architecture.

@@ -157,6 +157,11 @@ Stock and sharing logic is managed centrally in the inventory module but integra
 
 - [Service template configuration data flow](../../Diagrams/DataFlow/ServiceTemplateConfiguration.md) — outlines how master templates, garage overrides, and job generation exchange data.
 
+#### Data Flow Highlights
+- SaaS administrators curate the global template catalogue, persisting both template metadata and the default step definitions.
+- Garage operators clone templates, adjust step requirements, and persist overrides that tailor the execution rules per branch.
+- When a job card is generated, the execution service resolves all overrides, reserves required parts and tools, and reports progress back into audit tracking.
+
 ---
 
 ## ERD (Entity Relationship Diagram)

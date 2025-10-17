@@ -241,3 +241,8 @@ This module defines how users are created, invited, assigned roles, managed acro
 
 - [User & Role Management data flow](../../Diagrams/DataFlow/UserRoleManagement.md) — shows invitation, approval, MFA, and session governance across the identity services.
 
+#### Data Flow Highlights
+- Admin-initiated invitations and self-registration requests converge on the user directory service, which coordinates outbound communications.
+- Authentication APIs create user records, enforce MFA enrolment, and establish session state backed by the session store.
+- Administrative overrides—such as role changes, forced logouts, or impersonation—propagate to the directory and session store and emit both notifications and audit trails.
+

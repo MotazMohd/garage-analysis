@@ -12,6 +12,9 @@ A SaaS garage system tailored for the Middle East to help garage owners manage:
 
 Includes role-based access, training tracking, and inter-garage collaboration. Supports multiple countries and languages.
 
+### Visual Overview
+- [System data flow](../Diagrams/DataFlow/SystemOverview.md) — illustrates how the primary modules described in this context share data across the SaaS platform.
+
 ---
 
 ## 👥 Target Users & Portals

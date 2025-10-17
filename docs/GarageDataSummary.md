@@ -28,6 +28,9 @@
 - Suspension and archiving are managed by the SaaS Admin.
 - Audit trail stored for all actions.
 
+### Visual Reference
+- [Garage & Branch Management data flow](../Diagrams/DataFlow/GarageBranchManagement.md) — end-to-end view of onboarding, approval, branch inheritance, and audit logging.
+
 ## Branch Management & Inheritance
 | Field | Inherited from Garage | Editable Per Branch |
 |---|---|---|
