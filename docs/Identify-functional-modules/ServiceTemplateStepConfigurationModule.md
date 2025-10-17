@@ -157,6 +157,7 @@ Stock and sharing logic is managed centrally in the inventory module but integra
 
 - [Service template configuration data flow](../../Diagrams/DataFlow/ServiceTemplateConfiguration.md) — outlines how master templates, garage overrides, and job generation exchange data.
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/ServiceTemplateConfiguration-Level1.md) — details authoring, localization, resource binding, execution orchestration, and exception handling phases.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/ServiceTemplateConfiguration-Level2.md) — clarifies authoring, versioning, garage-level overrides, resource binding, and publishing into the job engine.
 
 #### Data Flow Highlights
 - **Template authoring:** SaaS administrators curate the global catalogue, persisting master metadata and default step definitions for downstream tenants.

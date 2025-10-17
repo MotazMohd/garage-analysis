@@ -136,6 +136,7 @@ Parallel and sequential steps are both supported.
 
 - [Job card execution data flow](../../Diagrams/DataFlow/JobCardExecution.md) — maps technician updates, exception handling, and customer notifications throughout the lifecycle.
 - [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/JobCardExecution-Level1.md) — details step allocation, execution telemetry, exception routing, QA inspection, customer communications, and closure activities.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/JobCardExecution-Level2.md) — illustrates technician execution, resource usage, exception routing, QA approval, and billing hand-off steps.
 
 #### Data Flow Highlights
 - **Work allocation:** Job card services distribute steps to technicians and assistants, who submit progress updates through the execution API.

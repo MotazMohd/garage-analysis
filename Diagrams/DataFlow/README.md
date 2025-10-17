@@ -28,6 +28,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level1/AppointmentCheckIn-Level1.md`](Level1/AppointmentCheckIn-Level1.md) | Intake workflow | Expands arrival into booking retrieval, intake capture, service confirmation, job card creation, and scheduling updates. |
 | [`Level1/JobCardExecution-Level1.md`](Level1/JobCardExecution-Level1.md) | Workshop execution | Shows step allocation, telemetry capture, exception routing, QA inspection, customer communications, and closure tasks. |
 
+### Level 2 Decompositions
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level2/SystemOverview-Level2.md`](Level2/SystemOverview-Level2.md) | Customer-to-billing journey | Follows booking creation through garage assignment, check-in, job orchestration, and billing notifications across shared stores. |
+| [`Level2/GarageBranchManagement-Level2.md`](Level2/GarageBranchManagement-Level2.md) | Onboarding & governance | Details application intake, compliance review, branch configuration, staff visibility, and lifecycle updates with audit trails. |
+| [`Level2/UserRoleManagement-Level2.md`](Level2/UserRoleManagement-Level2.md) | Identity lifecycle | Tracks invitations, MFA enrolment, role assignment, session control, and impersonation alerts tied to the identity directory. |
+| [`Level2/ServiceTemplateConfiguration-Level2.md`](Level2/ServiceTemplateConfiguration-Level2.md) | Template localisation | Shows authoring, versioning, garage overrides, resource binding, and publishing into the job execution engine. |
+| [`Level2/SparePartsManagement-Level2.md`](Level2/SparePartsManagement-Level2.md) | Supply-to-consumption | Maps supplier feeds, garage imports, stock usage, reservations, and replenishment triggers. |
+| [`Level2/ToolsManagement-Level2.md`](Level2/ToolsManagement-Level2.md) | Availability & maintenance | Illustrates tool curation, garage imports, scheduling, technician checkout, and maintenance logging. |
+| [`Level2/AppointmentCheckIn-Level2.md`](Level2/AppointmentCheckIn-Level2.md) | Intake & handover | Captures appointment lookup, digital intake, evidence storage, job card creation, and notification updates. |
+| [`Level2/JobCardExecution-Level2.md`](Level2/JobCardExecution-Level2.md) | Workshop progress | Depicts assignment, resource consumption, exception routing, QA approval, and billing hand-off. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.
