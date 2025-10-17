@@ -15,6 +15,11 @@ flowchart LR
         SupportDesk[Support Ticketing System]
         ThreatIntel[Threat Intelligence Feed]
         AuditFirm[Third-Party Audit Reports]
+        MobileApp[Garage Mobile App]
+        IoTSensors[Connected IoT Sensors]
+        VendorPortal[Vendor Partner Portal]
+        TrainingPlatform[Training & Certification Platform]
+        HRIS[HR Information System]
     end
 
     subgraph CoreServices[Core Processes]
@@ -37,6 +42,14 @@ flowchart LR
         DRCoordinator[Disaster Recovery Coordinator]
         SecretsMgr[Secrets Management Service]
         PolicyEngine[Policy Automation Engine]
+        OrchestrationHub[Workflow Orchestration Hub]
+        ChangeMgmt[Change Management Service]
+        FraudDetect[Fraud Detection Service]
+        VendorMgmt[Vendor Management Service]
+        TrainingSvc[Training Compliance Service]
+        HRCompliance[HR Compliance Checker]
+        SupplyChain[Parts Supply Coordinator]
+        ExperienceOrch[Experience Orchestration Hub]
     end
 
     subgraph Destinations[Data Destinations]
@@ -61,6 +74,16 @@ flowchart LR
         RunbookRepo[(Runbook Repository)]
         PolicyRegistry[(Policy Registry)]
         KeyVault[(Key Vault)]
+        MobileSync[(Mobile Sync Service)]
+        VendorLedger[(Vendor Settlement Ledger)]
+        TrainingArchive[(Training Records Archive)]
+        FraudCaseQueue[(Fraud Case Queue)]
+        LegalHold[(Legal Hold Vault)]
+        DataLake[(Enterprise Data Lake)]
+        JourneyAnalytics[(Journey Analytics Workspace)]
+        HRRecords[(HR Compliance Records)]
+        PartsInventory[(Parts Inventory System)]
+        KnowledgeBase[(Operational Knowledge Base)]
     end
 
     GA -->|Authenticate| IdP
@@ -75,6 +98,12 @@ flowchart LR
     SupportDesk -->|Escalate operational issues| IncidentResponse
     ThreatIntel -->|Share threat indicators| SecurityOps
     AuditFirm -->|Deliver attestation findings| Compliance
+    MobileApp -->|Authenticate & sync tasks| IdP
+    MobileApp -->|Capture onsite updates| MobileSync
+    IoTSensors -->|Transmit equipment diagnostics| Monitoring
+    VendorPortal -->|Submit partner onboarding data| VendorMgmt
+    TrainingPlatform -->|Share certification results| TrainingSvc
+    HRIS -->|Supply staffing roster & compliance status| HRCompliance
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -153,12 +182,39 @@ flowchart LR
     AccessCtrl -->|Retrieve scoped secrets| KeyVault
     SecurityOps -->|Review key usage| KeyVault
     SIEM -->|Dispatch incidents| IncidentResponse
+    GMS -->|Sync branch actions to field staff| MobileSync
+    MobileSync -->|Surface tasks to mobile app| MobileApp
+    VendorMgmt -->|Validate vendor credentials| Compliance
+    VendorMgmt -->|Coordinate onboarding| OrchestrationHub
+    VendorMgmt -->|Record settlements| VendorLedger
+    OrchestrationHub -->|Distribute workflow updates| ChangeMgmt
+    ChangeMgmt -->|Notify stakeholders| Notify
+    ChangeMgmt -->|Archive approvals| KnowledgeBase
+    TrainingSvc -->|Flag expired certifications| Compliance
+    TrainingSvc -->|Persist training proofs| TrainingArchive
+    HRCompliance -->|Enforce access constraints| AccessCtrl
+    HRCompliance -->|Archive attestations| HRRecords
+    SupplyChain -->|Track inventory consumption| PartsInventory
+    SupplyChain -->|Alert shortages| Monitoring
+    SupplyChain -->|Sync vendor updates| VendorMgmt
+    FraudDetect -->|Score anomalous activity| Monitoring
+    FraudDetect -->|Open fraud cases| FraudCaseQueue
+    PolicyEngine -->|Place records on hold| LegalHold
+    Compliance -->|Escalate legal hold requests| LegalHold
+    Lifecycle -->|Publish longitudinal dataset| DataLake
+    AnalyticsHub -->|Feed multi-channel journeys| JourneyAnalytics
+    ExperienceOrch -->|Curate proactive outreach| Notify
+    ExperienceOrch -->|Aggregate journey signals| JourneyAnalytics
+    QAEngine -->|Share insights for experience orchestration| ExperienceOrch
+    Monitoring -->|Provide telemetry snapshots| ExperienceOrch
+    IncidentResponse -->|Update procedural knowledge| KnowledgeBase
+    QAEngine -->|Surface best practices| KnowledgeBase
 
     classDef source fill:#eff6ff,stroke:#1d4ed8,stroke-width:1px,color:#1f2937;
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase destination;
 ```

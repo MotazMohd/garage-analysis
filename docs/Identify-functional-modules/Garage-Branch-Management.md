@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, and resilience touchpoints so stakeholders can see how incidents, policy updates, and recovery drills intersect with day-to-day garage and branch operations.
+The latest revision folds in support, security, resilience, and field execution touchpoints so stakeholders can see how incidents, policy updates, vendor onboarding, and frontline tasking intersect with day-to-day garage and branch operations.
 
 **Key actors captured in the diagram**
 
@@ -23,6 +23,11 @@ The latest revision folds in support, security, and resilience touchpoints so st
 - `Support Ticketing System`: captures break/fix reports from support agents so production issues can be routed alongside QA findings.
 - `Threat Intelligence Feed`: streams vulnerability and indicator updates that shape the security response posture for the module.
 - `Third-Party Audit Reports`: supplies external compliance attestations and exceptions that trigger internal remediation.
+- `Garage Mobile App`: captures onsite updates from field managers while keeping branch tasks synchronized in real time.
+- `Connected IoT Sensors`: surface equipment diagnostics that feed proactive maintenance, risk scoring, and monitoring alerts.
+- `Vendor Partner Portal`: centralizes third-party onboarding, credential submission, and integration details.
+- `Training & Certification Platform`: reports course completions and expirations so compliance teams can enforce credential guardrails.
+- `HR Information System`: streams staffing rosters and employment status to anchor access provisioning and compliance checks.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -44,6 +49,14 @@ The latest revision folds in support, security, and resilience touchpoints so st
 - `Disaster Recovery Coordinator`: maintains replicated environments and orchestrates failover readiness signals.
 - `Secrets Management Service`: rotates credentials and enforces privileged access guardrails for garage and branch tooling.
 - `Policy Automation Engine`: distributes updated governance, retention, and access policies based on compliance findings.
+- `Workflow Orchestration Hub`: coordinates cross-team automations spanning compliance, vendor onboarding, and field tasking.
+- `Change Management Service`: packages release notes and approvals for operational rollouts tied to garage or branch updates.
+- `Fraud Detection Service`: analyzes behavioral and transactional telemetry to flag anomalous activity for investigation.
+- `Vendor Management Service`: validates partner credentials, orchestrates approvals, and syncs settlement data.
+- `Training Compliance Service`: reconciles training results with policy requirements, flagging expired certifications for follow-up.
+- `HR Compliance Checker`: enforces role-based access based on staffing status and stores attestation history.
+- `Parts Supply Coordinator`: tracks parts consumption, supplier updates, and inventory signals relevant to branch operations.
+- `Experience Orchestration Hub`: blends telemetry, feedback, and predictive insights to trigger proactive outreach to garages and partners.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -66,6 +79,16 @@ The latest revision folds in support, security, and resilience touchpoints so st
 - `Runbook Repository`: stores vetted procedures for support, compliance, and security teams to execute consistent responses.
 - `Policy Registry`: authoritative source of the currently enforced governance rules and workflow automation scripts.
 - `Key Vault`: hardened storage for rotated secrets that back garage management and access control integrations.
+- `Mobile Sync Service`: relays workflow assignments and status changes to mobile devices used by field staff.
+- `Vendor Settlement Ledger`: reconciles onboarding incentives, rebates, and payouts for approved vendors.
+- `Training Records Archive`: retains immutable proof of completions and expirations for regulatory audits.
+- `Fraud Case Queue`: central system for investigators to manage escalated anomalies and resolution progress.
+- `Legal Hold Vault`: freezes impacted records whenever compliance or legal teams initiate preservation orders.
+- `Enterprise Data Lake`: hosts longitudinal datasets for advanced analytics beyond the curated warehouse feeds.
+- `Journey Analytics Workspace`: aggregates multi-channel signals that inform proactive experience programs.
+- `HR Compliance Records`: maintains access attestations and employment-linked authorization evidence.
+- `Parts Inventory System`: tracks fulfillment status, shortages, and replenishment orders tied to branch requests.
+- `Operational Knowledge Base`: stores playbooks, release notes, and remediation learnings sourced from change and incident workflows.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -79,6 +102,12 @@ The latest revision folds in support, security, and resilience touchpoints so st
 - `Site Reliability & Platform`: oversees disaster recovery drills, failover readiness, and infrastructure health across garages and branches.
 - `Support Operations`: triages inbound tickets and validates that automation and runbooks resolve frontline issues quickly.
 - `Data Science & Analytics`: iterates on predictive models, anomaly detectors, and exploratory studies sourced from the analytics lakehouse.
+- `Field Operations`: consumes mobile sync queues to keep onsite staff aligned with approvals, remediation tasks, and change windows.
+- `Vendor Relations`: validates onboarding, ensures settlement accuracy, and coordinates supply updates flagged by the vendor management service.
+- `Learning & Development`: audits training archives to confirm certifications remain in good standing and coordinates remediation plans.
+- `HR Compliance`: reviews attestation evidence and enforces employment-linked access controls in partnership with identity teams.
+- `Supply Chain`: monitors parts inventory posture, shortage alerts, and vendor escalations linked to branch performance.
+- `Customer Journey Team`: reviews journey analytics outputs to craft proactive communications surfaced by the experience orchestration hub.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -95,6 +124,7 @@ The latest revision folds in support, security, and resilience touchpoints so st
 | Insight, Retention & Compliance Reporting | Lifecycle events and flagged documents fuel manual review, analytics, and archival. | Document Verification → Compliance Reporter & Retention Service → Compliance Queue / Reporting Warehouse / Cold Archive |
 | Experience, Billing & Governance Oversight | Feedback, telemetry, and reconciliation routines drive continuous improvement and policy alignment. | Monitoring / Feedback Portal → Quality Assurance Engine → Compliance Reporter / Customer Feedback DB; Garage & Branch Services → Billing Reconciliation → Billing Ledger; Audit Event Bus → Data Governance Manager → Data Catalog |
 | Resilience, Security & Support Coordination | Threat intel, incident command, and recovery drills protect uptime while enforcing refreshed policies. | Threat Intelligence Feed → Security Operations Center → SIEM / Key Vault; Support Ticketing System → Incident Response Orchestrator → Support Ticket Queue / Runbook Repository; Garage & Branch Services → Disaster Recovery Coordinator → Disaster Recovery Site |
+| Field Execution, Vendors & Change Enablement | Vendor onboarding, mobile tasking, and training compliance stay synchronized with policy, fraud, and supply chain guardrails. | Vendor Portal → Vendor Management Service → Workflow Orchestration Hub / Vendor Settlement Ledger; Garage Mobile App ↔ Mobile Sync Service ↔ Garage Management Service; Training Platform → Training Compliance Service → Compliance Reporter / Training Records Archive; Parts Supply Coordinator → Monitoring / Parts Inventory System; Fraud Detection Service → Monitoring / Fraud Case Queue |
 
 ---
 
