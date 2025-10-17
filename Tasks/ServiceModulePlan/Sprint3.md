@@ -1,109 +1,42 @@
+# 🎨 Sprint 3 — Customer Experience & Booking UX
 
-# 🎨 Sprint 3: Customer Logic + UX Enhancements - Service Module
+## 🎯 Goal
+Ensure services surface in customer and technician journeys with the right visibility, sequencing, and upsell context while maintaining compliance controls for approval-required work.
 
-## 🎯 Sprint Goal
-Finalize the Service module by implementing customer-facing visibility flags, booking behavior, and frontend enhancements for part selection, filtering, and smart suggestions.
+## 📦 Key Deliverables
+- Visibility and booking flags controlling how services appear in portals and apps.
+- Customer-facing part selection experience that honours admin-configured rules.
+- Filtered, ordered catalogue endpoints supporting discovery by category and priority.
+- Playbooks and analytics hooks capturing how customers interact with optional and recommended items.
 
----
+## 🛠️ Major Tasks
+1. **Add visibility fields** (`IsCustomerVisible`, `CanBeBookedDirectly`, `IsAddOn`, `RequiresApproval`, `DisplayOrder`) with admin UI controls and validation.
+2. **Extend booking endpoints/UI** to render required vs optional vs locked parts, including “customer-supplied” flows, across web and mobile channels.
+3. **Surface recommended parts** within booking flows and record acceptance/decline decisions for downstream analytics.
+4. **Implement catalogue filtering & sorting** by category, search term, and display order in `/api/services` responses, with pagination for mobile clients.
+5. **Provide approval workflow hooks** by flagging services that require manager confirmation and emitting events for the notification/approval engine.
+6. **Update documentation and training** to guide garages on best practices for add-ons, hidden services, and sequencing strategies.
 
-## ✅ Tasks Breakdown with Data Model, Endpoints, Frontend, and Explanations
+## ✅ Acceptance Criteria
+- Customer catalogue shows only `IsCustomerVisible = true` services and honours `DisplayOrder`.
+- Attempting to book an approval-required service triggers workflow integration (event or API call) and blocks scheduling until resolved.
+- Optional and recommended parts render with correct defaults and persist customer selections into job cards.
+- Analytics instrumentation captures add-on adoption rates and approval turnaround metrics.
 
-### 1. Add Customer Visibility & Behavior Flags
+## 🔗 Dependencies
+- Notification/approval service must expose API to receive booking approval events.
+- Reporting module consumes analytics emitted for adoption metrics.
 
-**Data Model Additions in `Service`:**
-- `bool IsCustomerVisible`
-- `bool CanBeBookedDirectly`
-- `bool IsAddOn`
-- `bool RequiresApproval`
-- `int? DisplayOrder`
+## ⚠️ Risks & Mitigations
+- **Fragmented experience between web and mobile:** align design system components and share interaction specs with mobile team early.
+- **Over-surfacing add-ons:** include per-garage caps and copy review to keep experiences customer-friendly.
 
-**Frontend:**
-- Admin form: add toggles and dropdowns for the above fields
+## ⏱️ Estimated Effort
+| Role | Time |
+| --- | --- |
+| Frontend engineer (web) | 3 days |
+| Mobile engineer | 2 days |
+| Backend engineer | 1.5 days |
+| QA / UAT | 1.5 days |
 
-**Why:** These flags determine how services appear to the customer and in which scenarios. Some services should be hidden, others shown as add-ons, and some require manual approval.
-
----
-
-### 2. Implement Customer Part Selection Logic
-
-**Frontend Tasks:**
-- Display service parts as checkboxes:
-  - `Required` parts are selected and locked (unless `AllowCustomerProvided` is true)
-  - `Optional` parts are shown and can be toggled
-  - `Locked` parts cannot be deselected
-
-**Why:** This improves customer experience, allows choice, and reflects real garage operations like "bring your own part" or "remove optional filters".
-
----
-
-### 3. Display Recommended Parts in Booking UI
-
-**Frontend Tasks:**
-- Show recommended parts as a separate suggestion section when a service is selected
-- Allow customer to add them via checkbox
-
-**Why:** Recommended parts create upsell opportunities and improve maintenance advice during service selection.
-
----
-
-### 4. Filter Services by Category (Customer App)
-
-**Frontend Tasks:**
-- Add category filter in service listing screen
-- Use `ServiceCategory` data to group services visually or as a filter dropdown
-
-**Why:** Helps customers easily find services they need and improves usability.
-
----
-
-### 5. Sort Services by Display Order
-
-**Frontend Tasks:**
-- Sort service list using `DisplayOrder` value (if provided)
-- Fallback to default sort by `Name`
-
-**Why:** Garage admins may want to control how services appear in listings (e.g., prioritize high-value services).
-
----
-
-### 6. API Adjustments (if needed)
-
-**Endpoints:**
-- Ensure `GET /api/services` supports filtering by:
-  - `CategoryId`
-  - `IsCustomerVisible = true`
-- Ensure response includes:
-  - All visibility flags
-  - Sorted results using `DisplayOrder`
-
-**Why:** Enables the customer frontend to consume service data in a filtered, sorted, and optimized format.
-
----
-
-## 📌 Acceptance Criteria
-
-- [ ] Visibility fields are editable from the admin UI
-- [ ] Customer booking flow reflects part behavior correctly (required/optional/locked)
-- [ ] Recommended parts appear and can be added to cart
-- [ ] Services are filtered and sorted on customer app
-- [ ] Endpoints reflect visibility logic and sorting behavior
-
----
-
-## ⏱️ Estimated Time
-
-| Area | Time |
-|------|------|
-| Backend (Filters + Display logic) | 1.5 days |
-| Frontend (UX + checkboxes + filters) | 2 days |
-| QA/UAT + Testing | 0.5 day |
-
-**Total:** ~8 dev days
-
----
-
-## ✅ Sprint Outcome
-
-- Customer UI now fully reflects all logic of the service module
-- Supports optional parts, locked parts, smart suggestions, and visibility control
-- Ready for use in real-world booking scenarios and expansion into packages
+_Total: ~8 days._
