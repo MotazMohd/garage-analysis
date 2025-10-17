@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, AI governance, marketing intelligence, legal advisory, localization, partner risk analytics, scenario simulation, predictive maintenance, energy optimization, logistics automation, robotics telemetry, innovation governance, global expansion steering, customs compliance workflows, remote assist orchestration, fleet operations telemetry, and investor relations visibility so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations. The newest extension introduces franchise governance councils, tax compliance feeds, loyalty and experiential engagement loops, corporate communications alignment, industry benchmarking signals, smart building telemetry, emergency coordination, capital project oversight, and digital signage orchestration to keep strategic programs synchronized with operational reality.
+The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, AI governance, marketing intelligence, legal advisory, localization, partner risk analytics, scenario simulation, predictive maintenance, energy optimization, logistics automation, robotics telemetry, innovation governance, global expansion steering, customs compliance workflows, remote assist orchestration, fleet operations telemetry, and investor relations visibility so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations. The newest extension introduces franchise governance councils, tax compliance feeds, loyalty and experiential engagement loops, corporate communications alignment, industry benchmarking signals, smart building telemetry, emergency coordination, capital project oversight, and digital signage orchestration to keep strategic programs synchronized with operational reality. The latest continuation layers in subscription orchestration, dealer collaboration, EV charging coordination, cybersecurity research, employee wellness listening, digital identity brokerage, circular economy planning, and experience lab experimentation so leadership can trace how emerging programs feed policy, consent, and innovation pipelines.
 
 **Key actors captured in the diagram**
 
@@ -38,6 +38,16 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Field Inspection Reports`: capture on-site audits, safety findings, and remediation notes submitted by inspectors.
 - `Regulator Collaboration Portal`: publishes formal guidance, inquiry requests, and certification updates from regulators.
 - `Data Science Workbench`: shares model experiments, data quality findings, and operational ML needs discovered by analysts.
+- `Dealer Network Collaboration Hub`: distributes partner-driven programs, incentives, and operational feedback that need to be
+  coordinated with branch provisioning and enablement.
+- `Subscription Enrollment Portal`: captures membership preferences, tier selections, and add-on requests that fuel subscription
+  orchestration workflows.
+- `EV Charging Network`: streams charger availability, utilization, and outage signals that guide facility planning and field
+  maintenance.
+- `Cyber Security Lab`: surfaces deep-dive threat research, red-team findings, and exploit intelligence that tune proactive
+  defenses.
+- `Employee Feedback Platform`: collects pulse surveys, wellbeing trends, and anonymous feedback that help HR and compliance
+  teams respond quickly.
 - `Procurement Management Suite`: broadcasts sourcing events, contract updates, and purchase requisitions tied to branch supply.
 - `Marketing Automation Platform`: pushes campaign performance, targeting updates, and nurture results that inform outreach and engagement flows.
 - `Legal Advisory Portal`: provides legal interpretations, precedent, and regulatory clarifications for compliance and governance teams.
@@ -148,6 +158,15 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Emergency Response Bridge`: synchronizes emergency advisories, coordinates playbooks, and dispatches critical alerts.
 - `Capital Projects Office`: oversees long-horizon investments, aligns budgets, and coordinates procurement and facilities updates.
 - `Digital Experience Manager`: governs digital signage, experiential content rotations, and cross-channel alignment with engagement teams.
+- `Subscription Orchestration Service`: manages membership lifecycles, coordinates billing, and synchronizes subscription entitlements across downstream platforms.
+- `Dealer Engagement Manager`: collaborates with partner dealers on enablement, incentives, and fulfillment alignment tied to branch execution.
+- `Charging Coordination Hub`: harmonizes EV charging schedules, load balancing, and maintenance coordination across facilities.
+- `Security Research Operations`: operationalizes deep security research, funnels findings into detection rules, and informs policy updates.
+- `Employee Wellness Desk`: triages wellbeing signals, coordinates HR/compliance follow-up, and protects employee privacy evidence.
+- `Digital Identity Broker`: federates identity proofs, consent artifacts, and access relationships across partner systems.
+- `Circular Economy Planner`: designs reuse, refurbishment, and recycling loops while reporting sustainability progress.
+- `Knowledge Operations Desk`: curates cross-functional knowledge, briefs stakeholders, and connects experiments to enablement materials.
+- `Experience Lab Orchestrator`: runs journey prototypes, captures experimental data, and feeds learnings back into production orchestration.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -231,6 +250,13 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Emergency Notification Hub`: centralized broadcast history and acknowledgements for emergency communications.
 - `Capital Projects Ledger`: financial and milestone ledger for capital investment portfolios and retrofit programs.
 - `Digital Signage Network`: monitoring hub for signage deployments, content compliance, and device health.
+- `Subscription Ledger`: authoritative ledger for recurring membership charges, renewals, and adjustments managed by subscription orchestration.
+- `Dealer Collaboration Archive`: historical record of dealer initiatives, enablement decisions, and incentive agreements.
+- `Charging Network Operations Console`: telemetry and operational command center for EV charging infrastructure and maintenance.
+- `Employee Wellness Vault`: privacy-compliant repository for wellbeing program records, escalations, and follow-through evidence.
+- `Circularity Registry`: tracks reuse, refurbishment, and recycling outcomes tied to sustainability reporting.
+- `Security Research Archive`: catalog of advanced threat briefings, mitigation guidance, and policy follow-ups.
+- `Experience Lab Workspace`: shared environment for storing prototypes, experiment telemetry, and playbooks ready for production rollout.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -280,6 +306,13 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Fleet Operations Command`: monitors telematics dashboards, resolves routing conflicts, and tracks maintenance readiness.
 - `Remote Support Leadership`: oversees remote assist utilization, quality outcomes, and knowledge capture across AR sessions.
 - `Investor Relations & Communications`: synchronizes investor messaging, commitments, and regulatory disclosures with treasury and legal stakeholders.
+- `Dealer Collaboration Office`: steers dealer programs, confirms incentive execution, and feeds cross-partner improvements back to enablement and finance.
+- `Subscription Strategy & Pricing`: validates ledger entries, monitors churn signals, and adjusts offerings alongside finance and loyalty teams.
+- `Employee Wellness & Safety`: reviews wellbeing escalations, privacy safeguards, and follow-through evidence from HR and compliance.
+- `Cyber Defense Research Council`: evaluates security research briefs, prioritizes mitigations, and coordinates policy updates.
+- `Digital Identity Governance Board`: confirms brokered identity proofs, consent coverage, and access agreements remain compliant.
+- `Circular Economy Council`: monitors circularity metrics, coordinates reuse initiatives, and ensures ESG attestations reflect reality.
+- `Experience Lab Council`: vets experiment agendas, reviews prototype outcomes, and greenlights production rollouts.
 - `Workforce Planning Office`: validates staffing plans, labor compliance, and mobile tasking readiness.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
@@ -304,6 +337,7 @@ The latest revision folds in support, security, resilience, field execution, sus
 | Community, Marketing & Ethical Stewardship | Community signals, marketing insights, legal counsel, partner risk analytics, localization, and ethical oversight fine-tune engagement while reinforcing governance. | Community Feedback Forums → Journey Mapping Studio / Customer Success Desk → Community Engagement Hub; Marketing Automation Platform → Marketing Insights Engine → Engagement Orchestration Hub / Marketing Intelligence Mart; Legal Advisory Portal → Legal Counsel Desk → Compliance Reporter / Legal Advisory Archive / Regulatory Reporting Gateway; Partner Risk Exchange → Partner Risk Evaluator → Risk Scoring Engine / Partner Risk Register / Compliance Reporter; Localization Management Service → Experience Orchestration Hub → Localization Repository; Ethics Review Board → AI & ML Operations / Policy Automation Engine → Ethics Decisions Ledger; Operational Simulation Engine → Business Continuity Planner / Disaster Recovery Coordinator → Simulation Scenario Library |
 | Global Expansion, Customs & Remote Coordination | Cross-border programs align licensing, customs filings, fleet telemetry, remote assist, investor messaging, and staffing plans to smooth new market launches. | Global Trade Registry → Global Expansion Program → Trade Compliance Vault / Localization Management Service / Knowledge Base; Customs Broker Portal → Customs Compliance Desk → Customs Filing Center / Logistics Control Tower / Treasury Settlement Service; Fleet Telematics Network → Fleet Operations Control → Predictive Maintenance Orchestrator / Fleet Operations Dashboard / Facilities Maintenance Coordinator; Remote AR Support Platform → Remote Assist Orchestrator → Remote Assist Console / Quality Assurance Engine / Knowledge Base; Investor Relations Feed → Investor Relations Desk → Treasury Settlement Service / Legal Counsel Desk / Investor Relations Workspace / Notification Service; Workforce Management Platform → Workforce Planning Engine → Mobile Sync Service / Workforce Schedule Hub / HR Compliance Checker |
 | Franchise Governance, Tax & Engagement Expansion | Franchise councils, tax rule monitoring, loyalty insights, events, communications, benchmarks, smart facilities, emergency readiness, capital investments, and digital signage all loop into compliance, finance, and experience orchestration. | Franchise Council Portal → Franchise Alignment Council → Franchise Governance Library / Compliance Reporter / Knowledge Enablement Studio; Government Tax Authority Feed → Tax Compliance Engine → Regulatory Reporting Gateway / Tax Filing Vault / Treasury Settlement Service; Customer Loyalty Platform → Loyalty Engagement Service → Experience Orchestration Hub / Marketing Insights Engine / Loyalty Insights Warehouse; Event Management System → Event Coordination Service → Facilities Maintenance Coordinator / Corporate Communications Desk / Event Playbook Repository; Smart Building Management System → Smart Facilities Orchestrator → Facilities Maintenance Coordinator / Energy Optimization Engine / Smart Building Console; Emergency Alert Network → Emergency Response Bridge → Business Continuity Planner / Mobile Sync Service / Emergency Notification Hub; Capital Projects Tracker → Capital Projects Office → Procurement Coordination Hub / Treasury Settlement Service / Capital Projects Ledger; Digital Signage Controller → Digital Experience Manager → Engagement Orchestration Hub / Digital Signage Network |
+| Subscriptions, Dealer Alignment & Circularity Innovation | Subscription intents, dealer programs, EV charging telemetry, research, wellness, digital identity, circularity, and experimentation loops flow into billing, compliance, and enablement to extend lifecycle accountability. | Subscription Enrollment Portal → Subscription Orchestration Service → Billing Reconciliation / Subscription Ledger / Loyalty Engagement Service / Experience Orchestration Hub; Dealer Network Collaboration Hub → Dealer Engagement Manager → Treasury Settlement Service / Enablement Studio / Dealer Collaboration Archive / Analytics & ML Hub; EV Charging Network → Charging Coordination Hub → Energy Optimization Engine / Facilities Maintenance Coordinator / Charging Network Operations Console / Predictive Maintenance Orchestrator; Cyber Security Lab → Security Research Operations → Security Operations Center / Policy Automation Engine / Security Research Archive; Employee Feedback Platform → Employee Wellness Desk → HR Compliance Checker / Privacy & Consent Service / Analytics & ML Hub / Employee Wellness Vault; Digital Identity Broker → Access Control Service / Data Governance Manager / Consent & Preference Vault; Circular Economy Planner → Supply Chain / Environmental Compliance Service / Circularity Registry / Analytics & ML Hub; Digital Twin Service & Innovation Portfolio Manager → Experience Lab Orchestrator → Experience Orchestration Hub / Experience Lab Workspace / Operational Knowledge Base |
 
 ---
 

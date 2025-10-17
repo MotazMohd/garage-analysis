@@ -62,6 +62,11 @@ flowchart LR
         EmergencyAlertNetwork[Emergency Alert Network]
         CapitalProjectsTracker[Capital Projects Tracker]
         DigitalSignageController[Digital Signage Controller]
+        DealerNetwork[Dealer Network Collaboration Hub]
+        SubscriptionPortal[Subscription Enrollment Portal]
+        EVChargingNetwork[EV Charging Network]
+        CyberSecurityLab[Cyber Security Lab]
+        EmployeeFeedback[Employee Feedback Platform]
     end
 
     subgraph CoreServices[Core Processes]
@@ -141,6 +146,15 @@ flowchart LR
         EmergencyBridge[Emergency Response Bridge]
         CapitalProjectsOffice[Capital Projects Office]
         DigitalExperienceMgr[Digital Experience Manager]
+        SubscriptionOrchestrator[Subscription Orchestration Service]
+        DealerEngagement[Dealer Engagement Manager]
+        ChargingOrchestrator[Charging Coordination Hub]
+        SecurityResearchOps[Security Research Operations]
+        EmployeeWellnessDesk[Employee Wellness Desk]
+        DigitalIdentityBroker[Digital Identity Broker]
+        CircularEconomyPlanner[Circular Economy Planner]
+        KnowledgeOps[Knowledge Operations Desk]
+        ExperienceLabOrchestrator[Experience Lab Orchestrator]
     end
 
     subgraph Destinations[Data Destinations]
@@ -226,6 +240,13 @@ flowchart LR
         EmergencyHub[(Emergency Notification Hub)]
         CapitalProjectsLedger[(Capital Projects Ledger)]
         DigitalSignageNetwork[(Digital Signage Network)]
+        SubscriptionLedger[(Subscription Ledger)]
+        DealerCollabArchive[(Dealer Collaboration Archive)]
+        ChargingNetworkOps[(Charging Network Operations Console)]
+        WellnessVault[(Employee Wellness Vault)]
+        CircularityRegistry[(Circularity Registry)]
+        SecurityResearchArchive[(Security Research Archive)]
+        ExperienceLabWorkspace[(Experience Lab Workspace)]
     end
 
     GA -->|Authenticate| IdP
@@ -280,6 +301,14 @@ flowchart LR
     AccessibilityTesting -->|Deliver accessibility findings| AccessibilitySvc
     CommunityForums -->|Surface community insights| JourneyStudio
     CommunityForums -->|Raise experience feedback| CustomerSuccess
+    DealerNetwork -->|Share dealer programs| DealerEngagement
+    DealerNetwork -->|Coordinate best practices| KnowledgeOps
+    SubscriptionPortal -->|Send subscription intents| SubscriptionOrchestrator
+    SubscriptionPortal -->|Transmit billing preferences| TreasuryOps
+    EVChargingNetwork -->|Provide charging utilization| ChargingOrchestrator
+    CyberSecurityLab -->|Share research findings| SecurityResearchOps
+    CyberSecurityLab -->|Report emerging threats| SecurityOps
+    EmployeeFeedback -->|Submit wellbeing insights| EmployeeWellnessDesk
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -544,6 +573,7 @@ flowchart LR
     WarrantyProcessor -->|Coordinate coverage| InsuranceClaims
     WarrantyProcessor -->|Record decisions| WarrantyLedger
     WarrantyProcessor -->|Notify treasury exceptions| TreasuryOps
+    WarrantyProcessor -->|Inform subscription adjustments| SubscriptionOrchestrator
     EnergyOptimizer -->|Coordinate load| FacilitiesCoord
     EnergyOptimizer -->|Publish efficiency metrics| EnergyDashboard
     EnergyOptimizer -->|Alert anomalies| Monitoring
@@ -551,6 +581,7 @@ flowchart LR
     LogisticsHub -->|Update inventory| PartsInventory
     LogisticsHub -->|Log routing status| LogisticsControlCenter
     LogisticsHub -->|Sync vendors| VendorMgmt
+    LogisticsHub -->|Feed dealer fulfillment| DealerEngagement
     RoboticsCoordinator -->|Orchestrate automation| FacilitiesCoord
     RoboticsCoordinator -->|Log operations| RoboticsOpsBoard
     RoboticsCoordinator -->|Feed status| Monitoring
@@ -558,9 +589,11 @@ flowchart LR
     DigitalTwinService -->|Sync insights| AnalyticsHub
     DigitalTwinService -->|Archive twins| DigitalTwinLibrary
     DigitalTwinService -->|Loop feedback| PredictiveMaintenance
+    DigitalTwinService -->|Power experience prototypes| ExperienceLabOrchestrator
     InnovationLab -->|Share lessons| KnowledgeBase
     InnovationLab -->|Track backlog| InnovationBacklog
     InnovationLab -->|Seed graph context| KnowledgeGraph
+    InnovationLab -->|Surface pilots for experience lab| ExperienceLabOrchestrator
     LegalCounsel -->|File legal interpretations| LegalArchive
     CustomerSuccess -->|Channel community outcomes| CommunityHub
     IncidentResponse -->|Update procedural knowledge| KnowledgeBase
@@ -570,11 +603,46 @@ flowchart LR
     DataMasking -->|Generate anonymized samples| SyntheticVault
     DataMasking -->|Share safe datasets| AnalyticsHub
     DataMasking -->|Publish privacy attestations| PrivacyService
+    DataMasking -->|Provide anonymized wellness datasets| EmployeeWellnessDesk
     AIMLOps -->|Coordinate retraining| QAEngine
     AIMLOps -->|Alert governance| DataGov
+    AIMLOps -->|Feed experiment backlog| ExperienceLabOrchestrator
     AccessibilitySvc -->|Review digital assets| ExperienceOrch
     AccessibilitySvc -->|Log compliance reports| AccessibilityArchive
     AccessibilitySvc -->|Flag remediation tasks| ChangeMgmt
+    EmployeeWellnessDesk -->|Coordinate assistance| CustomerSuccess
+    EmployeeWellnessDesk -->|Log wellness programs| WellnessVault
+    EmployeeWellnessDesk -->|Share anonymized trends| AnalyticsHub
+    EmployeeWellnessDesk -->|Escalate urgent cases| HRCompliance
+    EmployeeWellnessDesk -->|Inform consent proofing| PrivacyService
+    DealerEngagement -->|Align partner incentives| TreasuryOps
+    DealerEngagement -->|Archive dealer decisions| DealerCollabArchive
+    DealerEngagement -->|Sync enablement needs| EnablementStudio
+    DealerEngagement -->|Publish dealer signals| AnalyticsHub
+    SubscriptionOrchestrator -->|Activate subscription tiers| ExperienceOrch
+    SubscriptionOrchestrator -->|Bill subscriptions| BillingRecon
+    SubscriptionOrchestrator -->|Persist ledger entries| SubscriptionLedger
+    SubscriptionOrchestrator -->|Notify loyalty updates| LoyaltyService
+    ChargingOrchestrator -->|Coordinate load balancing| EnergyOptimizer
+    ChargingOrchestrator -->|Dispatch charging maintenance| FacilitiesCoord
+    ChargingOrchestrator -->|Archive charging telemetry| ChargingNetworkOps
+    ChargingOrchestrator -->|Alert predictive maintenance| PredictiveMaintenance
+    SecurityResearchOps -->|Publish intelligence| SecurityOps
+    SecurityResearchOps -->|Archive threat briefs| SecurityResearchArchive
+    SecurityResearchOps -->|Inform policy updates| PolicyEngine
+    DigitalIdentityBroker -->|Broker cross-tenant credentials| AccessCtrl
+    DigitalIdentityBroker -->|Sync identity proofs| DataGov
+    DigitalIdentityBroker -->|Store verification evidence| ConsentVault
+    CircularEconomyPlanner -->|Plan refurbishment loops| SupplyChain
+    CircularEconomyPlanner -->|Log circularity metrics| CircularityRegistry
+    CircularEconomyPlanner -->|Coordinate ESG attestations| EnvCompliance
+    CircularEconomyPlanner -->|Surface reuse insights| AnalyticsHub
+    KnowledgeOps -->|Curate knowledge assets| KnowledgeBase
+    KnowledgeOps -->|Publish enablement briefs| EnablementLibrary
+    KnowledgeOps -->|Share insights with experience lab| ExperienceLabWorkspace
+    ExperienceLabOrchestrator -->|Prototype new journeys| ExperienceOrch
+    ExperienceLabOrchestrator -->|Capture experiment results| ExperienceLabWorkspace
+    ExperienceLabOrchestrator -->|Share learnings| KnowledgeBase
     BusinessContinuity -->|Curate continuity playbooks| ContinuityVault
     BusinessContinuity -->|Coordinate with DR plans| DRCoordinator
     BusinessContinuity -->|Share readiness status| Monitoring
@@ -584,7 +652,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler,FranchiseCouncilPortal,TaxAuthorityFeed,PartnerMarketingExchange,LoyaltyPlatform,EventMgmtSystem,ELearningAcademy,CorpCommsHub,BenchmarkFeed,SmartBuildingSystem,EmergencyAlertNetwork,CapitalProjectsTracker,DigitalSignageController source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner,FranchiseCouncil,TaxComplianceEngine,CoMarketingHub,LoyaltyService,EventCoordination,EnablementStudio,CorpCommsDesk,BenchmarkEngine,SmartFacilitiesOrchestrator,EmergencyBridge,CapitalProjectsOffice,DigitalExperienceMgr process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub,FranchiseGovernanceLibrary,TaxFilingVault,CoMarketingArchive,LoyaltyWarehouse,EventPlaybookRepo,EnablementLibrary,CorpCommsArchive,BenchmarkDashboard,SmartBuildingConsole,EmergencyHub,CapitalProjectsLedger,DigitalSignageNetwork destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler,FranchiseCouncilPortal,TaxAuthorityFeed,PartnerMarketingExchange,LoyaltyPlatform,EventMgmtSystem,ELearningAcademy,CorpCommsHub,BenchmarkFeed,SmartBuildingSystem,EmergencyAlertNetwork,CapitalProjectsTracker,DigitalSignageController,DealerNetwork,SubscriptionPortal,EVChargingNetwork,CyberSecurityLab,EmployeeFeedback source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner,FranchiseCouncil,TaxComplianceEngine,CoMarketingHub,LoyaltyService,EventCoordination,EnablementStudio,CorpCommsDesk,BenchmarkEngine,SmartFacilitiesOrchestrator,EmergencyBridge,CapitalProjectsOffice,DigitalExperienceMgr,SubscriptionOrchestrator,DealerEngagement,ChargingOrchestrator,SecurityResearchOps,EmployeeWellnessDesk,DigitalIdentityBroker,CircularEconomyPlanner,KnowledgeOps,ExperienceLabOrchestrator process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub,FranchiseGovernanceLibrary,TaxFilingVault,CoMarketingArchive,LoyaltyWarehouse,EventPlaybookRepo,EnablementLibrary,CorpCommsArchive,BenchmarkDashboard,SmartBuildingConsole,EmergencyHub,CapitalProjectsLedger,DigitalSignageNetwork,SubscriptionLedger,DealerCollabArchive,ChargingNetworkOps,WellnessVault,CircularityRegistry,SecurityResearchArchive,ExperienceLabWorkspace destination;
 ```
