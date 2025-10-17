@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, and AI governance so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations.
+The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, AI governance, marketing intelligence, legal advisory, localization, partner risk analytics, and scenario simulation so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations.
 
 **Key actors captured in the diagram**
 
@@ -39,6 +39,12 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Regulator Collaboration Portal`: publishes formal guidance, inquiry requests, and certification updates from regulators.
 - `Data Science Workbench`: shares model experiments, data quality findings, and operational ML needs discovered by analysts.
 - `Procurement Management Suite`: broadcasts sourcing events, contract updates, and purchase requisitions tied to branch supply.
+- `Marketing Automation Platform`: pushes campaign performance, targeting updates, and nurture results that inform outreach and engagement flows.
+- `Legal Advisory Portal`: provides legal interpretations, precedent, and regulatory clarifications for compliance and governance teams.
+- `IT Service Catalog`: enumerates planned changes, dependencies, and service ownership needed to coordinate safe releases.
+- `Partner Risk Exchange`: shares external partner posture, risk ratings, and mitigation notices for onboarding and monitoring.
+- `Accessibility Testing Suite`: streams accessibility audit evidence and remediation tasks for experience teams.
+- `Community Feedback Forums`: surface grassroots feedback, community sentiment, and qualitative anecdotes beyond formal surveys.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -84,6 +90,14 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Accessibility Compliance Service`: reviews digital assets and engagement flows to enforce accessibility standards.
 - `Customer Success Desk`: tracks health indicators, remediation plans, and churn-risk escalations for garages and partners.
 - `Business Continuity Planner`: curates continuity playbooks, aligns with disaster recovery teams, and verifies readiness signals.
+- `Journey Mapping Studio`: synthesizes qualitative and quantitative inputs into holistic journey maps and orchestration playbooks.
+- `Legal Counsel Desk`: interprets legal guidance, shapes policy updates, and advises on regulatory follow-up actions.
+- `Partner Risk Evaluator`: blends internal and external partner telemetry into unified risk scores that feed governance controls.
+- `Marketing Insights Engine`: centralizes campaign metrics and audience signals to guide engagement tactics.
+- `Localization Management Service`: coordinates translations, cultural adjustments, and localized collateral for global operations.
+- `Knowledge Graph Builder`: links operational entities, data assets, and relationships to reinforce governance and discovery.
+- `Ethics Review Board`: evaluates AI, automation, and policy changes for ethical alignment and issues directives.
+- `Operational Simulation Engine`: models disruption scenarios, stress tests playbooks, and feeds resilience planning.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -133,6 +147,14 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Accessibility Reporting Archive`: preserves accessibility audit evidence, remediation outcomes, and certification history.
 - `Customer Success Workspace`: shared hub for success managers to track plans, escalations, and follow-through items.
 - `Business Continuity Vault`: retains signed continuity plans, readiness attestations, and drill evidence.
+- `Marketing Intelligence Mart`: curated store of campaign performance, segmentation, and attribution insights.
+- `Legal Advisory Archive`: repository of legal interpretations, correspondence, and guidance history.
+- `Community Engagement Hub`: centralized view of community forum takeaways, program responses, and follow-up actions.
+- `Localization Repository`: source of translated assets, localized configurations, and review history.
+- `Ethics Decisions Ledger`: immutable record of ethics board deliberations, rulings, and action items.
+- `Simulation Scenario Library`: catalog of modeled disruptions, outcomes, and readiness gaps.
+- `Partner Risk Register`: ledger of partner risk scores, mitigations, and attestation evidence.
+- `Knowledge Graph Workspace`: knowledge models and semantic relationships shared across governance, analytics, and operations.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -164,6 +186,14 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Accessibility Program`: validates remediation progress, accessibility archives, and experience updates.
 - `Customer Success Leadership`: tracks success workspace updates and coordinates cross-functional remediation plans.
 - `Business Continuity & Resilience`: validates readiness attestations, continuity vault updates, and disaster recovery alignments.
+- `Marketing Strategy Office`: evaluates marketing intelligence marts, campaign insights, and engagement outcomes.
+- `Legal Affairs`: monitors legal advisory archives, compliance directives, and regulator follow-ups with policy owners.
+- `Community Engagement`: reviews community hub updates to coordinate outreach programs and feedback loops.
+- `Localization & Regional Leads`: oversee localized assets, translation accuracy, and culturally-tuned experiences.
+- `Ethics & Responsible AI Board`: reviews ethics ledger entries, directives, and AIMLOps alignment.
+- `Partner Risk Committee`: manages partner risk registers, mitigation plans, and escalations.
+- `Knowledge Management`: curates knowledge graph workspace updates and ensures governance adoption.
+- `Scenario Planning Team`: analyzes simulation libraries, readiness projections, and resilience improvement plans.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -183,6 +213,7 @@ The latest revision folds in support, security, resilience, field execution, sus
 | Field Execution, Vendors & Change Enablement | Vendor onboarding, mobile tasking, and training compliance stay synchronized with policy, fraud, and supply chain guardrails. | Vendor Portal → Vendor Management Service → Workflow Orchestration Hub / Vendor Settlement Ledger; Garage Mobile App ↔ Mobile Sync Service ↔ Garage Management Service; Training Platform → Training Compliance Service → Compliance Reporter / Training Records Archive; Parts Supply Coordinator → Monitoring / Parts Inventory System; Fraud Detection Service → Monitoring / Fraud Case Queue |
 | Sustainability, Maintenance & Treasury Assurance | ESG metrics, facility upkeep, and payout orchestration reinforce compliance, safety, and fiscal integrity. | Sustainability Feed → Environmental Compliance Service → Compliance / ESG Workspace / Data Governance; Facilities Maintenance Platform → Facilities Maintenance Coordinator → Supply Chain / Maintenance Command Center / Asset Lifecycle Manager → Asset Registry / Retention; Billing Reconciliation → Treasury Settlement Service → Payment Gateway / Treasury Settlement Vault / Monitoring; Customer Communications Hub → Engagement Orchestration Hub ↔ Privacy & Consent Service → Notify / Consent & Preference Vault / Engagement Campaign Archive |
 | Regulatory, Insurance & Intelligence Governance | Filings, claims, revenue analytics, procurement, and model oversight keep regulators, insurers, finance, and AI programs aligned. | Treasury Settlement Service → Regulatory Reporting Gateway → Regulator Collaboration Portal / Continuity Vault / Policy Automation Engine; Insurance Carrier Portal → Insurance Claims Orchestrator → Insurance Claims Repository / Facilities Maintenance Coordinator / Treasury Settlement Service / Customer Success Desk; Billing Reconciliation → Revenue Insights Engine → Monitoring / Revenue Analytics Mart / Analytics & ML Hub; Procurement Management Suite → Procurement Coordination Hub → Procurement Ledger / Supply Chain / Vendor Management Service; AI & ML Operations → Model Registry / Data Anonymization Service → Synthetic Data Vault / Privacy & Consent Service / Analytics & ML Hub |
+| Community, Marketing & Ethical Stewardship | Community signals, marketing insights, legal counsel, partner risk analytics, localization, and ethical oversight fine-tune engagement while reinforcing governance. | Community Feedback Forums → Journey Mapping Studio / Customer Success Desk → Community Engagement Hub; Marketing Automation Platform → Marketing Insights Engine → Engagement Orchestration Hub / Marketing Intelligence Mart; Legal Advisory Portal → Legal Counsel Desk → Compliance Reporter / Legal Advisory Archive / Regulatory Reporting Gateway; Partner Risk Exchange → Partner Risk Evaluator → Risk Scoring Engine / Partner Risk Register / Compliance Reporter; Localization Management Service → Experience Orchestration Hub → Localization Repository; Ethics Review Board → AI & ML Operations / Policy Automation Engine → Ethics Decisions Ledger; Operational Simulation Engine → Business Continuity Planner / Disaster Recovery Coordinator → Simulation Scenario Library |
 
 ---
 

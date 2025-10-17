@@ -31,6 +31,12 @@ flowchart LR
         RegPortal[Regulator Collaboration Portal]
         DSWorkbench[Data Science Workbench]
         ProcurementSuite[Procurement Management Suite]
+        MarketingPlatform[Marketing Automation Platform]
+        LegalAdvisory[Legal Advisory Portal]
+        ITServiceCatalog[IT Service Catalog]
+        PartnerRiskExchange[Partner Risk Exchange]
+        AccessibilityTesting[Accessibility Testing Suite]
+        CommunityForums[Community Feedback Forums]
     end
 
     subgraph CoreServices[Core Processes]
@@ -77,6 +83,14 @@ flowchart LR
         AccessibilitySvc[Accessibility Compliance Service]
         CustomerSuccess[Customer Success Desk]
         BusinessContinuity[Business Continuity Planner]
+        JourneyStudio[Journey Mapping Studio]
+        LegalCounsel[Legal Counsel Desk]
+        PartnerRiskEngine[Partner Risk Evaluator]
+        MarketingInsights[Marketing Insights Engine]
+        LocalizationService[Localization Management Service]
+        KnowledgeGraph[Knowledge Graph Builder]
+        EthicsBoard[Ethics Review Board]
+        SimulationEngine[Operational Simulation Engine]
     end
 
     subgraph Destinations[Data Destinations]
@@ -128,6 +142,14 @@ flowchart LR
         AccessibilityArchive[(Accessibility Reporting Archive)]
         SuccessWorkspace[(Customer Success Workspace)]
         ContinuityVault[(Business Continuity Vault)]
+        MarketingMart[(Marketing Intelligence Mart)]
+        LegalArchive[(Legal Advisory Archive)]
+        CommunityHub[(Community Engagement Hub)]
+        LocalizationRepo[(Localization Repository)]
+        EthicsLedger[(Ethics Decisions Ledger)]
+        SimulationLibrary[(Simulation Scenario Library)]
+        PartnerRiskRegister[(Partner Risk Register)]
+        KnowledgeGraphWorkspace[(Knowledge Graph Workspace)]
     end
 
     GA -->|Authenticate| IdP
@@ -161,6 +183,14 @@ flowchart LR
     RegPortal -->|Publish regulatory guidance| RegReporting
     DSWorkbench -->|Share model experiment metadata| AIMLOps
     ProcurementSuite -->|Send sourcing events| ProcurementHub
+    MarketingPlatform -->|Provide campaign performance| MarketingInsights
+    MarketingPlatform -->|Sync audience attributes| EngagementHub
+    LegalAdvisory -->|Submit legal guidance| LegalCounsel
+    ITServiceCatalog -->|Share change dependencies| ChangeMgmt
+    PartnerRiskExchange -->|Publish partner risk scores| PartnerRiskEngine
+    AccessibilityTesting -->|Deliver accessibility findings| AccessibilitySvc
+    CommunityForums -->|Surface community insights| JourneyStudio
+    CommunityForums -->|Raise experience feedback| CustomerSuccess
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -197,6 +227,8 @@ flowchart LR
     Lifecycle -->|Trigger dormant cleanup| Retention
     EnvCompliance -->|Register ESG policies| DataGov
     RegReporting -->|Sync updated obligations| DataGov
+    LegalCounsel -->|Interpret regulatory guidance| RegReporting
+    LegalCounsel -->|Advise compliance follow-up| Compliance
 
     GMS -->|Status changes, ownership transfer, document updates| AuditBus
     AuditBus -->|Write append-only log| AL
@@ -322,6 +354,27 @@ flowchart LR
     ExperienceOrch -->|Aggregate journey signals| JourneyAnalytics
     QAEngine -->|Share insights for experience orchestration| ExperienceOrch
     Monitoring -->|Provide telemetry snapshots| ExperienceOrch
+    JourneyStudio -->|Map omnichannel journeys| ExperienceOrch
+    JourneyStudio -->|Publish journey models| JourneyAnalytics
+    JourneyStudio -->|Share community learnings| CommunityHub
+    MarketingInsights -->|Distribute marketing intelligence| ExperienceOrch
+    MarketingInsights -->|Feed campaign strategy| EngagementHub
+    MarketingInsights -->|Persist insights| MarketingMart
+    LocalizationService -->|Coordinate localized assets| ExperienceOrch
+    LocalizationService -->|Store translations & assets| LocalizationRepo
+    KnowledgeGraph -->|Link operational entities| DataGov
+    KnowledgeGraph -->|Publish knowledge models| KnowledgeGraphWorkspace
+    PartnerRiskEngine -->|Sync enhanced risk scores| RiskEngine
+    PartnerRiskEngine -->|Notify compliance| Compliance
+    PartnerRiskEngine -->|Archive partner posture| PartnerRiskRegister
+    EthicsBoard -->|Review AI outcomes| AIMLOps
+    EthicsBoard -->|Issue policy directives| PolicyEngine
+    EthicsBoard -->|Record ethical decisions| EthicsLedger
+    SimulationEngine -->|Model disruption scenarios| BusinessContinuity
+    SimulationEngine -->|Share readiness projections| DRCoordinator
+    SimulationEngine -->|Archive scenarios| SimulationLibrary
+    LegalCounsel -->|File legal interpretations| LegalArchive
+    CustomerSuccess -->|Channel community outcomes| CommunityHub
     IncidentResponse -->|Update procedural knowledge| KnowledgeBase
     QAEngine -->|Surface best practices| KnowledgeBase
     AIMLOps -->|Register approved models| ModelRegistry
@@ -343,7 +396,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace destination;
 ```
