@@ -15,7 +15,8 @@
 - Already completed
 
 ### 🔹 5. Service Template & Step Configuration
-- Already completed
+- Structured service catalogue, parts behavior, and booking guardrails
+- 📄 See `Tasks/ServiceModulePlan/` for three-sprint roadmap and deliverables
 
 ### 🔹 6. Spare Parts & Inventory
 - Catalog governance, compatibility, and stock tracking
