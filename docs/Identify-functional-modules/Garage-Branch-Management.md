@@ -4,6 +4,13 @@
 
 This module handles the creation, configuration, and access control for garages and their branches within the SaaS system.
 
+📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual map of creation, approval, inheritance, and audit logging steps.
+
+Key takeaways from the diagram:
+- **Primary data sources:** Garage Admin submissions, SaaS Admin review actions, and branch setup forms.
+- **Core processes:** Garage Management Service orchestrates approvals and default provisioning while the Branch Management Service handles overrides.
+- **Destinations & stores:** Garage Registry, Branch Directory, and the centralized Audit Log feed the shared audit viewer for both admins.
+
 ---
 
 ### 🏢 Garage Creation Fields
