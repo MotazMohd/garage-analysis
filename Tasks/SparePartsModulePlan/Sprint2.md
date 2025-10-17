@@ -6,8 +6,8 @@ Implement bulk part management via Excel and prepare simulation flow for TecDoc 
 This sprint focuses on integration workflows and extensibility for API-based enrichment.
 
 📌 **Reference Sections**:
-- `Excel Import/Export` – https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md#excel-import--export
-- `TecDoc Integration (Simulation)` – https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md#tecdoc-api-lookup
+- `Excel Import/Export` – https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md#excel-import--export
+- `TecDoc Integration (Simulation)` – https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md#tecdoc-api-lookup
 
 ---
 

@@ -1,7 +1,7 @@
 
 # ✅ Spare Parts Module – Implementation Summary vs. Analysis
 
-📄 **Reference Analysis**: [GitHub Analysis Doc](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md)
+📄 **Reference Analysis**: [GitHub Analysis Doc](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md)
 
 ---
 

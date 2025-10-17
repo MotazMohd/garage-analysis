@@ -153,6 +153,12 @@ Stock and sharing logic is managed centrally in the inventory module but integra
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Service template configuration data flow](../../Diagrams/DataFlow/ServiceTemplateConfiguration.md) — outlines how master templates, garage overrides, and job generation exchange data.
+
+---
+
 ## ERD (Entity Relationship Diagram)
 
 ```dbml

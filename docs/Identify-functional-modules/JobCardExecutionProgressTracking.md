@@ -132,6 +132,12 @@ Parallel and sequential steps are both supported.
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Job card execution data flow](../../Diagrams/DataFlow/JobCardExecution.md) — maps technician updates, exception handling, and customer notifications throughout the lifecycle.
+
+---
+
 ## Future Enhancements (Planned)
 
 * Technician mobile app for live status updates

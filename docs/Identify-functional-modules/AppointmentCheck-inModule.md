@@ -99,3 +99,9 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 7. Customer is notified of service progress initiation.
 
 ---
+
+## 📈 Data Flow Diagram
+
+- [Appointment check-in data flow](../../Diagrams/DataFlow/AppointmentCheckIn.md) — details the intake, media capture, and notification sequence triggered during arrival.
+
+---

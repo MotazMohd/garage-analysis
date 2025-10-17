@@ -84,6 +84,12 @@ To enable garages and SaaS administrators to manage spare parts inventory, prici
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Spare parts management data flow](../../Diagrams/DataFlow/SparePartsManagement.md) — captures authoring, localization, stock adjustments, and alerting.
+
+---
+
 ## ERD (Entity Relationship Diagram)
 
 ```dbml

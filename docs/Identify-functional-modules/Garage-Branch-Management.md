@@ -112,6 +112,10 @@ This module handles the creation, configuration, and access control for garages 
 
 ---
 
+### 📈 Data Flow Diagram
+
+- [Garage & Branch Management data flow](../../Diagrams/DataFlow/GarageBranchManagement.md) — visualizes onboarding, approval, branch inheritance, and audit logging across the service.
+
 ✅ This completes the extended and finalized configuration for the **Garage & Branch Management module**.
 
 

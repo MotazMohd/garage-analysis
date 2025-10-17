@@ -22,6 +22,12 @@
 
 ---
 
+## 📈 System Data Flow
+
+- [Overall SaaS module data flow](Diagrams/DataFlow/SystemOverview.md) — summarizes how garage onboarding, user governance, templates, inventory, appointments, and job execution exchange data across the platform.
+
+---
+
 ## 🔜 Next Modules in Order
 
 ### 🔹 7. Tool Management

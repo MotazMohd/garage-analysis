@@ -70,6 +70,12 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Tools management data flow](../../Diagrams/DataFlow/ToolsManagement.md) — illustrates cataloging, local availability, job usage, and maintenance feedback.
+
+---
+
 ## ERD (Entity Relationship Diagram)
 
 ```dbml

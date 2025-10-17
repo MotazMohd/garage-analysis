@@ -2,7 +2,7 @@
 # 🚀 Sprint 1: Spare Parts Module – Core & Manual CRUD
 
 📅 **Sprint Goal**:  
-Implement the foundational CRUD logic for spare parts aligned with the [GitHub analysis](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md), the current UI, and backend structure.  
+Implement the foundational CRUD logic for spare parts aligned with the [GitHub analysis](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md), the current UI, and backend structure.  
 Includes DB adjustments, core endpoints, request/response structures, and car model/tool assignment logic.
 
 📌 **Reference Sections**:

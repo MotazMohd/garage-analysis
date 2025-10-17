@@ -237,3 +237,7 @@ This module defines how users are created, invited, assigned roles, managed acro
 - Exportable (CSV)
 - Optional: Inactive user report
 
+### 📈 Data Flow Diagram
+
+- [User & Role Management data flow](../../Diagrams/DataFlow/UserRoleManagement.md) — shows invitation, approval, MFA, and session governance across the identity services.
+
