@@ -4,12 +4,26 @@
 
 This module handles the creation, configuration, and access control for garages and their branches within the SaaS system.
 
-📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual map of creation, approval, inheritance, and audit logging steps.
+📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-Key takeaways from the diagram:
-- **Primary data sources:** Garage Admin submissions, SaaS Admin review actions, and branch setup forms.
-- **Core processes:** Garage Management Service orchestrates approvals and default provisioning while the Branch Management Service handles overrides.
-- **Destinations & stores:** Garage Registry, Branch Directory, and the centralized Audit Log feed the shared audit viewer for both admins.
+**Key actors captured in the diagram**
+
+**Data Sources**
+- `Garage Admin`: submits the initial configuration and manages branch overrides.
+- `SaaS Admin`: triggers the approval workflow and lifecycle changes.
+- `Branch Setup Form`: captures per-branch adjustments that piggyback on garage defaults.
+
+**Core Processes**
+- `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
+- `Approval Console`: surfaces review context so SaaS Admins can approve or reject with reasoning.
+- `Branch Management Service`: applies inheritance rules, tracks overrides, and persists branch metadata.
+- `Audit Event Bus`: normalizes events from the core services before writing to the append-only audit log.
+
+**Destinations & Stores**
+- `Garage Registry DB`: authoritative store for garage state and lifecycle history.
+- `Branch Directory DB`: records branch-level overrides and provisioning details.
+- `Notification Service`: relays approval results and rejection reasoning back to garage administrators.
+- `Audit Log Store` + `Audit Viewer`: retain immutable history and expose the full change log to auditors and admins.
 
 ---
 
