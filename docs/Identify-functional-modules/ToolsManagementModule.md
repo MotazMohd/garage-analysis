@@ -70,6 +70,24 @@ To enable garages and SaaS administrators to manage tools inventory, types, comp
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Tools management data flow](../../Diagrams/DataFlow/ToolsManagement.md) — illustrates cataloging, local availability, job usage, and maintenance feedback.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/ToolsManagement-Level1.md) — sequences catalog authoring, garage imports, availability planning, technician checkout, and maintenance cycles.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/ToolsManagement-Level2.md) — expands tool curation, garage imports, availability planning, technician checkout, and maintenance scheduling with audit logging.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/ToolsManagement-Level3.md) — visualises tool curation, importers, calibration schedulers, reservation services, technician checkout, maintenance logging, and availability sync writing into shared registries and alert queues.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/ToolsManagement-Level4.md) — covers tool registry updates, calibration scheduling, availability planning, checkout/return flows, preventive maintenance, external integrations, and notification dispatching over the tool stores.
+- [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/ToolsManagement-Level5.md) — illustrates tool catalog, calibration, availability planning, checkout, maintenance logging, telemetry ingestion, notification hubs, partner integrations, and monitoring pipelines safeguarding tool readiness.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/ToolsManagement-Level6.md) — depicts geo-redundant tool cataloguing, imports, availability planning, checkout, maintenance, telemetry, compliance monitoring, and audit streaming with mirrored stores and queues.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/ToolsManagement-Level7.md) — covers governance policies, calibration standards, telemetry analysis, safety inspections, supplier audits, and alert desks safeguarding tool usage.
+
+#### Data Flow Highlights
+- **Catalogue creation:** SaaS or garage admins register tools in the shared catalogue and optionally import them into local inventories.
+- **Operational allocation:** Service template linkages reserve tools, update availability, and surface conflicts when equipment is double-booked.
+- **Maintenance telemetry:** Usage and condition feedback raise alerts and enrich audit history so calibration and repairs can be scheduled proactively.
+
+---
+
 ## ERD (Entity Relationship Diagram)
 
 ```dbml

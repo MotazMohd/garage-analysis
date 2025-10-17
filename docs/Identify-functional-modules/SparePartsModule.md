@@ -84,6 +84,24 @@ To enable garages and SaaS administrators to manage spare parts inventory, prici
 
 ---
 
+## 📈 Data Flow Diagram
+
+- [Spare parts management data flow](../../Diagrams/DataFlow/SparePartsManagement.md) — captures authoring, localization, stock adjustments, and alerting.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/SparePartsManagement-Level1.md) — maps catalog authoring, supplier imports, garage localization, stock adjustments, and replenishment automation in sequential processes.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/SparePartsManagement-Level2.md) — follows supplier feeds, garage imports, consumption events, reservations, and automated replenishment triggers.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/SparePartsManagement-Level3.md) — highlights catalogue curation, supplier import services, garage localisation, reservations, replenishment planning, and quality holds writing to shared inventory stores and alerts.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/SparePartsManagement-Level4.md) — showcases catalogue authoring, supplier ingestion, garage overrides, reservation handling, stock ledger updates, replenishment planning, quality hold decisions, and notification queues across the inventory data stores.
+- [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/SparePartsManagement-Level5.md) — presents ingress, catalog, supplier ingestion, localisation, stock adjustments, reservations, replenishment, quality holds, notification services, and monitoring streams powering the inventory platform.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/SparePartsManagement-Level6.md) — documents geo-redundant catalogue curation, supplier ingestion, garage imports, stock adjustments, reservations, replenishment automation, quality holds, and audit streaming with replicated ledgers and queues.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/SparePartsManagement-Level7.md) — illustrates governance policies, supplier scanning, quality monitoring, anomaly detection, fraud analytics, and incident desks protecting inventory integrity.
+
+#### Data Flow Highlights
+- **Catalogue governance:** SaaS administrators manage the master part catalogue and publish updates that garages can selectively import into local inventory.
+- **Inventory synchronisation:** Receiving, consuming, or transferring stock keeps quantities and availability aligned with the service templates referencing those parts.
+- **Replenishment triggers:** Low-stock thresholds emit notifications and audit entries so restocking tasks remain visible to operations teams.
+
+---
+
 ## ERD (Entity Relationship Diagram)
 
 ```dbml

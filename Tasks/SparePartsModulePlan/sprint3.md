@@ -5,8 +5,8 @@
 Complete Spare Parts module by adding car model + tool assignments, UI enhancements (badges/filters), and prepare data for technician-side tool visibility.
 
 📌 **Reference Sections**:
-- [Tool Assignment & Usage](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md#tool--equipment)
-- [Part Listing Filters](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/%20SparePartsModule.md#search--listing)
+- [Tool Assignment & Usage](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md#tool--equipment)
+- [Part Listing Filters](https://github.com/rastaJane/garage-analysis/blob/main/docs/Identify-functional-modules/SparePartsModule.md#search--listing)
 - Internal sprint planning discussions
 
 ---

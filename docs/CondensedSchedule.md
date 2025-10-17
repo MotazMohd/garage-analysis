@@ -23,3 +23,11 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - Staffing assumes domain-focused squads capable of parallel execution.
 - Dependencies are met on or before the day a task begins; contingency buffers handled via cross-day overlap.
 - Observability (task 19) and testing (task 16) are iterative, with milestones reflected on the days above.
+- See the [system data flow overview](../Diagrams/DataFlow/SystemOverview.md) for how these workstreams converge into the unified platform architecture.
+- Consult the [Level 1 system decomposition](../Diagrams/DataFlow/Level1/SystemOverview-Level1.md) to understand which data stores and operational services are touched by each milestone.
+- Dive into the [Level 2 customer journey](../Diagrams/DataFlow/Level2/SystemOverview-Level2.md) to trace dependencies from booking through billing as they relate to the scheduled deliverables.
+- Reference the [Level 3 orchestration services](../Diagrams/DataFlow/Level3/SystemOverview-Level3.md) to align squad responsibilities with the platform services they own.
+- Use the [Level 4 integration workflow](../Diagrams/DataFlow/Level4/SystemOverview-Level4.md) when planning infrastructure or release steps that depend on authentication, data planes, and event streaming.
+- Consult the [Level 5 infrastructure & observability view](../Diagrams/DataFlow/Level5/SystemOverview-Level5.md) when coordinating ingress security, service mesh governance, monitoring, and third-party integrations during rollout.
+- Review the [Level 6 resilience & disaster recovery view](../Diagrams/DataFlow/Level6/SystemOverview-Level6.md) to plan geo-redundant deployments, failover drills, and cross-region data replication alongside schedule milestones.
+- Align with the [Level 7 security, compliance & assurance view](../Diagrams/DataFlow/Level7/SystemOverview-Level7.md) to map security operations, assurance workflows, and trust communications into the deployment cadence.

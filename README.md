@@ -22,6 +22,20 @@
 
 ---
 
+## 📈 System Data Flow
+
+- [Overall SaaS module data flow](Diagrams/DataFlow/SystemOverview.md) — summarizes how garage onboarding, user governance, templates, inventory, appointments, and job execution exchange data across the platform.
+- [Level 1 system decomposition](Diagrams/DataFlow/Level1/SystemOverview-Level1.md) — clusters customer journeys, operational services, and shared data stores to surface state transitions end-to-end.
+- [Level 2 customer journey decomposition](Diagrams/DataFlow/Level2/SystemOverview-Level2.md) — follows the booking-to-billing lifecycle and shows how operational services and shared stores collaborate for a single customer.
+- [Level 3 orchestration services view](Diagrams/DataFlow/Level3/SystemOverview-Level3.md) — breaks the platform into onboarding, identity, scheduling, job orchestration, inventory, and billing services interacting through shared stores and notification queues.
+- [Level 4 integration workflow](Diagrams/DataFlow/Level4/SystemOverview-Level4.md) — exposes the underlying service mesh, data plane, and streaming analytics that coordinate authentication, operations, and lifecycle automation.
+- [Level 5 infrastructure & observability view](Diagrams/DataFlow/Level5/SystemOverview-Level5.md) — maps ingress protection, service mesh control, domain microservices, shared ledgers, monitoring stacks, and external integrations that sustain the platform.
+- [Level 6 resilience & disaster recovery view](Diagrams/DataFlow/Level6/SystemOverview-Level6.md) — highlights geo-distributed edge controls, regional workloads, mirrored data planes, and automation that orchestrates failover across the SaaS journey.
+- [Level 7 security, compliance & assurance view](Diagrams/DataFlow/Level7/SystemOverview-Level7.md) — outlines governance controls, security operations, assurance pipelines, and trust communications coordinating across every module.
+- [Data flow diagram index](Diagrams/DataFlow/README.md) — catalogues every module-level diagram and provides editing guidelines to keep the visuals consistent.
+
+---
+
 ## 🔜 Next Modules in Order
 
 ### 🔹 7. Tool Management
