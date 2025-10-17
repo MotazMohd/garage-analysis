@@ -6,6 +6,8 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
+The latest revision folds in support, security, and resilience touchpoints so stakeholders can see how incidents, policy updates, and recovery drills intersect with day-to-day garage and branch operations.
+
 **Key actors captured in the diagram**
 
 **Data Sources**
@@ -18,6 +20,9 @@ This module handles the creation, configuration, and access control for garages 
 - `Regulatory Bulletin Feed`: streams licensing rule updates that are consumed by compliance tooling to flag new documentary requirements.
 - `Customer Feedback Portal`: gathers qualitative and CSAT-style feedback from garage managers and staff once provisioning is complete.
 - `Operational Telemetry Feeds`: capture latency, error rates, and job throughput from the garage and branch services to power proactive monitoring.
+- `Support Ticketing System`: captures break/fix reports from support agents so production issues can be routed alongside QA findings.
+- `Threat Intelligence Feed`: streams vulnerability and indicator updates that shape the security response posture for the module.
+- `Third-Party Audit Reports`: supplies external compliance attestations and exceptions that trigger internal remediation.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -33,6 +38,12 @@ This module handles the creation, configuration, and access control for garages 
 - `Quality Assurance Engine`: correlates feedback, telemetry, and audit signals to recommend remediation actions for struggling garages or branches.
 - `Billing Reconciliation Service`: reconciles provisioning data against partner fee schedules so finance teams can clear payouts or escalate disputes.
 - `Data Governance Manager`: registers metadata, ownership, and policy changes whenever audit or lifecycle events modify stored records.
+- `Security Operations Center`: correlates telemetry, threat intel, and key usage to harden the control surface and alert reviewers.
+- `Incident Response Orchestrator`: drives coordinated remediation by syncing tickets, runbooks, and quality insights across teams.
+- `Analytics & ML Hub`: refines curated datasets into predictive models and anomaly detectors that feed proactive operations.
+- `Disaster Recovery Coordinator`: maintains replicated environments and orchestrates failover readiness signals.
+- `Secrets Management Service`: rotates credentials and enforces privileged access guardrails for garage and branch tooling.
+- `Policy Automation Engine`: distributes updated governance, retention, and access policies based on compliance findings.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -48,6 +59,13 @@ This module handles the creation, configuration, and access control for garages 
 - `Customer Feedback DB`: stores normalized satisfaction metrics and remediation notes for retrospective analysis.
 - `Billing Ledger`: final destination for reconciled payouts, clawbacks, and dispute adjustments surfaced by finance teams.
 - `Data Catalog & Lineage`: registers canonical schema, access policies, and data ownership for downstream discovery and compliance audits.
+- `Support Ticket Queue`: central hub for orchestrated incident response tasks and regression follow-up.
+- `Security Information & Event Management (SIEM)`: aggregates enriched security alerts for investigation and compliance evidence.
+- `Analytics Lakehouse`: hosts advanced models and exploratory datasets derived from lifecycle and monitoring feeds.
+- `Disaster Recovery Site`: resilient standby environment that mirrors critical state to minimize downtime.
+- `Runbook Repository`: stores vetted procedures for support, compliance, and security teams to execute consistent responses.
+- `Policy Registry`: authoritative source of the currently enforced governance rules and workflow automation scripts.
+- `Key Vault`: hardened storage for rotated secrets that back garage management and access control integrations.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -57,6 +75,10 @@ This module handles the creation, configuration, and access control for garages 
 - `Customer Experience`: monitors quality scores and remediation outcomes to confirm that branch performance issues are addressed quickly.
 - `Finance Operations`: validates reconciled payouts, confirms dispute resolutions, and feeds variance findings back into partner agreements.
 - `Data Governance`: ensures cataloged lineage, retention attestations, and access policies stay current with every lifecycle event.
+- `Security Operations`: monitors SIEM alerts, key usage, and policy rollouts to maintain a hardened environment.
+- `Site Reliability & Platform`: oversees disaster recovery drills, failover readiness, and infrastructure health across garages and branches.
+- `Support Operations`: triages inbound tickets and validates that automation and runbooks resolve frontline issues quickly.
+- `Data Science & Analytics`: iterates on predictive models, anomaly detectors, and exploratory studies sourced from the analytics lakehouse.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -72,6 +94,7 @@ This module handles the creation, configuration, and access control for garages 
 | Notifications & Audit | Decisions are broadcast to admins while every event is normalized and archived. | Garage Management Service / Branch Service → Audit Event Bus → Audit Log Store & Viewer |
 | Insight, Retention & Compliance Reporting | Lifecycle events and flagged documents fuel manual review, analytics, and archival. | Document Verification → Compliance Reporter & Retention Service → Compliance Queue / Reporting Warehouse / Cold Archive |
 | Experience, Billing & Governance Oversight | Feedback, telemetry, and reconciliation routines drive continuous improvement and policy alignment. | Monitoring / Feedback Portal → Quality Assurance Engine → Compliance Reporter / Customer Feedback DB; Garage & Branch Services → Billing Reconciliation → Billing Ledger; Audit Event Bus → Data Governance Manager → Data Catalog |
+| Resilience, Security & Support Coordination | Threat intel, incident command, and recovery drills protect uptime while enforcing refreshed policies. | Threat Intelligence Feed → Security Operations Center → SIEM / Key Vault; Support Ticketing System → Incident Response Orchestrator → Support Ticket Queue / Runbook Repository; Garage & Branch Services → Disaster Recovery Coordinator → Disaster Recovery Site |
 
 ---
 

@@ -12,6 +12,9 @@ flowchart LR
         RegFeed[Regulatory Bulletin Feed]
         Feedback[Customer Feedback Portal]
         Telemetry[Operational Telemetry Feeds]
+        SupportDesk[Support Ticketing System]
+        ThreatIntel[Threat Intelligence Feed]
+        AuditFirm[Third-Party Audit Reports]
     end
 
     subgraph CoreServices[Core Processes]
@@ -28,6 +31,12 @@ flowchart LR
         QAEngine[Quality Assurance Engine]
         BillingRecon[Billing Reconciliation Service]
         DataGov[Data Governance Manager]
+        SecurityOps[Security Operations Center]
+        IncidentResponse[Incident Response Orchestrator]
+        AnalyticsHub[Analytics & ML Hub]
+        DRCoordinator[Disaster Recovery Coordinator]
+        SecretsMgr[Secrets Management Service]
+        PolicyEngine[Policy Automation Engine]
     end
 
     subgraph Destinations[Data Destinations]
@@ -45,6 +54,13 @@ flowchart LR
         FeedbackDB[(Customer Feedback DB)]
         BillingLedger[(Billing Ledger)]
         DataCatalog[(Data Catalog & Lineage)]
+        TicketQueue[(Support Ticket Queue)]
+        SIEM[(Security Information & Event Management)]
+        Lakehouse[(Analytics Lakehouse)]
+        DRSite[(Disaster Recovery Site)]
+        RunbookRepo[(Runbook Repository)]
+        PolicyRegistry[(Policy Registry)]
+        KeyVault[(Key Vault)]
     end
 
     GA -->|Authenticate| IdP
@@ -56,6 +72,9 @@ flowchart LR
     RegFeed -->|Publish compliance updates| Compliance
     Feedback -->|Share satisfaction scores & qualitative input| QAEngine
     Telemetry -->|Stream performance metrics| Monitoring
+    SupportDesk -->|Escalate operational issues| IncidentResponse
+    ThreatIntel -->|Share threat indicators| SecurityOps
+    AuditFirm -->|Deliver attestation findings| Compliance
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -114,12 +133,32 @@ flowchart LR
     BillingRecon -->|Flag discrepancies| Compliance
     DataGov -->|Register lineage & ownership| DataCatalog
     DataGov -->|Publish access policies| AccessCtrl
+    IncidentResponse -->|Create remediation tickets| TicketQueue
+    IncidentResponse -->|Sync runbooks| RunbookRepo
+    IncidentResponse -->|Coordinate with QA insights| QAEngine
+    SecurityOps -->|Tune detection rules| Monitoring
+    SecurityOps -->|Feed consolidated alerts| SIEM
+    PolicyEngine -->|Version governance rules| PolicyRegistry
+    PolicyEngine -->|Enforce guardrails| AccessCtrl
+    Compliance -->|Raise findings for policy updates| PolicyEngine
+    Warehouse -->|Provide curated datasets| AnalyticsHub
+    AnalyticsHub -->|Train predictive models| QAEngine
+    AnalyticsHub -->|Publish advanced analytics| Lakehouse
+    AnalyticsHub -->|Surface anomaly insights| Monitoring
+    GMS -->|Replicate critical state| DRCoordinator
+    BranchSvc -->|Stream branch state| DRCoordinator
+    DRCoordinator -->|Maintain hot standby| DRSite
+    DRCoordinator -->|Report failover readiness| Monitoring
+    SecretsMgr -->|Rotate credentials| KeyVault
+    AccessCtrl -->|Retrieve scoped secrets| KeyVault
+    SecurityOps -->|Review key usage| KeyVault
+    SIEM -->|Dispatch incidents| IncidentResponse
 
     classDef source fill:#eff6ff,stroke:#1d4ed8,stroke-width:1px,color:#1f2937;
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault destination;
 ```
