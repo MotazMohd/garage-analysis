@@ -12,18 +12,32 @@ This module handles the creation, configuration, and access control for garages 
 - `Garage Admin`: submits the initial configuration and manages branch overrides.
 - `SaaS Admin`: triggers the approval workflow and lifecycle changes.
 - `Branch Setup Form`: captures per-branch adjustments that piggyback on garage defaults.
+- `Document Uploads Portal`: secures license, insurance, and compliance attachments alongside the garage request.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
 - `Approval Console`: surfaces review context so SaaS Admins can approve or reject with reasoning.
 - `Branch Management Service`: applies inheritance rules, tracks overrides, and persists branch metadata.
 - `Audit Event Bus`: normalizes events from the core services before writing to the append-only audit log.
+- `Document Verification Service`: sanitizes uploads, links them to requests, and flags any compliance anomalies for review.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
 - `Branch Directory DB`: records branch-level overrides and provisioning details.
 - `Notification Service`: relays approval results and rejection reasoning back to garage administrators.
 - `Audit Log Store` + `Audit Viewer`: retain immutable history and expose the full change log to auditors and admins.
+- `Document Vault`: preserves the original, sanitized copies of every supporting artifact for audit retrieval.
+
+> 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility.
+
+### 🔁 Process Highlights
+
+| Stage | Description | Notable Data Paths |
+|-------|-------------|--------------------|
+| Intake & Classification | Garage Admin submits structured fields while uploading licenses via the Document Portal. | Portal → Document Verification Service → Garage Management Service & Document Vault |
+| Approval & Decisioning | SaaS Admin reviews consolidated context, including compliance flags, before approving or rejecting. | Approval Console ↔ Garage Management Service ↔ Audit Event Bus |
+| Branch Provisioning | Default branch configuration is cloned and overrides captured via the Branch Setup Form. | Branch Setup Form → Branch Management Service → Branch Directory DB |
+| Notifications & Audit | Decisions are broadcast to admins while every event is normalized and archived. | Garage Management Service / Branch Service → Audit Event Bus → Audit Log Store & Viewer |
 
 ---
 

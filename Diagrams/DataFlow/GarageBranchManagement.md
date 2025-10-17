@@ -6,6 +6,7 @@ flowchart LR
         GA[Garage Admin]
         SA[SaaS Admin]
         BranchForm[Branch Setup Form]
+        DocsPortal[Document Uploads Portal]
     end
 
     subgraph CoreServices[Core Processes]
@@ -13,6 +14,7 @@ flowchart LR
         Approval[Approval Console]
         BranchSvc[Branch Management Service]
         AuditBus[Audit Event Bus]
+        DocService[Document Verification Service]
     end
 
     subgraph Destinations[Data Destinations]
@@ -21,6 +23,7 @@ flowchart LR
         AL[(Audit Log Store)]
         AuditView[Audit Viewer]
         Notify[(Notification Service)]
+        DocVault[(Document Vault)]
     end
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
@@ -28,6 +31,12 @@ flowchart LR
     GMS -->|Emit submission event| AuditBus
     AuditBus -->|Store request snapshot| AL
     GMS -->|Notify pending review| SA
+
+    GA -->|Upload licenses & permits| DocsPortal
+    DocsPortal -->|Sanitize & classify| DocService
+    DocService -->|Link attachments| GMS
+    DocService -->|Surface compliance flags| Approval
+    DocService -->|Persist originals| DocVault
 
     SA -->|Review documents & details| Approval
     Approval -->|Approve| GMS
@@ -53,7 +62,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm source;
-    class GMS,Approval,BranchSvc,AuditBus process;
-    class GR,BR,AL,AuditView,Notify,Rejection destination;
+    class GA,SA,BranchForm,DocsPortal source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault destination;
 ```
