@@ -67,6 +67,19 @@ This directory hosts the mermaid source for the SaaS garage platform data-flow d
 | [`Level4/AppointmentCheckIn-Level4.md`](Level4/AppointmentCheckIn-Level4.md) | Intake microservices | Breaks down arrival capture, booking lookup, identity verification, evidence logging, upsell recommendations, and job card creation. |
 | [`Level4/JobCardExecution-Level4.md`](Level4/JobCardExecution-Level4.md) | Workshop execution engines | Details task routing, telemetry capture, resource consumption, exception handling, QA inspection, billing bridge, and audit trail services. |
 
+### Level 5 Infrastructure & Observability Views
+
+| Diagram | Scope | Key Highlights |
+| --- | --- | --- |
+| [`Level5/SystemOverview-Level5.md`](Level5/SystemOverview-Level5.md) | Platform infrastructure | Maps ingress protection, service mesh control plane, domain microservices, shared data plane, observability stack, and external integrations working together. |
+| [`Level5/GarageBranchManagement-Level5.md`](Level5/GarageBranchManagement-Level5.md) | Garage governance infrastructure | Shows intake services, document classifiers, risk scoring, compliance desks, lifecycle managers, branch configurators, staff access managers, and their supporting stores. |
+| [`Level5/UserRoleManagement-Level5.md`](Level5/UserRoleManagement-Level5.md) | Identity security infrastructure | Details invitation, registration, credential issuance, MFA, role governance, session control, and impersonation monitoring tied to dedicated security stores and alerts. |
+| [`Level5/ServiceTemplateConfiguration-Level5.md`](Level5/ServiceTemplateConfiguration-Level5.md) | Template infrastructure | Highlights authoring, versioning, validation, localisation, resource binding, publishing, and notification services integrated with external catalogues and observability. |
+| [`Level5/SparePartsManagement-Level5.md`](Level5/SparePartsManagement-Level5.md) | Inventory infrastructure | Captures catalog, supplier ingestion, localisation, stock adjustment, reservation, replenishment, quality hold, and notification services along with their ledgers. |
+| [`Level5/ToolsManagement-Level5.md`](Level5/ToolsManagement-Level5.md) | Tool infrastructure | Depicts catalog, calibration, availability planning, checkout, maintenance, telemetry, and notification services interacting with partners and observability. |
+| [`Level5/AppointmentCheckIn-Level5.md`](Level5/AppointmentCheckIn-Level5.md) | Check-in infrastructure | Breaks down appointment lookup, identity verification, intake, evidence capture, upsell, job card creation, and notifications across stores and monitoring. |
+| [`Level5/JobCardExecution-Level5.md`](Level5/JobCardExecution-Level5.md) | Execution infrastructure | Illustrates assignment, tracking, telemetry, exception handling, QA, resource management, customer notifications, and billing integration with observability and ledgers. |
+
 ## Editing Guidance
 
 1. **Use `flowchart` syntax** so that diagrams remain consistent across modules.

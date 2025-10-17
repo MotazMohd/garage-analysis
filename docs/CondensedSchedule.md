@@ -28,3 +28,4 @@ This schedule covers tasks 1–20 described in the project brief. At least three
 - Dive into the [Level 2 customer journey](../Diagrams/DataFlow/Level2/SystemOverview-Level2.md) to trace dependencies from booking through billing as they relate to the scheduled deliverables.
 - Reference the [Level 3 orchestration services](../Diagrams/DataFlow/Level3/SystemOverview-Level3.md) to align squad responsibilities with the platform services they own.
 - Use the [Level 4 integration workflow](../Diagrams/DataFlow/Level4/SystemOverview-Level4.md) when planning infrastructure or release steps that depend on authentication, data planes, and event streaming.
+- Consult the [Level 5 infrastructure & observability view](../Diagrams/DataFlow/Level5/SystemOverview-Level5.md) when coordinating ingress security, service mesh governance, monitoring, and third-party integrations during rollout.

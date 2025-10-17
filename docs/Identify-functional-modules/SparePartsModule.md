@@ -91,6 +91,7 @@ To enable garages and SaaS administrators to manage spare parts inventory, prici
 - [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/SparePartsManagement-Level2.md) — follows supplier feeds, garage imports, consumption events, reservations, and automated replenishment triggers.
 - [Level 3 service component flow](../../Diagrams/DataFlow/Level3/SparePartsManagement-Level3.md) — highlights catalogue curation, supplier import services, garage localisation, reservations, replenishment planning, and quality holds writing to shared inventory stores and alerts.
 - [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/SparePartsManagement-Level4.md) — showcases catalogue authoring, supplier ingestion, garage overrides, reservation handling, stock ledger updates, replenishment planning, quality hold decisions, and notification queues across the inventory data stores.
+- [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/SparePartsManagement-Level5.md) — presents ingress, catalog, supplier ingestion, localisation, stock adjustments, reservations, replenishment, quality holds, notification services, and monitoring streams powering the inventory platform.
 
 #### Data Flow Highlights
 - **Catalogue governance:** SaaS administrators manage the master part catalogue and publish updates that garages can selectively import into local inventory.

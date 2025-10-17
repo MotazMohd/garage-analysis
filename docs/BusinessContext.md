@@ -18,6 +18,7 @@ Includes role-based access, training tracking, and inter-garage collaboration. S
 - [Level 2 journey view](../Diagrams/DataFlow/Level2/SystemOverview-Level2.md) — follows the booking-to-billing lifecycle to show how customer touchpoints traverse operational modules and shared ledgers.
 - [Level 3 orchestration services](../Diagrams/DataFlow/Level3/SystemOverview-Level3.md) — identifies the major services responsible for onboarding, identity, scheduling, job orchestration, inventory, and billing.
 - [Level 4 integration workflow](../Diagrams/DataFlow/Level4/SystemOverview-Level4.md) — exposes the service mesh, data plane, event streaming, and notification layers underpinning each stage of the platform journey.
+- [Level 5 infrastructure & observability view](../Diagrams/DataFlow/Level5/SystemOverview-Level5.md) — details ingress security, service mesh governance, domain microservices, shared data stores, monitoring stacks, and external platforms keeping the journey resilient.
 
 ---
 
