@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, resilience, and field execution touchpoints so stakeholders can see how incidents, policy updates, vendor onboarding, and frontline tasking intersect with day-to-day garage and branch operations.
+The latest revision folds in support, security, resilience, field execution, sustainability oversight, and treasury coordination so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, and customer engagement intersect with day-to-day garage and branch operations.
 
 **Key actors captured in the diagram**
 
@@ -28,6 +28,10 @@ The latest revision folds in support, security, resilience, and field execution 
 - `Vendor Partner Portal`: centralizes third-party onboarding, credential submission, and integration details.
 - `Training & Certification Platform`: reports course completions and expirations so compliance teams can enforce credential guardrails.
 - `HR Information System`: streams staffing rosters and employment status to anchor access provisioning and compliance checks.
+- `Sustainability Reporting Feed`: delivers emissions, waste, and stewardship benchmarks that guide environmental governance for garages and branches.
+- `Facilities Maintenance Platform`: supplies scheduled work orders and inspection notes so operational teams can coordinate on-site remediation.
+- `Customer Communications Hub`: provides campaign calendars, messaging updates, and preference changes that influence targeted outreach.
+- `Bank Settlement Feed`: mirrors funding confirmations and rejection notices that reconcile downstream treasury settlements.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -57,6 +61,13 @@ The latest revision folds in support, security, resilience, and field execution 
 - `HR Compliance Checker`: enforces role-based access based on staffing status and stores attestation history.
 - `Parts Supply Coordinator`: tracks parts consumption, supplier updates, and inventory signals relevant to branch operations.
 - `Experience Orchestration Hub`: blends telemetry, feedback, and predictive insights to trigger proactive outreach to garages and partners.
+- `Environmental Compliance Service`: reconciles sustainability metrics with regulatory requirements and updates governance policies.
+- `Facilities Maintenance Coordinator`: dispatches facility upkeep tasks, tracks repairs, and aligns work orders with supply partners.
+- `Asset Lifecycle Manager`: maintains the canonical equipment inventory, coordinates retirements, and signals retention or decommissioning workflows.
+- `Performance Coaching Engine`: translates quality insights into targeted enablement plans for garage staff and partner teams.
+- `Privacy & Consent Service`: enforces opt-in policies, stores consent receipts, and gates messaging against preference changes.
+- `Engagement Orchestration Hub`: sequences targeted communications while coordinating with experience, compliance, and consent services.
+- `Treasury Settlement Service`: validates cleared invoices, triggers payouts, and logs settlement confirmations for finance partners.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -89,6 +100,14 @@ The latest revision folds in support, security, resilience, and field execution 
 - `HR Compliance Records`: maintains access attestations and employment-linked authorization evidence.
 - `Parts Inventory System`: tracks fulfillment status, shortages, and replenishment orders tied to branch requests.
 - `Operational Knowledge Base`: stores playbooks, release notes, and remediation learnings sourced from change and incident workflows.
+- `Sustainability & ESG Workspace`: centralizes environmental dashboards, obligations, and stewardship insights.
+- `Maintenance Command Center`: tracks facility repair queues, technician dispatch, and completion confirmation.
+- `Asset Registry`: authoritative ledger of garage equipment lifecycle, health, and ownership assignments.
+- `Coaching & Enablement Tracker`: records assigned coaching plans, completion status, and qualitative feedback loops.
+- `Consent & Preference Vault`: captures legal opt-ins, messaging suppressions, and proof-of-consent artifacts.
+- `Engagement Campaign Archive`: stores targeted outreach history along with effectiveness analytics.
+- `Payment Gateway`: executes treasury-initiated payouts and refunds tied to billing and settlement workflows.
+- `Treasury Settlement Vault`: long-term ledger of payouts, funding attempts, and reconciliation evidence used by finance teams.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -108,6 +127,10 @@ The latest revision folds in support, security, resilience, and field execution 
 - `HR Compliance`: reviews attestation evidence and enforces employment-linked access controls in partnership with identity teams.
 - `Supply Chain`: monitors parts inventory posture, shortage alerts, and vendor escalations linked to branch performance.
 - `Customer Journey Team`: reviews journey analytics outputs to craft proactive communications surfaced by the experience orchestration hub.
+- `Sustainability Office`: monitors ESG dashboards, validates environmental obligations, and coordinates remediation plans with compliance.
+- `Facilities Operations`: manages maintenance command queues, ensures repairs land on schedule, and confirms asset lifecycle updates.
+- `Treasury & Payments`: reviews settlement vault entries, validates payout readiness, and coordinates exceptions across billing and banking feeds.
+- `Customer Engagement`: tunes campaign sequencing, monitors consent adherence, and aligns outreach outcomes with enablement initiatives.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -125,6 +148,7 @@ The latest revision folds in support, security, resilience, and field execution 
 | Experience, Billing & Governance Oversight | Feedback, telemetry, and reconciliation routines drive continuous improvement and policy alignment. | Monitoring / Feedback Portal → Quality Assurance Engine → Compliance Reporter / Customer Feedback DB; Garage & Branch Services → Billing Reconciliation → Billing Ledger; Audit Event Bus → Data Governance Manager → Data Catalog |
 | Resilience, Security & Support Coordination | Threat intel, incident command, and recovery drills protect uptime while enforcing refreshed policies. | Threat Intelligence Feed → Security Operations Center → SIEM / Key Vault; Support Ticketing System → Incident Response Orchestrator → Support Ticket Queue / Runbook Repository; Garage & Branch Services → Disaster Recovery Coordinator → Disaster Recovery Site |
 | Field Execution, Vendors & Change Enablement | Vendor onboarding, mobile tasking, and training compliance stay synchronized with policy, fraud, and supply chain guardrails. | Vendor Portal → Vendor Management Service → Workflow Orchestration Hub / Vendor Settlement Ledger; Garage Mobile App ↔ Mobile Sync Service ↔ Garage Management Service; Training Platform → Training Compliance Service → Compliance Reporter / Training Records Archive; Parts Supply Coordinator → Monitoring / Parts Inventory System; Fraud Detection Service → Monitoring / Fraud Case Queue |
+| Sustainability, Maintenance & Treasury Assurance | ESG metrics, facility upkeep, and payout orchestration reinforce compliance, safety, and fiscal integrity. | Sustainability Feed → Environmental Compliance Service → Compliance / ESG Workspace / Data Governance; Facilities Maintenance Platform → Facilities Maintenance Coordinator → Supply Chain / Maintenance Command Center / Asset Lifecycle Manager → Asset Registry / Retention; Billing Reconciliation → Treasury Settlement Service → Payment Gateway / Treasury Settlement Vault / Monitoring; Customer Communications Hub → Engagement Orchestration Hub ↔ Privacy & Consent Service → Notify / Consent & Preference Vault / Engagement Campaign Archive |
 
 ---
 

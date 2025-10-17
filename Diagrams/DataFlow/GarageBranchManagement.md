@@ -20,6 +20,10 @@ flowchart LR
         VendorPortal[Vendor Partner Portal]
         TrainingPlatform[Training & Certification Platform]
         HRIS[HR Information System]
+        SustainabilityFeed[Sustainability Reporting Feed]
+        FacilitiesPlatform[Facilities Maintenance Platform]
+        CustomerComms[Customer Communications Hub]
+        BankFeed[Bank Settlement Feed]
     end
 
     subgraph CoreServices[Core Processes]
@@ -50,6 +54,13 @@ flowchart LR
         HRCompliance[HR Compliance Checker]
         SupplyChain[Parts Supply Coordinator]
         ExperienceOrch[Experience Orchestration Hub]
+        EnvCompliance[Environmental Compliance Service]
+        FacilitiesCoord[Facilities Maintenance Coordinator]
+        AssetManager[Asset Lifecycle Manager]
+        CoachingEngine[Performance Coaching Engine]
+        PrivacyService[Privacy & Consent Service]
+        EngagementHub[Engagement Orchestration Hub]
+        TreasuryOps[Treasury Settlement Service]
     end
 
     subgraph Destinations[Data Destinations]
@@ -84,6 +95,14 @@ flowchart LR
         HRRecords[(HR Compliance Records)]
         PartsInventory[(Parts Inventory System)]
         KnowledgeBase[(Operational Knowledge Base)]
+        ESGWorkspace[(Sustainability & ESG Workspace)]
+        MaintenanceBoard[(Maintenance Command Center)]
+        AssetRegistry[(Asset Registry)]
+        CoachingLog[(Coaching & Enablement Tracker)]
+        ConsentVault[(Consent & Preference Vault)]
+        EngagementArchive[(Engagement Campaign Archive)]
+        PaymentGateway[(Payment Gateway)]
+        TreasuryVault[(Treasury Settlement Vault)]
     end
 
     GA -->|Authenticate| IdP
@@ -101,9 +120,15 @@ flowchart LR
     MobileApp -->|Authenticate & sync tasks| IdP
     MobileApp -->|Capture onsite updates| MobileSync
     IoTSensors -->|Transmit equipment diagnostics| Monitoring
+    IoTSensors -->|Stream asset telemetry| AssetManager
     VendorPortal -->|Submit partner onboarding data| VendorMgmt
     TrainingPlatform -->|Share certification results| TrainingSvc
     HRIS -->|Supply staffing roster & compliance status| HRCompliance
+    SustainabilityFeed -->|Emit emissions metrics| EnvCompliance
+    FacilitiesPlatform -->|Report work orders| FacilitiesCoord
+    CustomerComms -->|Provide messaging calendar| EngagementHub
+    CustomerComms -->|Transmit consent updates| PrivacyService
+    BankFeed -->|Send settlement results| TreasuryOps
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -121,6 +146,7 @@ flowchart LR
     DocService -->|Persist originals| DocVault
     DocService -->|Escalate anomalies| Compliance
     Compliance -->|Queue manual review| ComplianceQueue
+    EnvCompliance -->|Flag environmental obligations| Compliance
 
     SA -->|Review documents & details| Approval
     Approval -->|Approve| GMS
@@ -137,6 +163,7 @@ flowchart LR
     BranchSvc -->|Emit branch change event| AuditBus
     Lifecycle -->|Schedule periodic reviews| GMS
     Lifecycle -->|Trigger dormant cleanup| Retention
+    EnvCompliance -->|Register ESG policies| DataGov
 
     GMS -->|Status changes, ownership transfer, document updates| AuditBus
     AuditBus -->|Write append-only log| AL
@@ -156,10 +183,12 @@ flowchart LR
     QAEngine -->|Log structured insights| FeedbackDB
     QAEngine -->|Open remediation tasks| Compliance
     QAEngine -->|Share service scores| Monitoring
+    QAEngine -->|Provide coaching cues| CoachingEngine
     GMS -->|Generate invoicing data| BillingRecon
     BranchSvc -->|Sync branch billing impacts| BillingRecon
     BillingRecon -->|Settle partner fees| BillingLedger
     BillingRecon -->|Flag discrepancies| Compliance
+    BillingRecon -->|Forward cleared invoices| TreasuryOps
     DataGov -->|Register lineage & ownership| DataCatalog
     DataGov -->|Publish access policies| AccessCtrl
     IncidentResponse -->|Create remediation tickets| TicketQueue
@@ -199,6 +228,27 @@ flowchart LR
     SupplyChain -->|Sync vendor updates| VendorMgmt
     FraudDetect -->|Score anomalous activity| Monitoring
     FraudDetect -->|Open fraud cases| FraudCaseQueue
+    FacilitiesCoord -->|Coordinate repairs| SupplyChain
+    FacilitiesCoord -->|Dispatch maintenance tasks| MaintenanceBoard
+    FacilitiesCoord -->|Sync facility lifecycle| AssetManager
+    AssetManager -->|Update asset registry| AssetRegistry
+    AssetManager -->|Notify retirements| Retention
+    AssetManager -->|Publish asset posture| Monitoring
+    EnvCompliance -->|Publish ESG dashboards| ESGWorkspace
+    EnvCompliance -->|Enforce sustainability policies| PolicyEngine
+    CoachingEngine -->|Assign coaching plans| CoachingLog
+    CoachingEngine -->|Trigger enablement nudges| EngagementHub
+    EngagementHub -->|Deliver targeted communications| Notify
+    EngagementHub -->|Archive campaign outcomes| EngagementArchive
+    EngagementHub -->|Coordinate with experience orchestration| ExperienceOrch
+    PrivacyService -->|Enforce consent checks| AccessCtrl
+    PrivacyService -->|Store consent receipts| ConsentVault
+    EngagementHub -->|Respect consent preferences| PrivacyService
+    TreasuryOps -->|Initiate payouts| PaymentGateway
+    TreasuryOps -->|Persist treasury ledger| TreasuryVault
+    TreasuryOps -->|Emit settlement telemetry| Monitoring
+    EnvCompliance -->|Share sustainability signals| AnalyticsHub
+    CoachingEngine -->|Provide enablement outcomes| AnalyticsHub
     PolicyEngine -->|Place records on hold| LegalHold
     Compliance -->|Escalate legal hold requests| LegalHold
     Lifecycle -->|Publish longitudinal dataset| DataLake
@@ -214,7 +264,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault destination;
 ```
