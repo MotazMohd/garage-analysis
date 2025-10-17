@@ -6,7 +6,7 @@ This module handles the creation, configuration, and access control for garages 
 
 📈 **Data Flow Overview:** Review the [Garage & Branch Management Data Flow](../../Diagrams/DataFlow/GarageBranchManagement.md) for a visual walkthrough of who contributes data, which services transform it, and where it ultimately lands.
 
-The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, AI governance, marketing intelligence, legal advisory, localization, partner risk analytics, scenario simulation, predictive maintenance, energy optimization, logistics automation, robotics telemetry, and innovation governance so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations.
+The latest revision folds in support, security, resilience, field execution, sustainability oversight, treasury coordination, regulatory filings, insurance reconciliation, revenue intelligence, procurement orchestration, AI governance, marketing intelligence, legal advisory, localization, partner risk analytics, scenario simulation, predictive maintenance, energy optimization, logistics automation, robotics telemetry, innovation governance, global expansion steering, customs compliance workflows, remote assist orchestration, fleet operations telemetry, and investor relations visibility so stakeholders can see how incidents, policy updates, vendor onboarding, facility upkeep, outreach, and compliance attestations intersect with day-to-day garage and branch operations.
 
 **Key actors captured in the diagram**
 
@@ -52,6 +52,12 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Robotics Fleet Console`: emits telemetry and command history from automated equipment deployed at garages.
 - `Quality Inspection Lab`: delivers third-party inspection, calibration, and certification outcomes for critical equipment.
 - `Innovation Experiment Hub`: catalogs pilot proposals, experiment feedback, and proof-of-concept telemetry for future capabilities.
+- `Global Trade Registry`: publishes cross-border licensing statutes and operational constraints for new market entries.
+- `Customs Broker Portal`: provides import/export declarations, duty schedules, and clearance statuses for inbound equipment and materials.
+- `Fleet Telematics Network`: streams vehicle routing, utilization, and compliance telemetry tied to field operations.
+- `Remote AR Support Platform`: delivers augmented-reality session context, annotations, and resolution history from remote experts.
+- `Investor Relations Feed`: broadcasts investor communications, commitments, and disclosure timing requirements.
+- `Workforce Management Platform`: maintains staffing plans, shift bids, and labor compliance requirements for branches and field crews.
 
 **Core Processes**
 - `Garage Management Service`: stores pending garages, applies decisions, and seeds default branch values.
@@ -112,6 +118,12 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Logistics Control Tower`: harmonizes shipments, reroutes inventory, and alerts stakeholders to carrier disruptions.
 - `Digital Twin Service`: mirrors garage configurations, enabling what-if analysis and feedback loops for planning engines.
 - `Innovation Portfolio Manager`: prioritizes experiments, translates learnings into governance updates, and evangelizes successful pilots.
+- `Global Expansion Program`: orchestrates market-entry readiness, aligns regulatory requirements, and disseminates localization playbooks.
+- `Customs Compliance Desk`: coordinates customs filings, duty reconciliations, and clearance escalations for imported equipment.
+- `Fleet Operations Control`: supervises telematics feeds, routing updates, and maintenance triggers for mobile service fleets.
+- `Remote Assist Orchestrator`: pairs remote experts with field teams, captures AR session outcomes, and feeds insights back into quality tooling.
+- `Investor Relations Desk`: synchronizes investor communications with treasury, legal, and leadership stakeholders while archiving commitments.
+- `Workforce Planning Engine`: optimizes staffing schedules, enforces labor guardrails, and syncs shift plans to mobile tasking queues.
 
 **Destinations & Stores**
 - `Garage Registry DB`: authoritative store for garage state and lifecycle history.
@@ -177,6 +189,12 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Digital Twin Library`: repository of modeled garages, branch twins, and scenario results for reuse.
 - `Weather Alert Hub`: broadcast channel for severe-weather notices and automated playbook triggers.
 - `Innovation Backlog Register`: persistent record of experiments, approvals, and institutional learnings.
+- `Trade Compliance Vault`: centralized evidence repository for market-entry approvals, licensing attestations, and trade compliance artifacts.
+- `Customs Filing Center`: system of record for customs declarations, duty payments, and clearance correspondence.
+- `Fleet Operations Dashboard`: telemetry hub for fleet utilization, routing status, and maintenance readiness.
+- `Remote Assist Console`: archive of remote support sessions, annotations, and follow-up actions for field teams.
+- `Investor Relations Workspace`: curated log of investor commitments, communications, and leadership follow-ups.
+- `Workforce Schedule Hub`: authoritative schedule store for staffing plans, shift assignments, and compliance attestations.
 
 **Oversight & Insight Consumers**
 - `Compliance Analysts`: triage queue items, update findings, and close the loop on document verification outcomes.
@@ -221,6 +239,12 @@ The latest revision folds in support, security, resilience, field execution, sus
 - `Logistics Command Center`: oversees logistics control metrics, resolves carrier bottlenecks, and collaborates with supply operations.
 - `Robotics Operations Team`: monitors robotics boards, enforces safety procedures, and syncs automation with human workflows.
 - `Innovation Steering Committee`: assesses experiment backlogs, greenlights pilots, and shares learnings with governance forums.
+- `Global Expansion Office`: coordinates market-entry roadmaps, validates licensing dossiers, and aligns localization rollouts.
+- `Customs & Trade Compliance`: reviews customs filing queues, duty reconciliations, and broker escalations.
+- `Fleet Operations Command`: monitors telematics dashboards, resolves routing conflicts, and tracks maintenance readiness.
+- `Remote Support Leadership`: oversees remote assist utilization, quality outcomes, and knowledge capture across AR sessions.
+- `Investor Relations & Communications`: synchronizes investor messaging, commitments, and regulatory disclosures with treasury and legal stakeholders.
+- `Workforce Planning Office`: validates staffing plans, labor compliance, and mobile tasking readiness.
 
 > 🧭 **How to read the diagram:** follow each row to see how a submission moves from intake, through verification and approval, into provisioning and downstream audit visibility. The refreshed flow also shows how role checks, compliance escalations, and operational dashboards plug into the lifecycle so nothing slips past reviewers.
 
@@ -242,6 +266,7 @@ The latest revision folds in support, security, resilience, field execution, sus
 | Predictive Maintenance, Energy & Logistics Automation | Forecasts, grid signals, and automation telemetry proactively tune operations and shipments before incidents occur. | Weather Intelligence Service → Predictive Maintenance Orchestrator → Maintenance Board / Maintenance Forecast Workspace / Weather Alert Hub / Asset Lifecycle Manager; Energy Optimization Engine → Facilities Maintenance Coordinator / Energy Optimization Dashboard / Monitoring; Logistics Control Tower & Robotics Operations Coordinator → Logistics Control Center / Parts Inventory System / Vendor Management Service / Robotics Operations Board |
 | Regulatory, Insurance & Intelligence Governance | Filings, claims, revenue analytics, procurement, and model oversight keep regulators, insurers, finance, and AI programs aligned. | Treasury Settlement Service → Regulatory Reporting Gateway → Regulator Collaboration Portal / Continuity Vault / Policy Automation Engine; Insurance Carrier Portal → Insurance Claims Orchestrator → Insurance Claims Repository / Facilities Maintenance Coordinator / Treasury Settlement Service / Customer Success Desk; Billing Reconciliation → Revenue Insights Engine → Monitoring / Revenue Analytics Mart / Analytics & ML Hub; Procurement Management Suite → Procurement Coordination Hub → Procurement Ledger / Supply Chain / Vendor Management Service; AI & ML Operations → Model Registry / Data Anonymization Service → Synthetic Data Vault / Privacy & Consent Service / Analytics & ML Hub |
 | Community, Marketing & Ethical Stewardship | Community signals, marketing insights, legal counsel, partner risk analytics, localization, and ethical oversight fine-tune engagement while reinforcing governance. | Community Feedback Forums → Journey Mapping Studio / Customer Success Desk → Community Engagement Hub; Marketing Automation Platform → Marketing Insights Engine → Engagement Orchestration Hub / Marketing Intelligence Mart; Legal Advisory Portal → Legal Counsel Desk → Compliance Reporter / Legal Advisory Archive / Regulatory Reporting Gateway; Partner Risk Exchange → Partner Risk Evaluator → Risk Scoring Engine / Partner Risk Register / Compliance Reporter; Localization Management Service → Experience Orchestration Hub → Localization Repository; Ethics Review Board → AI & ML Operations / Policy Automation Engine → Ethics Decisions Ledger; Operational Simulation Engine → Business Continuity Planner / Disaster Recovery Coordinator → Simulation Scenario Library |
+| Global Expansion, Customs & Remote Coordination | Cross-border programs align licensing, customs filings, fleet telemetry, remote assist, investor messaging, and staffing plans to smooth new market launches. | Global Trade Registry → Global Expansion Program → Trade Compliance Vault / Localization Management Service / Knowledge Base; Customs Broker Portal → Customs Compliance Desk → Customs Filing Center / Logistics Control Tower / Treasury Settlement Service; Fleet Telematics Network → Fleet Operations Control → Predictive Maintenance Orchestrator / Fleet Operations Dashboard / Facilities Maintenance Coordinator; Remote AR Support Platform → Remote Assist Orchestrator → Remote Assist Console / Quality Assurance Engine / Knowledge Base; Investor Relations Feed → Investor Relations Desk → Treasury Settlement Service / Legal Counsel Desk / Investor Relations Workspace / Notification Service; Workforce Management Platform → Workforce Planning Engine → Mobile Sync Service / Workforce Schedule Hub / HR Compliance Checker |
 
 ---
 

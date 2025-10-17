@@ -44,6 +44,12 @@ flowchart LR
         RoboticsFleet[Robotics Fleet Console]
         QualityLab[Quality Inspection Lab]
         InnovationHub[Innovation Experiment Hub]
+        GlobalTradeRegistry[Global Trade Registry]
+        CustomsBroker[Customs Broker Portal]
+        FleetTelematics[Fleet Telematics Network]
+        RemoteARPlatform[Remote AR Support Platform]
+        InvestorRelationsFeed[Investor Relations Feed]
+        WorkforceScheduler[Workforce Management Platform]
     end
 
     subgraph CoreServices[Core Processes]
@@ -105,6 +111,12 @@ flowchart LR
         LogisticsHub[Logistics Control Tower]
         DigitalTwinService[Digital Twin Service]
         InnovationLab[Innovation Portfolio Manager]
+        ExpansionProgram[Global Expansion Program]
+        CustomsCompliance[Customs Compliance Desk]
+        FleetOpsControl[Fleet Operations Control]
+        RemoteAssistHub[Remote Assist Orchestrator]
+        InvestorRelationsDesk[Investor Relations Desk]
+        WorkforcePlanner[Workforce Planning Engine]
     end
 
     subgraph Destinations[Data Destinations]
@@ -172,6 +184,12 @@ flowchart LR
         DigitalTwinLibrary[(Digital Twin Library)]
         WeatherAlertHub[(Weather Alert Hub)]
         InnovationBacklog[(Innovation Backlog Register)]
+        TradeComplianceVault[(Trade Compliance Vault)]
+        CustomsFilingCenter[(Customs Filing Center)]
+        FleetOpsDashboard[(Fleet Operations Dashboard)]
+        RemoteAssistConsole[(Remote Assist Console)]
+        InvestorRelationsWorkspace[(Investor Relations Workspace)]
+        WorkforceScheduleHub[(Workforce Schedule Hub)]
     end
 
     GA -->|Authenticate| IdP
@@ -187,6 +205,12 @@ flowchart LR
     RoboticsFleet -->|Telemetry & commands| RoboticsCoordinator
     QualityLab -->|Inspection results| QAEngine
     InnovationHub -->|Experiment backlog| InnovationLab
+    GlobalTradeRegistry -->|Provide cross-border requirements| ExpansionProgram
+    CustomsBroker -->|Share import/export manifests| CustomsCompliance
+    FleetTelematics -->|Stream fleet telemetry| FleetOpsControl
+    RemoteARPlatform -->|Supply AR session context| RemoteAssistHub
+    InvestorRelationsFeed -->|Broadcast investor commitments| InvestorRelationsDesk
+    WorkforceScheduler -->|Send staffing forecasts| WorkforcePlanner
     RegFeed -->|Publish compliance updates| Compliance
     Feedback -->|Share satisfaction scores & qualitative input| QAEngine
     Telemetry -->|Stream performance metrics| Monitoring
@@ -288,6 +312,31 @@ flowchart LR
     BillingRecon -->|Reconcile procurement accruals| ProcurementHub
     ProcurementHub -->|Match purchase orders| ProcurementLedger
     ProcurementHub -->|Notify sourcing variances| SupplyChain
+    ExpansionProgram -->|Coordinate market entry| Compliance
+    ExpansionProgram -->|Log expansion dossier| TradeComplianceVault
+    ExpansionProgram -->|Sync localization requirements| LocalizationService
+    ExpansionProgram -->|Share playbooks| KnowledgeBase
+    ExpansionProgram -->|Alert regulatory teams| RegReporting
+    CustomsCompliance -->|File customs declarations| CustomsFilingCenter
+    CustomsCompliance -->|Notify logistics orchestration| LogisticsHub
+    CustomsCompliance -->|Raise duty exceptions| Compliance
+    CustomsCompliance -->|Sync trade costs| TreasuryOps
+    FleetOpsControl -->|Dispatch routing updates| LogisticsHub
+    FleetOpsControl -->|Publish fleet health| FleetOpsDashboard
+    FleetOpsControl -->|Coordinate maintenance triggers| PredictiveMaintenance
+    FleetOpsControl -->|Alert facilities on disruptions| FacilitiesCoord
+    RemoteAssistHub -->|Coordinate remote experts| FacilitiesCoord
+    RemoteAssistHub -->|Archive AR sessions| RemoteAssistConsole
+    RemoteAssistHub -->|Feed remediation insights| QAEngine
+    RemoteAssistHub -->|Share guidance| KnowledgeBase
+    InvestorRelationsDesk -->|Inform treasury strategy| TreasuryOps
+    InvestorRelationsDesk -->|Archive investor commitments| InvestorRelationsWorkspace
+    InvestorRelationsDesk -->|Sync disclosures| LegalCounsel
+    InvestorRelationsDesk -->|Broadcast investor updates| Notify
+    WorkforcePlanner -->|Optimize staffing| HRCompliance
+    WorkforcePlanner -->|Coordinate shift assignments| MobileSync
+    WorkforcePlanner -->|Publish staffing plans| WorkforceScheduleHub
+    WorkforcePlanner -->|Notify facilities of staffing gaps| FacilitiesCoord
     ProcurementHub -->|Raise escalations| Compliance
     ProcurementHub -->|Coordinate fulfillment| VendorMgmt
     ProcurementHub -->|Sync financial impacts| ERP
@@ -450,7 +499,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub destination;
 ```
