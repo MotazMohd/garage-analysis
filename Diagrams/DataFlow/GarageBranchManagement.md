@@ -75,6 +75,11 @@ flowchart LR
         QuantumLab[Quantum Research Lab]
         OpenDataExchange[Open Data Exchange]
         CommunityScienceHub[Community Science Hub]
+        CarbonExchange[Carbon Market Exchange]
+        DroneFleet[Autonomous Drone Fleet]
+        SafetyDispatch[Public Safety Dispatch Feed]
+        SkillsAcademy[Skills Acceleration Platform]
+        DiversitySurvey[Diversity & Inclusion Survey]
     end
 
     subgraph CoreServices[Core Processes]
@@ -171,6 +176,11 @@ flowchart LR
         QuantumSecurityService[Quantum Security Service]
         OpenDataSteward[Open Data Steward]
         CommunityScienceCoordinator[Community Science Coordinator]
+        CarbonCreditManager[Carbon Credit Manager]
+        SafetyFusionCenter[Safety Fusion Center]
+        WorkforceUpskillingHub[Workforce Upskilling Hub]
+        DiversityAnalyticsEngine[Diversity Analytics Engine]
+        InnovationFundingDesk[Innovation Funding Desk]
     end
 
     subgraph Destinations[Data Destinations]
@@ -271,6 +281,11 @@ flowchart LR
         QuantumSecurityVault[(Quantum Security Vault)]
         OpenDataPortal[(Open Data Portal)]
         CommunityImpactHub[(Community Impact Hub)]
+        CarbonLedger[(Carbon Credit Ledger)]
+        SafetyCommandHub[(Safety Command Hub)]
+        SkillsPortfolio[(Skills Portfolio Workspace)]
+        DiversityDashboard[(Diversity & Inclusion Dashboard)]
+        InnovationFundRegistry[(Innovation Funding Registry)]
     end
 
     GA -->|Authenticate| IdP
@@ -341,6 +356,11 @@ flowchart LR
     QuantumLab -->|Provide quantum threat intel| QuantumSecurityService
     OpenDataExchange -->|Share open datasets| OpenDataSteward
     CommunityScienceHub -->|Submit community findings| CommunityScienceCoordinator
+    CarbonExchange -->|Share carbon pricing & offsets| CarbonCreditManager
+    DroneFleet -->|Provide aerial inspection telemetry| SafetyFusionCenter
+    SafetyDispatch -->|Send incident bulletins| SafetyFusionCenter
+    SkillsAcademy -->|Publish upskilling progress| WorkforceUpskillingHub
+    DiversitySurvey -->|Submit inclusion feedback| DiversityAnalyticsEngine
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -698,6 +718,27 @@ flowchart LR
     CommunityScienceCoordinator -->|Coordinate with open data| OpenDataSteward
     KnowledgeOps -->|Publish enablement briefs| EnablementLibrary
     KnowledgeOps -->|Share insights with experience lab| ExperienceLabWorkspace
+    CarbonCreditManager -->|Track offsets & obligations| CarbonLedger
+    CarbonCreditManager -->|Inform sustainability governance| EnvCompliance
+    CarbonCreditManager -->|Sync funding signals| TreasuryOps
+    CarbonCreditManager -->|Share climate finance posture| ClimateRiskAnalyzer
+    SafetyFusionCenter -->|Coordinate response advisories| EmergencyBridge
+    SafetyFusionCenter -->|Archive multi-source incidents| SafetyCommandHub
+    SafetyFusionCenter -->|Alert monitoring teams| Monitoring
+    SafetyFusionCenter -->|Partner with continuity planning| BusinessContinuity
+    WorkforceUpskillingHub -->|Coordinate skill plans| EnablementStudio
+    WorkforceUpskillingHub -->|Log capability journeys| SkillsPortfolio
+    WorkforceUpskillingHub -->|Feed analytics| AnalyticsHub
+    WorkforceUpskillingHub -->|Share insights with workforce planning| WorkforcePlanner
+    DiversityAnalyticsEngine -->|Publish equity dashboards| DiversityDashboard
+    DiversityAnalyticsEngine -->|Flag compliance gaps| Compliance
+    DiversityAnalyticsEngine -->|Sync workforce inclusivity metrics| HRCompliance
+    DiversityAnalyticsEngine -->|Share insights with leadership| CorpCommsDesk
+    InnovationFundingDesk -->|Prioritize investment| InnovationLab
+    InnovationFundingDesk -->|Archive funding decisions| InnovationFundRegistry
+    InnovationFundingDesk -->|Coordinate capital planning| CapitalProjectsOffice
+    InnovationFundingDesk -->|Share signals with treasury| TreasuryOps
+    InnovationFundingDesk -->|Seed strategic backlog| InnovationBacklog
     ExperienceLabOrchestrator -->|Prototype new journeys| ExperienceOrch
     ExperienceLabOrchestrator -->|Capture experiment results| ExperienceLabWorkspace
     ExperienceLabOrchestrator -->|Share learnings| KnowledgeBase
@@ -710,7 +751,7 @@ flowchart LR
     classDef process fill:#ecfdf5,stroke:#047857,stroke-width:1px,color:#064e3b;
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
-    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler,FranchiseCouncilPortal,TaxAuthorityFeed,PartnerMarketingExchange,LoyaltyPlatform,EventMgmtSystem,ELearningAcademy,CorpCommsHub,BenchmarkFeed,SmartBuildingSystem,EmergencyAlertNetwork,CapitalProjectsTracker,DigitalSignageController,DealerNetwork,SubscriptionPortal,EVChargingNetwork,CyberSecurityLab,EmployeeFeedback source;
-    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner,FranchiseCouncil,TaxComplianceEngine,CoMarketingHub,LoyaltyService,EventCoordination,EnablementStudio,CorpCommsDesk,BenchmarkEngine,SmartFacilitiesOrchestrator,EmergencyBridge,CapitalProjectsOffice,DigitalExperienceMgr,SubscriptionOrchestrator,DealerEngagement,ChargingOrchestrator,SecurityResearchOps,EmployeeWellnessDesk,DigitalIdentityBroker,CircularEconomyPlanner,KnowledgeOps,ExperienceLabOrchestrator process;
-    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub,FranchiseGovernanceLibrary,TaxFilingVault,CoMarketingArchive,LoyaltyWarehouse,EventPlaybookRepo,EnablementLibrary,CorpCommsArchive,BenchmarkDashboard,SmartBuildingConsole,EmergencyHub,CapitalProjectsLedger,DigitalSignageNetwork,SubscriptionLedger,DealerCollabArchive,ChargingNetworkOps,WellnessVault,CircularityRegistry,SecurityResearchArchive,ExperienceLabWorkspace destination;
+    class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler,FranchiseCouncilPortal,TaxAuthorityFeed,PartnerMarketingExchange,LoyaltyPlatform,EventMgmtSystem,ELearningAcademy,CorpCommsHub,BenchmarkFeed,SmartBuildingSystem,EmergencyAlertNetwork,CapitalProjectsTracker,DigitalSignageController,DealerNetwork,SubscriptionPortal,EVChargingNetwork,CyberSecurityLab,EmployeeFeedback,CarbonExchange,DroneFleet,SafetyDispatch,SkillsAcademy,DiversitySurvey source;
+    class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner,FranchiseCouncil,TaxComplianceEngine,CoMarketingHub,LoyaltyService,EventCoordination,EnablementStudio,CorpCommsDesk,BenchmarkEngine,SmartFacilitiesOrchestrator,EmergencyBridge,CapitalProjectsOffice,DigitalExperienceMgr,SubscriptionOrchestrator,DealerEngagement,ChargingOrchestrator,SecurityResearchOps,EmployeeWellnessDesk,DigitalIdentityBroker,CircularEconomyPlanner,KnowledgeOps,ExperienceLabOrchestrator,CarbonCreditManager,SafetyFusionCenter,WorkforceUpskillingHub,DiversityAnalyticsEngine,InnovationFundingDesk process;
+    class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub,FranchiseGovernanceLibrary,TaxFilingVault,CoMarketingArchive,LoyaltyWarehouse,EventPlaybookRepo,EnablementLibrary,CorpCommsArchive,BenchmarkDashboard,SmartBuildingConsole,EmergencyHub,CapitalProjectsLedger,DigitalSignageNetwork,SubscriptionLedger,DealerCollabArchive,ChargingNetworkOps,WellnessVault,CircularityRegistry,SecurityResearchArchive,ExperienceLabWorkspace,CarbonLedger,SafetyCommandHub,SkillsPortfolio,DiversityDashboard,InnovationFundRegistry destination;
 ```
