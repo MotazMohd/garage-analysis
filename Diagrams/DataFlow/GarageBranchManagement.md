@@ -99,6 +99,15 @@ flowchart LR
         NanoManufacturingConsortium[Nano Manufacturing Consortium]
         CyberPhysicalTestbed[Cyber-Physical Testbed]
         SpaceWeatherObservatory[Space Weather Observatory]
+        AtmosphericArray[Atmospheric Research Array]
+        GeothermalGrid[Geothermal Monitoring Grid]
+        SpaceTrafficCenter[Space Traffic Coordination Center]
+        BiotechAlliance[Biotech Innovation Alliance]
+        EthicalAIObservatory[Ethical AI Observatory]
+        AgriRoboticsLab[AgriTech Robotics Lab]
+        ZeroEmissionFleetNet[Zero Emission Fleet Network]
+        InsuranceOracle[Smart Contract Insurance Oracle]
+        ResilienceInstitute[Resilience Research Institute]
     end
 
     subgraph CoreServices[Core Processes]
@@ -219,6 +228,15 @@ flowchart LR
         NanoFabricationManager[Nano-Fabrication Manager]
         CyberPhysicalOrchestrator[Cyber-Physical Orchestrator]
         SpaceWeatherDesk[Space Weather Desk]
+        AtmosphericDesk[Atmospheric Intelligence Desk]
+        GeothermalCoordinator[Geothermal Resilience Coordinator]
+        OrbitalLiaison[Orbital Traffic Liaison]
+        BiotechCouncil[Biotech Innovation Council]
+        EthicalAICenter[Ethical AI Command Center]
+        AgriRoboticsCoordinator[AgriTech Robotics Coordinator]
+        ZeroEmissionCommand[Zero Emission Fleet Command]
+        ParametricInsuranceEngine[Parametric Insurance Engine]
+        ResilienceResearchExchange[Resilience Research Exchange]
     end
 
     subgraph Destinations[Data Destinations]
@@ -343,6 +361,15 @@ flowchart LR
         NanoFabricationRepository[(Nano-Fabrication Repository)]
         CyberPhysicalTwinLibrary[(Cyber-Physical Twin Library)]
         SpaceWeatherDashboard[(Space Weather Dashboard)]
+        AtmosphericIntelligenceVault[(Atmospheric Intelligence Vault)]
+        GeothermalInsightsRepository[(Geothermal Insights Repository)]
+        OrbitalTrafficLedger[(Orbital Traffic Ledger)]
+        BiotechInnovationArchive[(Biotech Innovation Archive)]
+        ResponsibleAIJournal[(Responsible AI Journal)]
+        AgriRoboticsLibrary[(Agri Robotics Library)]
+        ZeroEmissionFleetLedger[(Zero Emission Fleet Ledger)]
+        ParametricInsuranceVault[(Parametric Insurance Vault)]
+        ResilienceResearchLibrary[(Resilience Research Library)]
     end
 
     GA -->|Authenticate| IdP
@@ -437,6 +464,15 @@ flowchart LR
     NanoManufacturingConsortium -->|Supply advanced fabrication updates| NanoFabricationManager
     CyberPhysicalTestbed -->|Deliver cyber-physical stress results| CyberPhysicalOrchestrator
     SpaceWeatherObservatory -->|Send solar storm forecasts| SpaceWeatherDesk
+    AtmosphericArray -->|Share atmospheric research| AtmosphericDesk
+    GeothermalGrid -->|Stream geothermal telemetry| GeothermalCoordinator
+    SpaceTrafficCenter -->|Provide orbital routing alerts| OrbitalLiaison
+    BiotechAlliance -->|Submit biotech innovation insights| BiotechCouncil
+    EthicalAIObservatory -->|Report responsible AI findings| EthicalAICenter
+    AgriRoboticsLab -->|Deliver agri-robotics telemetry| AgriRoboticsCoordinator
+    ZeroEmissionFleetNet -->|Share zero-emission fleet metrics| ZeroEmissionCommand
+    InsuranceOracle -->|Stream parametric contract data| ParametricInsuranceEngine
+    ResilienceInstitute -->|Publish resilience research| ResilienceResearchExchange
 
     OceanStewardshipOffice -->|Coordinate marine stewardship actions| EnvCompliance
     OceanStewardshipOffice -->|Publish conservation dashboards| OceanStewardshipVault
@@ -465,6 +501,33 @@ flowchart LR
     SpaceWeatherDesk -->|Alert continuity teams| BusinessContinuity
     SpaceWeatherDesk -->|Advise maintenance forecasts| PredictiveMaintenance
     SpaceWeatherDesk -->|Publish space weather dashboards| SpaceWeatherDashboard
+    AtmosphericDesk -->|Enrich space weather planning| SpaceWeatherDesk
+    AtmosphericDesk -->|Inform climate analytics| ClimateRiskAnalyzer
+    AtmosphericDesk -->|Archive atmospheric intelligence| AtmosphericIntelligenceVault
+    GeothermalCoordinator -->|Coordinate energy optimization| EnergyOptimizer
+    GeothermalCoordinator -->|Dispatch facilities follow-up| FacilitiesCoord
+    GeothermalCoordinator -->|Store geothermal insights| GeothermalInsightsRepository
+    OrbitalLiaison -->|Sync orbital logistics| SpaceLogisticsCoordinator
+    OrbitalLiaison -->|Alert continuity planners| BusinessContinuity
+    OrbitalLiaison -->|Record orbital traffic| OrbitalTrafficLedger
+    BiotechCouncil -->|Advise genomic safeguards| GenomicSafeguardCouncil
+    BiotechCouncil -->|Feed innovation pipeline| InnovationLab
+    BiotechCouncil -->|Archive biotech guidance| BiotechInnovationArchive
+    EthicalAICenter -->|Escalate ethics reviews| EthicsBoard
+    EthicalAICenter -->|Inform AIMLOps governance| AIMLOps
+    EthicalAICenter -->|Record responsible AI updates| ResponsibleAIJournal
+    AgriRoboticsCoordinator -->|Tune robotics orchestration| RoboticsCoordinator
+    AgriRoboticsCoordinator -->|Coordinate facilities readiness| FacilitiesCoord
+    AgriRoboticsCoordinator -->|Archive agri robotics playbooks| AgriRoboticsLibrary
+    ZeroEmissionCommand -->|Guide autonomous routing| AutonomousFleetCommand
+    ZeroEmissionCommand -->|Coordinate logistics adjustments| LogisticsHub
+    ZeroEmissionCommand -->|Record emissions outcomes| ZeroEmissionFleetLedger
+    ParametricInsuranceEngine -->|Trigger insurance workflows| InsuranceClaims
+    ParametricInsuranceEngine -->|Notify treasury hedging| TreasuryOps
+    ParametricInsuranceEngine -->|Archive parametric policies| ParametricInsuranceVault
+    ResilienceResearchExchange -->|Advise continuity planning| BusinessContinuity
+    ResilienceResearchExchange -->|Feed simulation scenarios| SimulationEngine
+    ResilienceResearchExchange -->|Store resilience research| ResilienceResearchLibrary
 
     GA -->|Submit creation fields\n(name, license, services, hours, etc.)| GMS
     GMS -->|Persist Pending garage| GR
@@ -888,9 +951,9 @@ flowchart LR
     classDef destination fill:#fff7ed,stroke:#c2410c,stroke-width:1px,color:#7c2d12;
 
     class GA,SA,BranchForm,DocsPortal,IdP,CRM,RegFeed,Feedback,Telemetry,SupportDesk,ThreatIntel,AuditFirm,MobileApp,IoTSensors,VendorPortal,TrainingPlatform,HRIS,SustainabilityFeed,FacilitiesPlatform,CustomerComms,BankFeed,ERP,InsurancePortal,SocialListening,FieldInspectors,RegPortal,DSWorkbench,ProcurementSuite,MarketingPlatform,LegalAdvisory,ITServiceCatalog,PartnerRiskExchange,AccessibilityTesting,CommunityForums,WeatherService,GridMonitor,WarrantySystem,LogisticsTracker,RoboticsFleet,QualityLab,InnovationHub,GlobalTradeRegistry,CustomsBroker,FleetTelematics,RemoteARPlatform,InvestorRelationsFeed,WorkforceScheduler,FranchiseCouncilPortal,TaxAuthorityFeed,PartnerMarketingExchange,LoyaltyPlatform,EventMgmtSystem,ELearningAcademy,CorpCommsHub,BenchmarkFeed,SmartBuildingSystem,EmergencyAlertNetwork,CapitalProjectsTracker,DigitalSignageController,DealerNetwork,SubscriptionPortal,EVChargingNetwork,CyberSecurityLab,EmployeeFeedback,CarbonExchange,DroneFleet,SafetyDispatch,SkillsAcademy,DiversitySurvey,SpacePort,AutonomousFleet,BioSafetyNet,NeurodiversityNetwork,SmartWaste,MetaverseHub,DigitalTherapeutics,MicrogridController,WaterSensors,MaterialsExchange source;
-    class OceanicObservatory,RegenerativeFarmNetwork,HoloOpsHub,GenomicsSafetyLab,BlockchainNode,SatelliteImagingArray,NanoManufacturingConsortium,CyberPhysicalTestbed,SpaceWeatherObservatory source;
+    class OceanicObservatory,RegenerativeFarmNetwork,HoloOpsHub,GenomicsSafetyLab,BlockchainNode,SatelliteImagingArray,NanoManufacturingConsortium,CyberPhysicalTestbed,SpaceWeatherObservatory,AtmosphericArray,GeothermalGrid,SpaceTrafficCenter,BiotechAlliance,EthicalAIObservatory,AgriRoboticsLab,ZeroEmissionFleetNet,InsuranceOracle,ResilienceInstitute source;
     class GMS,Approval,BranchSvc,AuditBus,DocService,AccessCtrl,Compliance,RiskEngine,Lifecycle,Retention,QAEngine,BillingRecon,DataGov,SecurityOps,IncidentResponse,AnalyticsHub,DRCoordinator,SecretsMgr,PolicyEngine,OrchestrationHub,ChangeMgmt,FraudDetect,VendorMgmt,TrainingSvc,HRCompliance,SupplyChain,ExperienceOrch,EnvCompliance,FacilitiesCoord,AssetManager,CoachingEngine,PrivacyService,EngagementHub,TreasuryOps,RegReporting,InsuranceClaims,RevenueInsights,ProcurementHub,AIMLOps,DataMasking,AccessibilitySvc,CustomerSuccess,BusinessContinuity,JourneyStudio,LegalCounsel,PartnerRiskEngine,MarketingInsights,LocalizationService,KnowledgeGraph,EthicsBoard,SimulationEngine,PredictiveMaintenance,WarrantyProcessor,EnergyOptimizer,RoboticsCoordinator,LogisticsHub,DigitalTwinService,InnovationLab,ExpansionProgram,CustomsCompliance,FleetOpsControl,RemoteAssistHub,InvestorRelationsDesk,WorkforcePlanner,FranchiseCouncil,TaxComplianceEngine,CoMarketingHub,LoyaltyService,EventCoordination,EnablementStudio,CorpCommsDesk,BenchmarkEngine,SmartFacilitiesOrchestrator,EmergencyBridge,CapitalProjectsOffice,DigitalExperienceMgr,SubscriptionOrchestrator,DealerEngagement,ChargingOrchestrator,SecurityResearchOps,EmployeeWellnessDesk,DigitalIdentityBroker,CircularEconomyPlanner,KnowledgeOps,ExperienceLabOrchestrator,CarbonCreditManager,SafetyFusionCenter,WorkforceUpskillingHub,DiversityAnalyticsEngine,InnovationFundingDesk,SpaceLogisticsCoordinator,AutonomousFleetCommand,BiosecurityDesk,NeurodiversityEnablement,WasteCircularityManager,MetaverseExperienceStudio,DigitalTherapeuticsCoordinator,MicrogridOptimizer,WaterStewardshipDesk,SustainableMaterialsPlanner process;
-    class OceanStewardshipOffice,AgriIntegrationService,HoloCollabOrchestrator,GenomicSafeguardCouncil,BlockchainComplianceDesk,SatelliteOpsCoordinator,NanoFabricationManager,CyberPhysicalOrchestrator,SpaceWeatherDesk process;
+    class OceanStewardshipOffice,AgriIntegrationService,HoloCollabOrchestrator,GenomicSafeguardCouncil,BlockchainComplianceDesk,SatelliteOpsCoordinator,NanoFabricationManager,CyberPhysicalOrchestrator,SpaceWeatherDesk,AtmosphericDesk,GeothermalCoordinator,OrbitalLiaison,BiotechCouncil,EthicalAICenter,AgriRoboticsCoordinator,ZeroEmissionCommand,ParametricInsuranceEngine,ResilienceResearchExchange process;
     class GR,BR,AL,AuditView,Notify,Rejection,DocVault,ComplianceQueue,Monitoring,Warehouse,RiskStore,Archive,FeedbackDB,BillingLedger,DataCatalog,TicketQueue,SIEM,Lakehouse,DRSite,RunbookRepo,PolicyRegistry,KeyVault,MobileSync,VendorLedger,TrainingArchive,FraudCaseQueue,LegalHold,DataLake,JourneyAnalytics,HRRecords,PartsInventory,KnowledgeBase,ESGWorkspace,MaintenanceBoard,AssetRegistry,CoachingLog,ConsentVault,EngagementArchive,PaymentGateway,TreasuryVault,RegulatorPortal,InsuranceRepository,RevenueWarehouse,ProcurementLedger,ModelRegistry,SyntheticVault,AccessibilityArchive,SuccessWorkspace,ContinuityVault,MarketingMart,LegalArchive,CommunityHub,LocalizationRepo,EthicsLedger,SimulationLibrary,PartnerRiskRegister,KnowledgeGraphWorkspace,MaintenanceForecast,WarrantyLedger,EnergyDashboard,LogisticsControlCenter,RoboticsOpsBoard,DigitalTwinLibrary,WeatherAlertHub,InnovationBacklog,TradeComplianceVault,CustomsFilingCenter,FleetOpsDashboard,RemoteAssistConsole,InvestorRelationsWorkspace,WorkforceScheduleHub,FranchiseGovernanceLibrary,TaxFilingVault,CoMarketingArchive,LoyaltyWarehouse,EventPlaybookRepo,EnablementLibrary,CorpCommsArchive,BenchmarkDashboard,SmartBuildingConsole,EmergencyHub,CapitalProjectsLedger,DigitalSignageNetwork,SubscriptionLedger,DealerCollabArchive,ChargingNetworkOps,WellnessVault,CircularityRegistry,SecurityResearchArchive,ExperienceLabWorkspace,CarbonLedger,SafetyCommandHub,SkillsPortfolio,DiversityDashboard,InnovationFundRegistry,OrbitalOpsConsole,AutonomousFleetLedger,BiosecurityVault,NeurodiversityWorkspace,WasteCircularityHub,MetaverseArchive,TherapeuticsRegistry,MicrogridOpsHub,WaterStewardshipLedger,SustainableMaterialsLibrary destination;
-    class OceanStewardshipVault,AgriResilienceWarehouse,HoloCollabArchive,GenomicSafeguardVault,TokenComplianceLedger,SatelliteImagingVault,NanoFabricationRepository,CyberPhysicalTwinLibrary,SpaceWeatherDashboard destination;
+    class OceanStewardshipVault,AgriResilienceWarehouse,HoloCollabArchive,GenomicSafeguardVault,TokenComplianceLedger,SatelliteImagingVault,NanoFabricationRepository,CyberPhysicalTwinLibrary,SpaceWeatherDashboard,AtmosphericIntelligenceVault,GeothermalInsightsRepository,OrbitalTrafficLedger,BiotechInnovationArchive,ResponsibleAIJournal,AgriRoboticsLibrary,ZeroEmissionFleetLedger,ParametricInsuranceVault,ResilienceResearchLibrary destination;
 ```
