@@ -99,3 +99,22 @@ To manage the vehicle arrival and check-in process for scheduled appointments, e
 7. Customer is notified of service progress initiation.
 
 ---
+
+## 📈 Data Flow Diagram
+
+- [Appointment check-in data flow](../../Diagrams/DataFlow/AppointmentCheckIn.md) — details the intake, media capture, and notification sequence triggered during arrival.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/AppointmentCheckIn-Level1.md) — expands the arrival journey into booking retrieval, intake capture, service confirmation, job card creation, and scheduling updates.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/AppointmentCheckIn-Level2.md) — emphasises appointment lookup, digital intake, evidence storage, job card creation, and notification broadcasts with audit logging.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/AppointmentCheckIn-Level3.md) — illustrates the reception tablet, identity verification, intake services, upsell engine, and job card handler coordinating through appointment ledgers, intake records, media vaults, and notification channels.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/AppointmentCheckIn-Level4.md) — highlights arrival capture, booking lookups, identity verification, condition documentation, intake form generation, upsell recommendation, job card creation, and notification queuing across the supporting stores.
+- [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/AppointmentCheckIn-Level5.md) — illustrates ingress gateways, appointment lookup, identity verification, intake, evidence capture, upsell, job card creation, notification services, and monitoring telemetry protecting the check-in lifecycle.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/AppointmentCheckIn-Level6.md) — describes geo-distributed arrival capture, booking lookup, identity verification, evidence storage, upsell engines, job card bridging, and notification dispatching with mirrored ledgers and failover automation.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/AppointmentCheckIn-Level7.md) — details intake governance policies, evidence retention rules, privacy controls, classification pipelines, anomaly detection, and incident desks securing the arrival workflow.
+- [Level 8 continuous improvement & analytics view](../../Diagrams/DataFlow/Level8/AppointmentCheckIn-Level8.md) — depicts arrival feedback, evidence analytics, wait-time telemetry, and experiment loops that evolve flow design, coaching, and revenue playbooks.
+
+#### Data Flow Highlights
+- **Intake capture:** Reception staff confirm booking details, log vehicle conditions, and upload mandatory photos that persist in dedicated stores.
+- **Job initiation:** The check-in service produces intake documents, triggers optional upsell recommendations, and either activates an existing job card or creates a new one.
+- **Communication trail:** Notifications keep customers informed of arrival status while audit logs preserve evidence and decision points for compliance.
+
+---

@@ -237,3 +237,20 @@ This module defines how users are created, invited, assigned roles, managed acro
 - Exportable (CSV)
 - Optional: Inactive user report
 
+### 📈 Data Flow Diagram
+
+- [User & Role Management data flow](../../Diagrams/DataFlow/UserRoleManagement.md) — shows invitation, approval, MFA, and session governance across the identity services.
+- [Level 1 data flow decomposition](../../Diagrams/DataFlow/Level1/UserRoleManagement-Level1.md) — breaks down invitations, registration validation, credential provisioning, MFA, role governance, impersonation, and alerting into discrete processes.
+- [Level 2 data flow decomposition](../../Diagrams/DataFlow/Level2/UserRoleManagement-Level2.md) — traces invitation completion, MFA enrolment, role assignment, session issuance, and impersonation auditing across supporting services.
+- [Level 3 service component flow](../../Diagrams/DataFlow/Level3/UserRoleManagement-Level3.md) — highlights the invitation console, identity APIs, role policy engine, session manager, and impersonation service coordinating through the directory, caches, and security telemetry bus.
+- [Level 4 integration workflow](../../Diagrams/DataFlow/Level4/UserRoleManagement-Level4.md) — follows invitation token storage, credential vaulting, MFA secret registration, role policy enforcement, session management, impersonation monitoring, and analytics pipelines across the identity stores and audit ledgers.
+- [Level 5 infrastructure & observability view](../../Diagrams/DataFlow/Level5/UserRoleManagement-Level5.md) — outlines ingress gateways, identity services, invitation, registration, credential issuance, MFA, role governance, session control, impersonation guardrails, dedicated security stores, and alerting pipelines tied into SIEM and threat intelligence feeds.
+- [Level 6 resilience & disaster recovery view](../../Diagrams/DataFlow/Level6/UserRoleManagement-Level6.md) — presents active-passive identity services, credential vault replication, MFA gateways, session brokers, and audit mirroring that preserve access continuity during regional failover.
+- [Level 7 security, compliance & assurance view](../../Diagrams/DataFlow/Level7/UserRoleManagement-Level7.md) — details policy governance, identity analytics, behaviour monitoring, privilege scanning, MFA health checks, and incident response remediating identity risks.
+- [Level 8 continuous improvement & analytics view](../../Diagrams/DataFlow/Level8/UserRoleManagement-Level8.md) — explains how login feedback, telemetry, risk analytics, and UX research drive access, policy, and education backlogs.
+
+#### Data Flow Highlights
+- **Onboarding sources:** Admin invitations and self-registration requests converge on the identity directory, which orchestrates outbound email/SMS and persists pending user context.
+- **Authentication controls:** Login and MFA APIs activate accounts, issue sessions backed by the session store, and update device trust data.
+- **Governance actions:** Role promotions, impersonation, and forced logouts push updates to the directory and session subsystems while emitting notifications and audit events.
+
