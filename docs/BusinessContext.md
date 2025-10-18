@@ -1,6 +1,6 @@
 # Step 1: Business Context & Goals – SaaS Garage System (Middle East)
 
-## 🎯 SaaS Purpose
+## 🎯 SaaS Purpose sls
 
 A SaaS garage system tailored for the Middle East to help garage owners manage:
 - Spare parts
