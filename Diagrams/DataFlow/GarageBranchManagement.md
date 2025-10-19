@@ -108,6 +108,18 @@ flowchart LR
         ZeroEmissionFleetNet[Zero Emission Fleet Network]
         InsuranceOracle[Smart Contract Insurance Oracle]
         ResilienceInstitute[Resilience Research Institute]
+        HydrogenNetwork[Hydrogen Fuel Network]
+        CarbonCapturePlant[Carbon Capture Plant]
+        SeabedMonitor[Seabed Mining Monitor]
+        TemporalLab[Temporal Analytics Lab]
+        InterplanetaryRelay[Interplanetary Relay Station]
+        SocialImpactObservatory[Social Impact Observatory]
+        BiomeRestorationProgram[Biome Restoration Program]
+        UniversalTranslator[Universal Translation Engine]
+        AIAlignmentLab[AI Alignment Lab]
+        ClimateJusticeCoalition[Climate Justice Coalition]
+        EthicsHotline[Digital Ethics Hotline]
+        SpaceHabitatTelemetry[Space Habitat Telemetry]
     end
 
     subgraph CoreServices[Core Processes]
@@ -237,6 +249,17 @@ flowchart LR
         ZeroEmissionCommand[Zero Emission Fleet Command]
         ParametricInsuranceEngine[Parametric Insurance Engine]
         ResilienceResearchExchange[Resilience Research Exchange]
+        HydrogenCoordinator[Hydrogen Infrastructure Coordinator]
+        CarbonCaptureOrchestrator[Carbon Capture Orchestrator]
+        SeabedController[Seabed Stewardship Controller]
+        TemporalAnalyticsEngine[Temporal Analytics Engine]
+        InterplanetaryLiaison[Interplanetary Liaison Service]
+        ClimateJusticeDesk[Climate Justice Desk]
+        EthicalEscalationCenter[Ethical Escalation Center]
+        BiomeRestorationOrchestrator[Biome Restoration Orchestrator]
+        TranslationService[Universal Translation Service]
+        AIAlignmentGovernance[AI Alignment Governance Hub]
+        SpaceHabitatOps[Space Habitat Operations Center]
     end
 
     subgraph Destinations[Data Destinations]
@@ -370,6 +393,17 @@ flowchart LR
         ZeroEmissionFleetLedger[(Zero Emission Fleet Ledger)]
         ParametricInsuranceVault[(Parametric Insurance Vault)]
         ResilienceResearchLibrary[(Resilience Research Library)]
+        HydrogenLedger[(Hydrogen Operations Ledger)]
+        CarbonCaptureArchive[(Carbon Capture Archive)]
+        SeabedVault[(Seabed Stewardship Vault)]
+        TemporalRepository[(Temporal Analytics Repository)]
+        InterplanetaryCommand[(Interplanetary Command Console)]
+        ClimateJusticeWorkspace[(Climate Justice Workspace)]
+        EthicsHotlineArchive[(Ethics Hotline Archive)]
+        BiomeRestorationLibrary[(Biome Restoration Library)]
+        TranslationMemory[(Universal Translation Memory)]
+        AIAlignmentLedger[(AI Alignment Decisions Ledger)]
+        SpaceHabitatDashboard[(Space Habitat Dashboard)]
     end
 
     GA -->|Authenticate| IdP
@@ -473,6 +507,19 @@ flowchart LR
     ZeroEmissionFleetNet -->|Share zero-emission fleet metrics| ZeroEmissionCommand
     InsuranceOracle -->|Stream parametric contract data| ParametricInsuranceEngine
     ResilienceInstitute -->|Publish resilience research| ResilienceResearchExchange
+    HydrogenNetwork -->|Stream hydrogen telemetry| HydrogenCoordinator
+    CarbonCapturePlant -->|Send capture efficiency data| CarbonCaptureOrchestrator
+    SeabedMonitor -->|Report seabed stewardship insights| SeabedController
+    TemporalLab -->|Share temporal analytics| TemporalAnalyticsEngine
+    InterplanetaryRelay -->|Transmit interplanetary signals| InterplanetaryLiaison
+    SocialImpactObservatory -->|Provide social impact insights| ClimateJusticeDesk
+    SocialImpactObservatory -->|Surface equity indicators| EthicalEscalationCenter
+    BiomeRestorationProgram -->|Deliver restoration metrics| BiomeRestorationOrchestrator
+    UniversalTranslator -->|Sync linguistic corpora| TranslationService
+    AIAlignmentLab -->|Submit alignment findings| AIAlignmentGovernance
+    ClimateJusticeCoalition -->|Share advocacy directives| ClimateJusticeDesk
+    EthicsHotline -->|Escalate ethics reports| EthicalEscalationCenter
+    SpaceHabitatTelemetry -->|Stream habitat telemetry| SpaceHabitatOps
 
     OceanStewardshipOffice -->|Coordinate marine stewardship actions| EnvCompliance
     OceanStewardshipOffice -->|Publish conservation dashboards| OceanStewardshipVault
@@ -518,6 +565,41 @@ flowchart LR
     EthicalAICenter -->|Record responsible AI updates| ResponsibleAIJournal
     AgriRoboticsCoordinator -->|Tune robotics orchestration| RoboticsCoordinator
     AgriRoboticsCoordinator -->|Coordinate facilities readiness| FacilitiesCoord
+    HydrogenCoordinator -->|Coordinate hydrogen readiness| EnergyOptimizer
+    HydrogenCoordinator -->|Alert facilities teams| FacilitiesCoord
+    HydrogenCoordinator -->|Log hydrogen operations| HydrogenLedger
+    CarbonCaptureOrchestrator -->|Sync capture performance| EnvCompliance
+    CarbonCaptureOrchestrator -->|Register capture archives| CarbonCaptureArchive
+    CarbonCaptureOrchestrator -->|Update carbon finance| CarbonLedger
+    SeabedController -->|Coordinate ocean stewardship| OceanStewardshipOffice
+    SeabedController -->|Notify compliance leads| Compliance
+    SeabedController -->|Archive seabed evidence| SeabedVault
+    TemporalAnalyticsEngine -->|Enrich scenario planning| SimulationEngine
+    TemporalAnalyticsEngine -->|Guide continuity timelines| BusinessContinuity
+    TemporalAnalyticsEngine -->|Store temporal analytics| TemporalRepository
+    InterplanetaryLiaison -->|Synchronize orbital logistics| SpaceLogisticsCoordinator
+    InterplanetaryLiaison -->|Brief continuity teams| BusinessContinuity
+    InterplanetaryLiaison -->|Publish interplanetary command updates| InterplanetaryCommand
+    ClimateJusticeDesk -->|Coordinate equity remediation| Compliance
+    ClimateJusticeDesk -->|Inform sustainability teams| EnvCompliance
+    ClimateJusticeDesk -->|Engage community programs| CommunityImpactHub
+    ClimateJusticeDesk -->|Archive justice actions| ClimateJusticeWorkspace
+    EthicalEscalationCenter -->|Escalate to ethics board| EthicsBoard
+    EthicalEscalationCenter -->|Sync responsible AI mitigations| EthicsLedger
+    EthicalEscalationCenter -->|Log hotline follow-up| EthicsHotlineArchive
+    BiomeRestorationOrchestrator -->|Align environmental programs| EnvCompliance
+    BiomeRestorationOrchestrator -->|Coordinate facilities readiness| FacilitiesCoord
+    BiomeRestorationOrchestrator -->|Store restoration knowledge| BiomeRestorationLibrary
+    TranslationService -->|Deliver localized assets| LocalizationService
+    TranslationService -->|Amplify experience orchestration| ExperienceOrch
+    TranslationService -->|Maintain translation memory| TranslationMemory
+    AIAlignmentGovernance -->|Coordinate with AIMLOps| AIMLOps
+    AIAlignmentGovernance -->|Inform ethics governance| EthicsBoard
+    AIAlignmentGovernance -->|Record alignment decisions| AIAlignmentLedger
+    SpaceHabitatOps -->|Support continuity planning| BusinessContinuity
+    SpaceHabitatOps -->|Sync orbital logistics| SpaceLogisticsCoordinator
+    SpaceHabitatOps -->|Publish habitat status| SpaceHabitatDashboard
+    SpaceHabitatOps -->|Coordinate environmental safeguards| EnvCompliance
     AgriRoboticsCoordinator -->|Archive agri robotics playbooks| AgriRoboticsLibrary
     ZeroEmissionCommand -->|Guide autonomous routing| AutonomousFleetCommand
     ZeroEmissionCommand -->|Coordinate logistics adjustments| LogisticsHub
