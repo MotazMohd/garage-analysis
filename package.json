@@ -2,6 +2,7 @@
   "name": "garage-analysis",
   "version": "1.0.0",
   "description": "Analysis repository for garage modules",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "vitest run",

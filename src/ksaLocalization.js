@@ -35,7 +35,7 @@ function formatSarCurrency(amount, locale = "ar-SA") {
   }).format(amount);
 }
 
-module.exports = {
+export {
   normalizeSaudiPhoneNumber,
   formatSarCurrency,
 };

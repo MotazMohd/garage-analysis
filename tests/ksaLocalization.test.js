@@ -1,8 +1,8 @@
-const { describe, it, expect } = require("vitest");
-const {
+import { describe, it, expect } from "vitest";
+import {
   normalizeSaudiPhoneNumber,
   formatSarCurrency,
-} = require("../src/ksaLocalization");
+} from "../src/ksaLocalization.js";
 
 describe("KSA localization utilities", () => {
   it("normalizes valid Saudi mobile numbers to E.164", () => {
