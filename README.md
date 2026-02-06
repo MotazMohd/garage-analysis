@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SALIS AUTO Platform
 
-## Getting Started
+A comprehensive automotive service platform connecting customers with verified service providers.
 
-First, run the development server:
+## 🚀 Features
+
+### For Customers (B2C)
+
+- **Smart Search**: Find service providers by specialty, location, and rating
+- **Verified Providers**: All businesses are verified and rated by real customers
+- **Direct Communication**: Contact providers via phone, email, or messaging
+- **Reviews & Ratings**: Make informed decisions based on customer feedback
+
+### For Businesses (B2B)
+
+- **Business Dashboard**: Manage your service offerings and bookings
+- **Customer Management**: Track customer interactions and history
+- **Analytics**: Monitor performance metrics and revenue
+- **SaaS Tools**: Comprehensive management system for automotive service businesses
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Next.js 14** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Modern, responsive styling
+- **Lucide React** - Beautiful icons
+
+### Backend
+
+- **FastAPI** - High-performance Python API
+- **PostgreSQL** - Robust relational database
+- **SQLAlchemy** - Python ORM
+- **Pydantic** - Data validation
+
+## 📦 Installation
+
+### Frontend Setup
 
 ```bash
+cd salisauto-platform
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Backend Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cd api
+pip install -r requirements.txt
+python main.py
+```
 
-## Learn More
+The API will be available at `http://localhost:8000`
+API documentation: `http://localhost:8000/docs`
 
-To learn more about Next.js, take a look at the following resources:
+## 🗄️ Database Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install PostgreSQL
+2. Create a database:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sql
+CREATE DATABASE salisauto;
+```
 
-## Deploy on Vercel
+1. Run the schema:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+psql -U postgres -d salisauto -f api/schema.sql
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```
+salisauto-platform/
+├── app/                          # Next.js pages
+│   ├── page.tsx                  # Landing page
+│   ├── marketplace/              # Customer marketplace
+│   └── business/                 # Business portal
+│       └── dashboard/            # Business dashboard
+├── api/                          # Python backend
+│   ├── main.py                   # FastAPI application
+│   ├── schema.sql                # Database schema
+│   └── requirements.txt          # Python dependencies
+└── public/                       # Static assets
+```
+
+## 🎨 Design Philosophy
+
+The platform features a **dark neon theme** with:
+
+- Gradient accents (emerald to cyan)
+- Glassmorphism effects
+- Smooth animations and transitions
+- Premium, modern aesthetics
+
+## 🔗 API Endpoints
+
+- `GET /api/providers` - List service providers
+- `GET /api/providers/{id}` - Get provider details
+- `POST /api/providers` - Register new provider
+- `GET /api/search` - Search providers
+- `GET /api/specialties` - List specialties
+- `POST /api/messages` - Send message to provider
+
+## 📝 License
+
+© 2026 SALIS AUTO. All rights reserved.
