@@ -109,14 +109,14 @@ describe("Date range validation", () => {
     const date = new Date("2024-06-15");
     const min = new Date("2024-01-01");
     const max = new Date("2024-12-31");
-    
+
     expect(isDateInRange(date, min, max)).toBe(true);
   });
 
   it("accepts boundary dates", () => {
     const min = new Date("2024-01-01");
     const max = new Date("2024-12-31");
-    
+
     expect(isDateInRange(min, min, max)).toBe(true);
     expect(isDateInRange(max, min, max)).toBe(true);
   });
@@ -124,7 +124,7 @@ describe("Date range validation", () => {
   it("rejects dates outside range", () => {
     const min = new Date("2024-01-01");
     const max = new Date("2024-12-31");
-    
+
     expect(isDateInRange(new Date("2023-12-31"), min, max)).toBe(false);
     expect(isDateInRange(new Date("2025-01-01"), min, max)).toBe(false);
   });
@@ -144,7 +144,7 @@ describe("Required fields validation", () => {
   it("validates all required fields are present", () => {
     const obj = { name: "Test", email: "test@example.com", phone: "+966551234567" };
     const result = validateRequiredFields(obj, ["name", "email", "phone"]);
-    
+
     expect(result.valid).toBe(true);
     expect(result.missing).toEqual([]);
   });
@@ -152,7 +152,7 @@ describe("Required fields validation", () => {
   it("identifies missing fields", () => {
     const obj = { name: "Test" };
     const result = validateRequiredFields(obj, ["name", "email", "phone"]);
-    
+
     expect(result.valid).toBe(false);
     expect(result.missing).toEqual(["email", "phone"]);
   });
@@ -160,7 +160,7 @@ describe("Required fields validation", () => {
   it("treats empty strings as missing", () => {
     const obj = { name: "", email: "   ", phone: "+966551234567" };
     const result = validateRequiredFields(obj, ["name", "email", "phone"]);
-    
+
     expect(result.valid).toBe(false);
     expect(result.missing).toEqual(["name", "email"]);
   });
@@ -168,7 +168,7 @@ describe("Required fields validation", () => {
   it("treats null and undefined as missing", () => {
     const obj = { name: null, email: undefined, phone: "+966551234567" };
     const result = validateRequiredFields(obj, ["name", "email", "phone"]);
-    
+
     expect(result.valid).toBe(false);
     expect(result.missing).toEqual(["name", "email"]);
   });
