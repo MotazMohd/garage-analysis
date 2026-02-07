@@ -2,9 +2,14 @@
   "name": "garage-analysis",
   "version": "1.0.0",
   "description": "Analysis repository for garage modules",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/placeholder.test.js"
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
   },
   "keywords": [],
   "author": "",

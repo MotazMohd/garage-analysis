@@ -109,3 +109,13 @@
 - Bidirectional UI foundations, translation services, and accessibility automation for all channels
 - Translation management workflows, inclusive UX patterns, and compliance dashboards
 - 📄 See `Tasks/LocalizationAccessibilityModulePlan/` for three-sprint roadmap and deliverables
+
+---
+
+## Testing
+
+Run the test suite with:
+
+```bash
+npm test
+```
